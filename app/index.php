@@ -8,17 +8,22 @@
         <title>Тест Коузи</title>
               
         <link rel="stylesheet" type="text/css" href="lib/css/bootstrap.css" media="screen" />
-        <link rel="stylesheet" type="text/css" href="css/shop.css" media="screen" />        
-    </head>
-    <body>
-        
-<?php
-        
-?>            
-            
+        <link rel="stylesheet" type="text/css" href="css/shop.css" media="screen" /> 
         
         <script src="lib/js/jquery.min.js" type="text/javascript"></script>
         <script src="lib/js/jquery.mask.min.js" type="text/javascript"></script>
-        <script src="lib/js/bootstrap.min.js" type="text/javascript"></script>                        
+        <script src="lib/js/bootstrap.min.js" type="text/javascript"></script>        
+    </head>
+    <body>
+        <div id="shop">
+        </div>
+                  
+        <script src="js/shop.js" type="text/javascript"></script>
+        <script type="text/javascript">
+            KouziShop.url="/";
+            KouziShop.init("#shop");            
+        </script>
+        
+                        
     </body>
 </html>
