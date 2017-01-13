@@ -1,0 +1,97 @@
+// Clearfix
+.clearfix {
+    &:before,
+    &:after {
+      content: " "; // 1
+      display: table; // 2
+    }
+    &:after {
+      clear: both;
+    }
+}
+
+@mixin bg-gradient($bg-from, $bg-to) {
+	background: linear-gradient(top,$bg-from,$bg-to);
+	background: -moz-linear-gradient(top,$bg-from,$bg-to);
+	background: -o-linear-gradient(top,$bg-from,$bg-to);
+	background: -webkit-gradient(linear, left top, left bottom, from($bg-from), to($bg-to));
+}
+
+@mixin bg-cover {
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+@mixin bg-size($bg-size) {
+  -webkit-background-size: $bg-size;
+  -moz-background-size: $bg-size;
+  -o-background-size: $bg-size;
+  background-size: $bg-size;
+}
+
+@mixin box-shadow($shadow-param) {
+  -webkit-box-shadow: $shadow-param;
+  -moz-box-shadow: $shadow-param;
+  box-shadow: $shadow-param;
+}
+
+@mixin border-radius($radius) {
+  -moz-border-radius: $radius;
+  -webkit-border-radius: $radius;
+  -khtml-border-radius: $radius;
+  border-radius: $radius;
+}
+
+@mixin box-sizing($sizin-param) {
+  box-sizing: $sizin-param;
+  -moz-box-sizing: $sizin-param;
+  -webkit-box-sizing: $sizin-param;
+}
+
+@mixin filter($index) {
+  -webkit-filter: $index;
+  -moz-filter: $index;
+  -ms-filter: $index;
+  -o-filter: $index;
+  filter: $index;  
+}
+
+@mixin transform($index) {
+    transform: $index;
+    -webkit-transform: $index; 
+    -o-transform: $index; 
+    -moz-transform: $index; 
+}
+
+@mixin transition($index) {
+    transition: $index;
+    -webkit-transition: $index; 
+    -o-transition: $index; 
+    -moz-transition: $index; 
+}
+
+@mixin btn {
+        display: block;
+        margin: 0 auto;
+        vertical-align: top;
+        line-height: 50px;
+        height: 50px;
+        font-family: MyriadProRegular;
+        font-size: 25px;
+        padding: 0 15px;
+        cursor: pointer;
+        text-decoration: none;
+        text-align: center;
+        color: #fff;
+        width: 250px;                       
+}
+    
+@mixin btn-primary {
+        @include bg-gradient(#e78122, #fdce22);
+        border: solid 1px #f2a814;
+        &:hover {
+            @include bg-gradient(darken(#e78122, 10%), darken(#fdce22, 10%));
+        }                 
+}    

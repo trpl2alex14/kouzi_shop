@@ -1,10 +1,113 @@
-/*
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
-*/
-/* 
-    Created on : 11.01.2017, 17:49:36
-    Author     : Alex
-*/
 
+
+@import "variables";
+
+@import "lib/normalize";
+@import "lib/fonts";
+@import "lib/mixins";
+
+@import "catalog";
+
+#shop{ 
+    font: normal $font-size-base/$line-height-base $font-family-base;
+    font-family: $font-family-base;
+    color: $text-color-base;     
+    .wrapper {
+        max-width:960px;    
+        margin: 0 auto;    
+    }
+
+
+    .lists {
+        padding: 10px 0;
+        border-top:1px solid $color-grey;
+        
+        .title{
+            text-align: center;            
+            padding: 5px 0 10px;
+            h3{
+                font-size: 1.5em;  
+                margin: 5px 0;
+            }
+            p{
+                font-size: 1.2em;
+            }        
+        }; 
+        
+        .table{
+            .list-clear{
+                text-align: center;
+                font-size: 1.2em;
+                padding: 20px 0;
+                display: none;
+            }
+            .line {
+                font-size:1.2em;
+                line-height:1.5em;
+                .col{
+                    display: block;
+                    float: left;
+                }
+                .number{
+                    width: 5%;                    
+                }
+                .name {
+                    width: 45%;
+                }
+                .price{
+                    width: 15%;
+                }
+                .count{
+                    width: 10%;
+                    text-align: center;
+                }
+                .total{
+                    width: 20%;
+                    text-align: right;
+                    font-weight: bold;
+                }
+                .del{
+                    width: 5%;
+                    text-align: right;
+                }
+                .total-line{
+                    width: 75%;
+                    text-align: right;
+                    font-weight: bold;
+                }
+            }
+            .line.top{
+                border-top: 1px solid $color-grey;
+            }
+            .line.bottom{
+                border-bottom: 1px solid $color-grey;
+            }            
+        }
+    }
+}
+
+.action-bar{
+        padding: 10px 0;
+        border-top:1px solid $color-grey;
+        
+        .btn {
+            color: $link-color;
+            display: inline-block;
+        }
+        .btn.sale{
+            background: $color-orange;
+            color: #fff;
+            font-weight: bold;
+            font-size: 1.1em;
+            padding: 5px 15px;
+            line-height:1.5em;
+            text-align: center;
+            border-radius: $border-radius-base;
+            float: right;
+        };
+        .btn.clear {
+            border: 1px solid $color-grey;
+            padding: 5px 15px;
+            line-height: 1.5em;
+        };
+}

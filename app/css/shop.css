@@ -1,11 +1,197 @@
-/*
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
-*/
-/* 
-    Created on : 11.01.2017, 17:49:36
-    Author     : Alex
-*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, img {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+input, textarea, select, img, a, button {
+  outline: none;
+  margin: 0;
+  padding: 0; }
+
+header, nav, section, article, aside, footer {
+  display: block; }
+
+@font-face {
+  font-family: 'MyriadProRegular';
+  src: url("../fonts/MyriadPro_Regular/MYRIADPROREGULAR.eot");
+  src: url("../fonts/MyriadPro_Regular/MYRIADPROREGULAR.eot?#iefix") format("embedded-opentype"), url("../fonts/MyriadPro_Regular/MYRIADPROREGULAR.woff") format("woff"), url("../fonts/MyriadPro_Regular/MYRIADPROREGULAR.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal; }
+@font-face {
+  font-family: 'MyriadProBold';
+  src: url("../fonts/MyriadPro_Semibold/MyriadProSemibold.eot");
+  src: url("../fonts/MyriadPro_Semibold/MyriadProSemibold.eot?#iefix") format("embedded-opentype"), url("../fonts/MyriadPro_Semibold/MyriadProSemibold.woff") format("woff"), url("../fonts/MyriadPro_Semibold/MyriadProSemibold.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal; }
+@font-face {
+  font-family: 'MyriadProBoldCondensed';
+  src: url("../fonts/MyriadPro_Bold_Condensed/MyriadProBoldCondensed.eot");
+  src: url("../fonts/MyriadPro_Bold_Condensed/MyriadProBoldCondensed.eot?#iefix") format("embedded-opentype"), url("../fonts/MyriadPro_Bold_Condensed/MyriadProBoldCondensed.woff") format("woff"), url("../fonts/MyriadPro_Bold_Condensed/MyriadProBoldCondensed.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal; }
+.clearfix:before, .clearfix:after {
+  content: " ";
+  display: table; }
+.clearfix:after {
+  clear: both; }
+
+.catalog .title {
+  text-align: center;
+  border-bottom: 1px solid #ccc;
+  padding: 5px 0 10px; }
+  .catalog .title h3 {
+    font-size: 1.5em;
+    margin: 5px 0 10px; }
+  .catalog .title p {
+    font-size: 1.2em; }
+.catalog .items {
+  position: relative;
+  width: 100%; }
+  .catalog .items .item {
+    display: block;
+    width: 24%;
+    margin: 10px .5%;
+    float: left;
+    overflow: hidden;
+    border: 1px solid #ccc;
+    padding: 5px;
+    text-align: center; }
+    .catalog .items .item img {
+      width: 100%;
+      height: 150px;
+      text-align: center; }
+    .catalog .items .item h4 {
+      font-size: 1.5em;
+      font-weight: bold; }
+    .catalog .items .item p {
+      height: 4em;
+      padding: 10px 0; }
+    .catalog .items .item .price {
+      font-size: 1.5em;
+      font-weight: bold;
+      margin: 5px 0 10px; }
+    .catalog .items .item .action-block .btn {
+      color: #05628a; }
+    .catalog .items .item .action-block .btn.btn-add {
+      background: #e67e21;
+      color: #fff;
+      font-weight: bold;
+      font-size: 1.1em;
+      padding: 5px 15px;
+      text-align: center;
+      border-radius: 4px; }
+
+#shop {
+  font: normal 14px/normal MyriadProRegular, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: MyriadProRegular, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #5d5d5d; }
+  #shop .wrapper {
+    max-width: 960px;
+    margin: 0 auto; }
+  #shop .lists {
+    padding: 10px 0;
+    border-top: 1px solid #ccc; }
+    #shop .lists .title {
+      text-align: center;
+      padding: 5px 0 10px; }
+      #shop .lists .title h3 {
+        font-size: 1.5em;
+        margin: 5px 0; }
+      #shop .lists .title p {
+        font-size: 1.2em; }
+    #shop .lists .table .list-clear {
+      text-align: center;
+      font-size: 1.2em;
+      padding: 20px 0;
+      display: none; }
+    #shop .lists .table .line {
+      font-size: 1.2em;
+      line-height: 1.5em; }
+      #shop .lists .table .line .col {
+        display: block;
+        float: left; }
+      #shop .lists .table .line .number {
+        width: 5%; }
+      #shop .lists .table .line .name {
+        width: 45%; }
+      #shop .lists .table .line .price {
+        width: 15%; }
+      #shop .lists .table .line .count {
+        width: 10%;
+        text-align: center; }
+      #shop .lists .table .line .total {
+        width: 20%;
+        text-align: right;
+        font-weight: bold; }
+      #shop .lists .table .line .del {
+        width: 5%;
+        text-align: right; }
+      #shop .lists .table .line .total-line {
+        width: 75%;
+        text-align: right;
+        font-weight: bold; }
+    #shop .lists .table .line.top {
+      border-top: 1px solid #ccc; }
+    #shop .lists .table .line.bottom {
+      border-bottom: 1px solid #ccc; }
+
+.action-bar {
+  padding: 10px 0;
+  border-top: 1px solid #ccc; }
+  .action-bar .btn {
+    color: #05628a;
+    display: inline-block; }
+  .action-bar .btn.sale {
+    background: #e67e21;
+    color: #fff;
+    font-weight: bold;
+    font-size: 1.1em;
+    padding: 5px 15px;
+    line-height: 1.5em;
+    text-align: center;
+    border-radius: 4px;
+    float: right; }
+  .action-bar .btn.clear {
+    border: 1px solid #ccc;
+    padding: 5px 15px;
+    line-height: 1.5em; }
 
 /*# sourceMappingURL=shop.css.map */

@@ -24,29 +24,51 @@ KouziShop = {
         KouziShop.f_ajaxtmpl(tmpl,function(responseData){
                     jQuery(config.idblock).append(responseData.data);                    
                     if (typeof config.callbk === 'function') {
-                        config.callbk();
+                        config.callbk(responseData);
                     }
         });
     },    
     
     init:function(wrapper){
         this.shopWrapper.idblock = wrapper;
+        this.shopWrapper.callbk = KouziCatalog.load;
         this.load(this.shopWrapper,"index");
     }
 };
+   
 
 KouziCatalog = {
-        catalog : [               
-            {
-                "id"   : 1,
-                "name" : "КОУЗИ",                
-                "sale" : 5200
-            }        
-        ],
+        tpl_item : '<div class="item">\n\
+                    <h4>{name}</h4>\n\
+                    <img src="image/{img}">\n\
+                    <p>{info}</p>\n\
+                    <div class="price">{price} руб.</div> \n\
+                    <div class="action-block">\n\
+                    <a class="btn btn-add" onclick="KouziCatalog.addArticle({id})">В корзину</a>\n\
+                    <a class="btn about" onclick="KouziCatalog.infoArticle({id})">Подробнее</a>\n\
+                    </div>\n\
+                    </div>',
+        catalog : null,
         
-        load:function(){
-            
-        }
-}
+        load:function(responseData){
+            KouziCatalog.catalog = responseData.array;                      
+            jQuery('#catalog-article').html('');
+            KouziCatalog.catalog.forEach(function(item) {
+                            var tmp = KouziCatalog.tpl_item;                            
+                            for (var key in item){                                  
+                                tmp = tmp.replace('{'+key+'}',item[key]);                 
+                            }
+                            jQuery('#catalog-article').append(tmp);            
+            });
+        },
+        
+        addArticle: function(id){
+            console.log(id);
+        },
+        
+        infoArticle: function(id){
+            console.log(id);
+        }        
+};
 
 
