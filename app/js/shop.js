@@ -35,4 +35,18 @@ KouziShop = {
     }
 };
 
+KouziCatalog = {
+        catalog : [               
+            {
+                "id"   : 1,
+                "name" : "КОУЗИ",                
+                "sale" : 5200
+            }        
+        ],
+        
+        load:function(){
+            
+        }
+}
+
 
