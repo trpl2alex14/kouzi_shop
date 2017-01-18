@@ -16,6 +16,47 @@
         max-width:960px;    
         margin: 0 auto;    
     }
+    
+    
+.fixed-overlay {
+    display: none; 
+    position: fixed;
+    overflow: auto;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 1000;
+}
+
+.fixed-overlay__modal {
+    text-align: center;
+    white-space: nowrap;
+    
+    &::after {
+        display: inline-block;
+        vertical-align: middle;
+        width: 0;
+        height: 100%;
+        content: '';
+    }    
+    .win_modal {
+        display: inline-block;
+        vertical-align: middle;
+        .modal_container {
+            margin: 50px;
+            padding: 20px;
+            text-align: left;
+            white-space: normal;
+            background-color: #fff;    
+            color: #000;
+        }        
+    }    
+}
+
+ 
+
 
 
     .lists {
@@ -69,6 +110,7 @@
                 .del{
                     width: 5%;
                     text-align: right;
+                    cursor: pointer;
                 }
                 .total-line{
                     width: 75%;

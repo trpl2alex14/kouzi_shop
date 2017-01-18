@@ -8,3 +8,9 @@
         } else return false;
     } 
 
+    
+    function get_cookie($arg){
+        if(isset($_COOKIE[$arg])){
+            return htmlspecialchars($_COOKIE[$arg]);
+        } else return false;
+    }
