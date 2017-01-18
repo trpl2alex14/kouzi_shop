@@ -87,7 +87,8 @@ KouziCatalog = {
             if(art){
                 var components = {  config : {  
                                         type    :'config',   
-                                        articul : art.articul,
+                                        articulInit : art.articul,
+                                        articul : 0,
                                         count   : 1                                        
                                     },
                                     line1  : {
@@ -98,7 +99,7 @@ KouziCatalog = {
                 if(art.type==='d' && art.model){
                     for(var i=0;i<art.model.length;i++){                        
                         if(art.model[i].type){
-                            components['line'+i+2] = {
+                            components['line'+Number(i+2)] = {
                                 type : 'checkbox',
                                 data : '<h3>'+art.model[i].name+'</h3>',
                                 value: art.model[i].item[0].atrmod,
@@ -167,11 +168,21 @@ KouziModal = {
                 }                
             }
         }
+        $('#content_modal input').change(function(){KouziModal.viewPrice.call(KouziModal);});
+        this.viewPrice();
         this.callbk = callbk;        
         $('.fixed-overlay .action-block .btn').hide();
         $('.fixed-overlay .action-block .cancel').show();        
         $('.fixed-overlay .action-block .btn-add').show();        
         $('.fixed-overlay').show();
+    },
+    
+    viewPrice:function(){
+        var param = this.getParams();
+        var art = KouziCatalog.getItem(param.config.articul);
+        if(art){
+            $('.price-box span').html(art.price);
+        }
     },
     
     showModalInfo: function(content){
@@ -182,17 +193,19 @@ KouziModal = {
     },
     
     getParams:function(){
+        var components;
         if(this.components){
             var item;
             var art_mod = 0;
-            for(var key in this.components){
-                item = this.components[key];
+            components = this.components;
+            for(var key in components){
+                item = components[key];
                 switch (item.type){           
                     case 'count':
-                        this.components[key].value = Number(jQuery('#content_modal input[name=count]').val());                                  
+                        components[key].value = Number(jQuery('#content_modal input[name=count]').val());                                  
                     break;   
                     case 'checkbox':
-                        this.components[key].value = Number(jQuery('#content_modal input[name='+key+']:checked').val());                        
+                        components[key].value = Number(jQuery('#content_modal input[name='+key+']:checked').val());                        
                     break;                
                 ///color
                 }
@@ -200,9 +213,9 @@ KouziModal = {
                     art_mod+=item.value;
                 }
             }
-            this.components.config.articul+=art_mod;
+            components.config.articul=art_mod+components.config.articulInit;
         }
-        return this.components;
+        return components;
     },
     
     applayBtn:function(){

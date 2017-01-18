@@ -4,6 +4,9 @@
             <div id="content_modal">
 
             </div>
+            <div class="price-box">
+                Стоимость за шт.:<span>0</span> руб.
+            </div>
             <div class="action-block">
                 <a class="btn btn-add" onclick="KouziModal.applayBtn();">Добавить</a>
                 <a class="btn about" onclick="KouziModal.aboutBtn();">Закрыть</a>
