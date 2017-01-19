@@ -1,15 +1,6 @@
 <?php
 
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
     $ralclassic = [
-        'yellow_and_beige' => [
-            'name' => __('Yellow and Beige','ral-colorpicker_header_yellow_and_beige'),
-            'colors' => [
                 ['name' => 'RAL 1000', 'hex' => '#BEBD7F'],
                 ['name' => 'RAL 1001', 'hex' => '#C2B078'],
                 ['name' => 'RAL 1002', 'hex' => '#C6A664'],
@@ -40,11 +31,6 @@
                 ['name' => 'RAL 1035', 'hex' => '#6A5D4D'],
                 ['name' => 'RAL 1036', 'hex' => '#705335'],
                 ['name' => 'RAL 1037', 'hex' => '#F39F18'],
-            ],
-        ],
-        'orange' => [
-            'name' => __('Orange','ral-colorpicker_header_orange'),
-            'colors' => [
                 ['name' => 'RAL 2000', 'hex' => '#ED760E'],
                 ['name' => 'RAL 2001', 'hex' => '#C93C20'],
                 ['name' => 'RAL 2002', 'hex' => '#CB2821'],
@@ -58,11 +44,6 @@
                 ['name' => 'RAL 2011', 'hex' => '#EC7C26'],
                 ['name' => 'RAL 2012', 'hex' => '#E55137'],
                 ['name' => 'RAL 2013', 'hex' => '#C35831'],
-            ],
-        ],
-        'red' => [
-            'name' => __('Red','ral-colorpicker_header_red'),
-            'colors' => [
                 ['name' => 'RAL 3000', 'hex' => '#AF2B1E'],
                 ['name' => 'RAL 3001', 'hex' => '#A52019'],
                 ['name' => 'RAL 3002', 'hex' => '#A2231D'],
@@ -88,11 +69,6 @@
                 ['name' => 'RAL 3031', 'hex' => '#B32428'],
                 ['name' => 'RAL 3032', 'hex' => '#721422'],
                 ['name' => 'RAL 3033', 'hex' => '#B44C43'],
-            ],
-        ],
-        'violet' => [
-            'name' => __('Violet','ral-colorpicker_header_violet'),
-            'colors' => [
                 ['name' => 'RAL 4001', 'hex' => '#6D3F5B'],
                 ['name' => 'RAL 4002', 'hex' => '#922B3E'],
                 ['name' => 'RAL 4003', 'hex' => '#DE4C8A'],
@@ -105,11 +81,6 @@
                 ['name' => 'RAL 4010', 'hex' => '#CF3476'],
                 ['name' => 'RAL 4011', 'hex' => '#8673A1'],
                 ['name' => 'RAL 4012', 'hex' => '#6C6874'],
-            ],
-        ],
-        'blue' => [
-            'name' => __('Blue','ral-colorpicker_header_blue'),
-            'colors' => [
                 ['name' => 'RAL 5001', 'hex' => '#1F3438'],
                 ['name' => 'RAL 5002', 'hex' => '#20214F'],
                 ['name' => 'RAL 5003', 'hex' => '#1D1E33'],
@@ -134,11 +105,6 @@
                 ['name' => 'RAL 5024', 'hex' => '#5D9B9B'],
                 ['name' => 'RAL 5025', 'hex' => '#2A6478'],
                 ['name' => 'RAL 5026', 'hex' => '#102C54'],
-            ],
-        ],
-        'green' => [
-            'name' => __('Green','ral-colorpicker_header_green'),
-            'colors' => [
                 ['name' => 'RAL 6000', 'hex' => '#316650'],
                 ['name' => 'RAL 6001', 'hex' => '#287233'],
                 ['name' => 'RAL 6002', 'hex' => '#2D572C'],
@@ -175,11 +141,6 @@
                 ['name' => 'RAL 6036', 'hex' => '#193737'],
                 ['name' => 'RAL 6037', 'hex' => '#008F39'],
                 ['name' => 'RAL 6038', 'hex' => '#00BB2D'],
-            ],
-        ],
-        'grey' => [
-            'name' => __('Grey','ral-colorpicker_header_grey'),
-            'colors' => [
                 ['name' => 'RAL 7000', 'hex' => '#78858B'],
                 ['name' => 'RAL 7001', 'hex' => '#8A9597'],
                 ['name' => 'RAL 7002', 'hex' => '#7E7B52'],
@@ -218,11 +179,6 @@
                 ['name' => 'RAL 7046', 'hex' => '#82898F'],
                 ['name' => 'RAL 7047', 'hex' => '#D0D0D0'],
                 ['name' => 'RAL 7048', 'hex' => '#898176'],
-            ],
-        ],
-        'brown' => [
-            'name' => __('Brown','ral-colorpicker_header_brown'),
-            'colors' => [
                 ['name' => 'RAL 8000', 'hex' => '#826C34'],
                 ['name' => 'RAL 8001', 'hex' => '#955F20'],
                 ['name' => 'RAL 8002', 'hex' => '#6C3B2A'],
@@ -243,11 +199,6 @@
                 ['name' => 'RAL 8025', 'hex' => '#755C48'],
                 ['name' => 'RAL 8028', 'hex' => '#4E3B31'],
                 ['name' => 'RAL 8029', 'hex' => '#763C28'],
-            ],
-        ],
-        'white_and_black' => [
-            'name' => __('White and Black','ral-colorpicker_header_white_and_black'),
-            'colors' => [
                 ['name' => 'RAL 9001', 'hex' => '#FDF4E3'],
                 ['name' => 'RAL 9002', 'hex' => '#E7EBDA'],
                 ['name' => 'RAL 9003', 'hex' => '#F4F4F4'],
@@ -261,7 +212,5 @@
                 ['name' => 'RAL 9017', 'hex' => '#1E1E1E'],
                 ['name' => 'RAL 9018', 'hex' => '#D7D7D7'],
                 ['name' => 'RAL 9022', 'hex' => '#9C9C9C'],
-                ['name' => 'RAL 9023', 'hex' => '#828282'],
-            ],
-        ],
+                ['name' => 'RAL 9023', 'hex' => '#828282']
     ];

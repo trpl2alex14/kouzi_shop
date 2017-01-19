@@ -32,6 +32,7 @@ KouziShop = {
     ready:function(responseData){
         KouziCatalog.load(responseData);
         KouziList.load(responseData);
+        RalPicker.load(responseData);
     },
     
     init:function(wrapper){
@@ -53,6 +54,41 @@ KouziShop = {
     }
 };
    
+RalPicker = {   
+    color : null,
+    callbk: null,
+    
+    load : function(responseData){
+        RalPicker.color = responseData.ral;
+    },
+    
+    show: function(callbk){
+        this.callbk = callbk; 
+        var tmp='<h3>Выберите цвет</h3>';
+        var j=0;        
+        for(var i=0;i<this.color.length;i++){
+            tmp+='<div onclick="RalPicker.select(this);" class="box" style="background:'+this.color[i].hex+';">'+this.color[i].name+'</div>';
+             j++;
+            if(j===12){
+                tmp+='<div class="clearfix"></div>';               
+                j=0;
+            }
+        }
+        tmp+='<div class="clearfix"></div>';
+        jQuery('#ral_modal .modal_container').html(tmp);
+        jQuery('#ral_modal').show();
+    },
+    
+    close:function(){
+        jQuery('#ral_modal').hide();
+    },
+    
+    select: function(element){
+        var col = jQuery(element).html();
+        RalPicker.callbk(col);
+        RalPicker.close();
+    }
+};
 
 KouziCatalog = {
         tpl_item : '<div class="item">\n\
@@ -61,8 +97,8 @@ KouziCatalog = {
                     <p>{info}</p>\n\
                     <div class="price">{price} руб.</div> \n\
                     <div class="action-block">\n\
-                    <a class="btn btn-add" onclick="KouziCatalog.addArticle({id});">В корзину</a>\n\
                     <a class="btn about" onclick="KouziCatalog.infoArticle({id});">Подробнее</a>\n\
+                    <a class="btn btn-add" onclick="KouziCatalog.addArticle({id});">В корзину</a>\n\
                     </div>\n\
                     </div>',
         
@@ -93,17 +129,19 @@ KouziCatalog = {
                                     },
                                     line1  : {
                                         type:'text',
-                                        data:'<h3>'+art.name+'</h3><p><img src="image/'+art.img+'"></p>'
+                                        data:'<div class="info-block"><p><img src="image/'+art.img+'"></p><h3>'+art.name+'</h3><p>'+art.info+'</p></div><div class="components-block">'
                                     }                                   
                                  };
                 if(art.type==='d' && art.model){
                     for(var i=0;i<art.model.length;i++){                        
                         if(art.model[i].type){
-                            components['line'+Number(i+2)] = {
+                            var key = (art.model[i].type==='color')? 'color':'line'+Number(i+2);
+                            components[key] = {
                                 type : 'checkbox',
                                 data : '<h3>'+art.model[i].name+'</h3>',
                                 value: art.model[i].item[0].atrmod,
-                                item : art.model[i].item
+                                item : art.model[i].item,
+                                color: art.model[i].type
                             };
                         }
                     }
@@ -114,9 +152,13 @@ KouziCatalog = {
                                         data:'Укажите колличество',
                                         value:1
                 }; 
+                components['footer'] = {
+                                        type:'text',
+                                        data:'</div>'
+                };                
                 
                 KouziModal.create(components,function(params){
-                            KouziList.add(params.config.articul,params.count.value);                    
+                            KouziList.add(params.config.articul,params.count.value,params.config.color);                    
                 });
             }
         },
@@ -146,6 +188,7 @@ KouziModal = {
     
     create:function(components,callbk){
         $('#content_modal').html('');
+        var tmp = '';
         if(components){            
             this.components = components;
             var item;
@@ -153,24 +196,27 @@ KouziModal = {
                 item = this.components[key];
                 switch (item.type){
                     case 'text':
-                        $('#content_modal').append(item.data);
+                        tmp += item.data;
                     break;           
                     case 'count':
-                        $('#content_modal').append('<input type="number" size="2" name="count" min="1" max="99" value="1">'+item.data);
+                       tmp += '<div class="component"><input type="number" size="2" name="count" min="1" max="99" value="1">'+item.data+'</div>';
                     break;
                     case 'checkbox':
-                        $('#content_modal').append(item.data);
-                        for(var j=0;j<item.item.length;j++){
-                            $('#content_modal').append('<input type="radio" name="'+key+'" value="'+item.item[j].artmod+'" '+( j===0 ? 'checked':'')+'>'+item.item[j].text+'<br>');
-                        }                                                
-                    break;         
-                ///color
+                        tmp += '<div class="component">'+item.data;                        
+                        for(var j=0;j<item.item.length;j++){                            
+                            tmp += '<input type="radio" id="'+key+'-'+j+'" name="'+key+'" value="'+item.item[j].artmod+'" '+( j===0 ? 'checked':'')+'><label for="'+key+'-'+j+'">'+item.item[j].text+'</label><br>';
+                        }      
+                        tmp += '</div>';                        
+                    break;                         
                 }                
             }
         }
-        $('#content_modal input').change(function(){KouziModal.viewPrice.call(KouziModal);});
+        $('#content_modal').append(tmp);
+        $('#content_modal input[id=color-1]').click(function(){RalPicker.show(function(color){KouziModal.components.config.color=color;});});
+        $('#content_modal input').change(function(){KouziModal.viewPrice.call(KouziModal);});        
         this.viewPrice();
-        this.callbk = callbk;        
+        this.callbk = callbk;
+        $('.fixed-overlay .price-box').show();
         $('.fixed-overlay .action-block .btn').hide();
         $('.fixed-overlay .action-block .cancel').show();        
         $('.fixed-overlay .action-block .btn-add').show();        
@@ -186,10 +232,11 @@ KouziModal = {
     },
     
     showModalInfo: function(content){
-                $('#content_modal').html(content);
+                $('#content_modal').html('<div class="info-modal">'+content+'</div>');
                 $('.fixed-overlay').show();
                 $('.fixed-overlay .action-block .btn').hide();
-                $('.fixed-overlay .action-block .about').show();        
+                $('.fixed-overlay .action-block .about').show(); 
+                $('.fixed-overlay .price-box').hide();
     },
     
     getParams:function(){
@@ -236,7 +283,7 @@ KouziModal = {
 KouziList = {
     tpl_item:'<div class="line">\n\
                 <div class="col number">{ind}.</div>\n\
-                <div class="col name">{name}</div>\n\
+                <div class="col name">{name}{comment}</div>\n\
                 <div class="col price">{price} руб.</div>\n\
                 <div class="col count">{count}</div>\n\
                 <div class="col total">{total} руб.</div>\n\
@@ -283,9 +330,12 @@ KouziList = {
             KouziList.viev();
     },
     
-    add:function(articul,count){     
+    add:function(articul,count,comment){ 
+        if(typeof comment == "undefined"){
+            comment='';
+        }        
         for(var i=0;i<KouziList.article.length;i++){        
-            if(KouziList.article[i].id===articul){
+            if(KouziList.article[i].id===articul && KouziList.article[i].comment===comment){
                 KouziList.article[i].count+=count;
                 KouziList.article[i].total = KouziList.article[i].price * KouziList.article[i].count;
                 KouziList.viev();
@@ -300,7 +350,8 @@ KouziList = {
                     'price':art.price,
                     'total':art.price*count,
                     'count':count,
-                    'id'   :articul
+                    'id'   :articul,
+                    'comment':comment
                 });
                 KouziList.viev();
                 KouziList.sendEdit();            

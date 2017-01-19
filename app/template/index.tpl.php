@@ -4,16 +4,27 @@
             <div id="content_modal">
 
             </div>
+            <div class="clearfix"></div>
             <div class="price-box">
-                Стоимость за шт.:<span>0</span> руб.
+                Стоимость: <span>0</span> руб.<br/>
+                <small>за единицу товара</small>
             </div>
             <div class="action-block">
                 <a class="btn btn-add" onclick="KouziModal.applayBtn();">Добавить</a>
                 <a class="btn about" onclick="KouziModal.aboutBtn();">Закрыть</a>
                 <a class="btn cancel" onclick="KouziModal.cancelBtn();">Отмена</a>
-            </div>    
+            </div>  
+            <div class="clearfix"></div>
         </div>
     </div>
+</div>
+
+<div id="ral_modal">
+    <div class="win_modal">
+        <div class="modal_container">
+            <div class="clearfix"></div>
+        </div>
+    </div>    
 </div>
 
 <div class="wrapper">
@@ -104,6 +115,6 @@
     
     <div class="action-bar">
         <a class="btn clear" onclick="KouziList.clear();">Очистить корзину</a>
-        <a class="btn sale" onclick="KouziShop.nextStep(1);">Оформить заказ</a>        
+        <a class="btn sale" onclick="KouziShop.nextStep(1);">Оформить заказ</a>              
     </div>    
 </div>

@@ -1,6 +1,7 @@
 <?php
 
 require_once  'include/function.php';
+require_once  'include/ral.php';
 require_once  'config.php';
 
 
@@ -15,7 +16,8 @@ if(get_reqest('form')){
                     'form'   => $form_name);
     if($form_name == 'index'){
         $data['array']   = load_array($form_name);
-        $data['article'] = getArticleClient(get_cookie("ID_CART"));       
+        $data['article'] = getArticleClient(get_cookie("ID_CART")); 
+        $data['ral'] = $ralclassic; 
     }
     echo json_encode($data);
     die();
@@ -28,10 +30,12 @@ function getArticleClient($id){
         $data[] = array(
             'id'   => 10121,
             'count'=> 2,
+            'comment' => ''
         );   
         $data[] = array(
             'id'   => 500,
             'count'=> 3,
+            'comment' => ''
         );    
     }else{
         setcookie('ID_CART',5,time()+60*60*24*30);
@@ -80,7 +84,7 @@ function load_array($form_name){
     $data = array();
     $tmp = array(
         'id'   => 10000,
-        'name' => 'КОУЗИ 250В',
+        'name' => 'КОУЗИ 250Вт',
         'img'  => 'k250.jpg',
         'info' => 'КОУЗИ 250Вт - прогреет площадь 5м2',
         'about' => '<h2>Описание</h2><p>КОУЗИ 250Вт - прогреет площадь 5м2</p><ol><li>Модели: М1,М2,М3</li><li>Масса: 8 кг</li><li>КПД прибора: 99,7-99,9%</li><li>Габариты(ШхВхГ):<br>    М1 - 700х580х30мм<br>    М2 - 750х500х30мм<br>    М3 - 950х350х33мм</li></ol>',
@@ -96,80 +100,80 @@ function load_array($form_name){
     
     $tmp['id']    =10111;
     $tmp['price'] =5200;
-    $tmp['name']  ='КОУЗИ М1 250В Белый';
+    $tmp['name']  ='КОУЗИ М1 250Вт Белый';
     $tmp['articul']=$tmp['id'];
     $data[] = $tmp;
     
     $tmp['id']    =10112;
     $tmp['price'] =5500;
-    $tmp['name']  ='КОУЗИ М1 250В RAL';
+    $tmp['name']  ='КОУЗИ М1 250Вт ';
     $tmp['articul']=$tmp['id'];
     $data[] = $tmp;    
   
     $tmp['id']    =10121;
     $tmp['price'] =5400;
-    $tmp['name']  ='КОУЗИ М1 250ВK Белый';
+    $tmp['name']  ='КОУЗИ М1 250ВтK Белый';
     $tmp['articul']=$tmp['id'];
     $data[] = $tmp;    
    
     $tmp['id']    =10122;
     $tmp['price'] =5700;
-    $tmp['name']  ='КОУЗИ М1 250ВK RAL';
+    $tmp['name']  ='КОУЗИ М1 250ВтK ';
     $tmp['articul']=$tmp['id'];
     $data[] = $tmp;    
 //
     $tmp['id']    =10211;
     $tmp['price'] =5200;
-    $tmp['name']  ='КОУЗИ М2 250В Белый';
+    $tmp['name']  ='КОУЗИ М2 250Вт Белый';
     $tmp['articul']=$tmp['id'];
     $data[] = $tmp;
     
     $tmp['id']    =10212;
     $tmp['price'] =5500;
-    $tmp['name']  ='КОУЗИ М2 250В RAL';
+    $tmp['name']  ='КОУЗИ М2 250Вт ';
     $tmp['articul']=$tmp['id'];
     $data[] = $tmp;    
   
     $tmp['id']    =10221;
     $tmp['price'] =5400;
-    $tmp['name']  ='КОУЗИ М2 250ВK Белый';
+    $tmp['name']  ='КОУЗИ М2 250ВтK Белый';
     $tmp['articul']=$tmp['id'];
     $data[] = $tmp;    
    
     $tmp['id']    =10222;
     $tmp['price'] =5700;
-    $tmp['name']  ='КОУЗИ М2 250ВK RAL';
+    $tmp['name']  ='КОУЗИ М2 250ВтK ';
     $tmp['articul']=$tmp['id'];
     $data[] = $tmp;    
 //
     $tmp['id']    =10311;
     $tmp['price'] =5200;
-    $tmp['name']  ='КОУЗИ М3 250В Белый';
+    $tmp['name']  ='КОУЗИ М3 250Вт Белый';
     $tmp['articul']=$tmp['id'];
     $data[] = $tmp;
     
     $tmp['id']    =10312;
     $tmp['price'] =5500;
-    $tmp['name']  ='КОУЗИ М3 250В RAL';
+    $tmp['name']  ='КОУЗИ М3 250Вт ';
     $tmp['articul']=$tmp['id'];
     $data[] = $tmp;    
   
     $tmp['id']    =10321;
     $tmp['price'] =5400;
-    $tmp['name']  ='КОУЗИ М3 250ВK Белый';
+    $tmp['name']  ='КОУЗИ М3 250ВтK Белый';
     $tmp['articul']=$tmp['id'];
     $data[] = $tmp;    
    
     $tmp['id']    =10322;
     $tmp['price'] =5700;
-    $tmp['name']  ='КОУЗИ М3 250ВK RAL';
+    $tmp['name']  ='КОУЗИ М3 250ВтK ';
     $tmp['articul']=$tmp['id'];
     $data[] = $tmp;    
     
     
     $data[] = array(
         'id'   => 200,
-        'name' => 'КОУЗИ 320В',
+        'name' => 'КОУЗИ 320Вт',
         'img'  => 'k250.jpg',
         'info' => 'КОУЗИ 320Вт - прогреет площадь 7м2',
         'about' => '<h2>Описание</h2><p>КОУЗИ 250Вт - прогреет площадь 5м2</p><ol><li>Модели: М1,М2,М3</li><li>Масса: 8 кг</li><li>КПД прибора: 99,7-99,9%</li><li>Габариты(ШхВхГ):<br>    М1 - 700х580х30мм<br>    М2 - 750х500х30мм<br>    М3 - 950х350х33мм</li></ol>',
@@ -179,7 +183,7 @@ function load_array($form_name){
     );
     $data[] = array(
         'id'   => 300,
-        'name' => 'КОУЗИ 450В',
+        'name' => 'КОУЗИ 450Вт',
         'img'  => 'k250.jpg',
         'info' => 'КОУЗИ 450Вт - прогреет площадь 10м2',
         'about' => '<h2>Описание</h2><p>КОУЗИ 250Вт - прогреет площадь 5м2</p><ol><li>Модели: М1,М2,М3</li><li>Масса: 8 кг</li><li>КПД прибора: 99,7-99,9%</li><li>Габариты(ШхВхГ):<br>    М1 - 700х580х30мм<br>    М2 - 750х500х30мм<br>    М3 - 950х350х33мм</li></ol>',
@@ -197,5 +201,15 @@ function load_array($form_name){
         'articul'=> 500,
         'type'   => 'v'
     );        
+    $data[] = array(
+        'id'   => 600,
+        'name' => 'Ножки',
+        'img'  => 'term.jpg',
+        'info' => 'контролирует заданную температуру в помещении',
+        'about' => '<h2>Описание</h2><p>контролирует заданную температуру в помещении</p>',
+        'price'=> 400,
+        'articul'=> 600,
+        'type'   => 'v'
+    );     
     return $data;
 }
