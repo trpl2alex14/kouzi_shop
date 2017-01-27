@@ -18,11 +18,31 @@ if(get_reqest('form')){
         $data['array']   = load_array($form_name);
         $data['article'] = getArticleClient(get_cookie("ID_CART")); 
         $data['ral'] = $ralclassic; 
+        $data['city'] = getCity();
     }
     echo json_encode($data);
     die();
 }
 
+function getCity(){    
+    $city = array(
+        "Москва",
+        "Пермь",
+        "Курган",
+        "Челябинск"
+    );
+    $price = array(
+        1000,
+        800,
+        500,
+        0
+    );
+    $data = array(
+        'name' => $city,
+        'price' => $price
+    );
+    return $data;
+}
 
 function getArticleClient($id){
     $data = array();

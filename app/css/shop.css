@@ -79,7 +79,8 @@ header, nav, section, article, aside, footer {
   padding: 5px 0 10px; }
   .catalog .title h3 {
     font-size: 1.5em;
-    margin: 5px 0 10px; }
+    margin: 5px 0 10px;
+    text-transform: uppercase; }
   .catalog .title p {
     font-size: 1.2em; }
 .catalog .items {
@@ -112,7 +113,7 @@ header, nav, section, article, aside, footer {
     .catalog .items .item .action-block .btn.btn-add {
       background: #e67e21;
       color: #fff;
-      font-weight: bold;
+      text-transform: uppercase;
       font-size: 1.1em;
       padding: 5px 15px;
       text-align: center;
@@ -127,6 +128,97 @@ header, nav, section, article, aside, footer {
     margin: 0 auto; }
   #shop .btn:hover {
     box-shadow: 1px 1px 2px RGBA(0, 0, 0, 0.5); }
+  #shop .order h3 {
+    font-size: 1.5em;
+    text-align: center;
+    margin: 40px 0 20px;
+    text-transform: uppercase; }
+  #shop .order input.error-check {
+    border: 1px solid #c9002f; }
+  #shop .order .error-text {
+    display: none;
+    font-size: 0.8 !important;
+    color: #c9002f;
+    line-height: 0.8em; }
+  #shop .order .client-block {
+    line-height: 2em; }
+    #shop .order .client-block .client-select {
+      border-bottom: 3px solid #e67e21; }
+      #shop .order .client-block .client-select .active {
+        color: #fff;
+        background: #e67e21; }
+      #shop .order .client-block .client-select li {
+        display: inline-block;
+        width: 20%;
+        text-align: center;
+        height: 2em;
+        line-height: 2em;
+        font-size: 1.5em;
+        cursor: pointer; }
+    #shop .order .client-block p {
+      margin-left: 20%;
+      font-size: 14px; }
+      #shop .order .client-block p span {
+        color: #c9002f; }
+    #shop .order .client-block .box {
+      font-size: 1.2em;
+      padding: 20px 0; }
+      #shop .order .client-block .box label {
+        width: 20%;
+        text-align: right;
+        padding-right: 15px; }
+        #shop .order .client-block .box label span {
+          color: #c9002f; }
+      #shop .order .client-block .box input {
+        height: 1.8em;
+        padding: 0 5px;
+        width: 35%;
+        margin: 5px 0; }
+  #shop .order .logistic-block {
+    padding: 20px 0; }
+    #shop .order .logistic-block p {
+      margin: 0 0 20px 20%; }
+      #shop .order .logistic-block p span {
+        color: #c9002f; }
+    #shop .order .logistic-block input, #shop .order .logistic-block label {
+      font-size: 1.2em; }
+    #shop .order .logistic-block label[for=city], #shop .order .logistic-block label[for=address] {
+      width: 20%;
+      text-align: right;
+      padding-right: 15px; }
+      #shop .order .logistic-block label[for=city] span, #shop .order .logistic-block label[for=address] span {
+        color: #c9002f; }
+    #shop .order .logistic-block input[name=city] {
+      height: 1.8em;
+      padding: 0 5px;
+      width: 35%;
+      margin: 5px 0 5px; }
+    #shop .order .logistic-block input[name=address] {
+      height: 1.8em;
+      padding: 0 5px;
+      width: 70%;
+      margin: 20px 0 20px; }
+    #shop .order .logistic-block input[type=radio] {
+      width: 2%;
+      margin: 0 0 10px 18%; }
+  #shop .order .payment-block input, #shop .order .payment-block label {
+    font-size: 1.2em; }
+  #shop .order .payment-block input[type=radio] {
+    width: 2%;
+    margin: 0 0 30px 18%;
+    height: 2em; }
+  #shop .order .payment-block label p {
+    font-size: 0.8em; }
+  #shop .order .other-block textarea, #shop .order .other-block label {
+    font-size: 1.2em; }
+  #shop .order .other-block label {
+    width: 20%;
+    text-align: right;
+    padding-right: 15px;
+    vertical-align: top; }
+  #shop .order .other-block textarea {
+    width: 70%;
+    margin: 0 0 20px 0; }
   #shop #ral_modal {
     display: none;
     position: fixed;
@@ -254,7 +346,7 @@ header, nav, section, article, aside, footer {
           #shop .fixed-overlay__modal .win_modal .modal_container .action-block .btn-add {
             background: #e67e21;
             color: #fff;
-            font-weight: bold;
+            text-transform: uppercase;
             font-size: 1.1em;
             padding: 5px 60px;
             line-height: 1.5em;
@@ -276,7 +368,8 @@ header, nav, section, article, aside, footer {
       padding: 5px 0 10px; }
       #shop .lists .title h3 {
         font-size: 1.5em;
-        margin: 5px 0; }
+        margin: 5px 0;
+        text-transform: uppercase; }
       #shop .lists .title p {
         font-size: 1.2em; }
     #shop .lists .table .list-clear {
@@ -326,13 +419,13 @@ header, nav, section, article, aside, footer {
   .action-bar .btn.sale {
     background: #e67e21;
     color: #fff;
-    font-weight: bold;
     font-size: 1.1em;
     padding: 5px 15px;
     line-height: 1.5em;
     text-align: center;
     border-radius: 4px;
-    float: right; }
+    float: right;
+    text-transform: uppercase; }
   .action-bar .btn.clear {
     border: 1px solid #ccc;
     padding: 5px 15px;
