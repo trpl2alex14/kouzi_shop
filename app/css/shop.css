@@ -128,6 +128,28 @@ header, nav, section, article, aside, footer {
     margin: 0 auto; }
   #shop .btn:hover {
     box-shadow: 1px 1px 2px RGBA(0, 0, 0, 0.5); }
+  #shop #order-info h3 {
+    font-size: 1.5em;
+    text-align: center;
+    margin: 10px 0 20px;
+    text-transform: uppercase; }
+  #shop #order-info h4 {
+    font-size: 1.2em;
+    text-align: left;
+    margin: 30px 0 5px;
+    font-weight: bold;
+    text-transform: uppercase; }
+  #shop #order-info p {
+    font-size: 1.2em; }
+  #shop #order-info .price-block {
+    font-size: 1.5em;
+    text-align: center;
+    font-weight: bold;
+    text-transform: uppercase; }
+    #shop #order-info .price-block .post-pay {
+      font-size: 14px;
+      text-transform: none;
+      font-weight: normal; }
   #shop .order h3 {
     font-size: 1.5em;
     text-align: center;

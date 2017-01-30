@@ -180,6 +180,21 @@
         <a class="btn clear" onclick="KouziShop.nextStep(0);">Изменить заказ</a>
         <a class="btn sale" onclick="KouziShop.nextStep(2);">Подтвердить заказ</a>              
     </div> 
+    
+    <div class="#order-info" style="display: none;">
+        <h3>Информация к заказу</h3>
+        <h4>Доставка</h4>
+        <p class="address-info">До <span>склада в г. Челябинск</span></p>
+        <h4>Срок поставки</h4>
+        <p class="time-info"><span>2 - 3</span> раб. дней с учетом доставки</p>
+        <h4>Получатель</h4>
+        <p class="client-info">Иванов Иван Иванович</p>
+        <p class="contact-info">Телефон <span>8 903090909</span></p>
+        <div class="price-block">
+            Сумма к оплате <span>100</span> руб. 
+            <p class="post-pay" style="display: none;">Оплачивается только доставка, заказ в момент получения.</p>
+        </div>            
+    </div>
 
     <div class="action-bar" id="action-3" style="display: none;">
         <a class="btn clear" onclick="KouziShop.nextStep(0);">Изменить заказ</a>

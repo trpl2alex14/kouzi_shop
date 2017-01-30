@@ -50,7 +50,9 @@ KouziShop = {
     sendOrder:function(){        
         if(!KouziOrder.checkOrder()){
             return false;
-        }
+        }        
+        KouziOrder.getInputData();
+        
         ///send ajax
         return true;
     },
@@ -71,6 +73,7 @@ KouziShop = {
             jQuery("#action-3").hide();
             jQuery("#delivery-info").hide();
             jQuery("#all-info").hide();
+            jQuery("#order-info").hide();
                         
             jQuery(this.shopWrapper.idblock+" .catalog").show();
             jQuery("#action-1").show();            
@@ -84,6 +87,7 @@ KouziShop = {
                 jQuery(this.shopWrapper.idblock+" .catalog").hide();
                 jQuery("#action-1").hide();            
                 jQuery("#article-list .item-block .del").hide();
+                jQuery("#order-info").hide();
 
                 jQuery(this.shopWrapper.idblock+" .order").show();
                 jQuery("#action-2").show();
@@ -91,18 +95,40 @@ KouziShop = {
             }
         }else 
         if(step === 2){
-            if(this.sendOrder()){  
-                //viev info client
-                //viev info delivery 
+            if(this.sendOrder()){                  
+                if(KouziOrder.order.type === 0){
+                    jQuery("#order-info .client-info").html(KouziOrder.order.lname+' '+KouziOrder.order.fname+' '+KouziOrder.order.pname );
+                    jQuery("#order-info .contact-info span").html(KouziOrder.order.phone);
+                }else{
+                    jQuery("#order-info .client-info").html(KouziOrder.order.companyname+' (ИНН: '+KouziOrder.order.inn+')');
+                    jQuery("#order-info .contact-info span").html(KouziOrder.order.cphone);
+                }
+                
+                if(KouziOrder.order.logistic === 0){
+                    jQuery("#order-info .address-info span").html('склада г.'+KouziOrder.order.city);                 
+                }else{
+                    jQuery("#order-info .address-info span").html('адреса г.'+KouziOrder.order.city+' '+KouziOrder.order.address);                 
+                }                
+                jQuery("#order-info .time-info span").html(CityPicker.getTime(KouziOrder.order.logistic,KouziOrder.order.city));
                 
                 var delivery = CityPicker.getPrice(KouziOrder.order.logistic,KouziOrder.order.city);
                 var article = KouziList.getTotalPrice();                
+                
+                if(KouziOrder.order.payment === 0){
+                    jQuery("#order-info .price-block span").html(Number(delivery)+Number(article));
+                    jQuery("#order-info .post-pay").hide();
+                }else{
+                    jQuery("#order-info .price-block span").html(delivery);
+                    jQuery("#order-info .post-pay").show();                    
+                }
+                    
                 jQuery("#delivery-total").html(delivery + " руб.");
                 jQuery("#total-all").html((Number(delivery)+Number(article)) + " руб.");
                 
                 jQuery(this.shopWrapper.idblock+" .order").hide();
                 jQuery("#action-2").hide();
 
+                jQuery("#order-info").show();
                 jQuery("#action-3").show();
                 jQuery("#delivery-info").show();
                 jQuery("#all-info").show();
@@ -174,6 +200,10 @@ KouziOrder = {
         });    
         
         //set event check input city
+    },
+    
+    getInputData: function(){
+       ////  
     },
     
     setClient: function(client,el){
@@ -276,8 +306,13 @@ CityPicker = {
     
     getPrice:function(type,city){
         ////
-        return 0; 
-    }
+        return 100; 
+    },
+
+    getTime:function(type,city){
+        ////
+        return '1-2'; 
+    }    
 };
    
 RalPicker = {   
