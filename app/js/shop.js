@@ -18,6 +18,23 @@ KouziShop = {
                 }                 
         });                        
     },
+    
+    ajaxReq:function(req, data,callbk){        
+        jQuery.ajax({type: "POST",
+                url: KouziShop.url+"route.php?sendorder="+req, 
+                dataType: "json",
+                data: data,
+                success: function(data){                                                                                                                                
+                        switch(data.status){
+                            case 'success':	
+                                if (typeof callbk === 'function') {
+                                    callbk(data);
+                                }
+                            break;	
+                        }                        
+                }                 
+        });                        
+    },    
 
     load:function(configForm, tmpl){
         var config = configForm;
@@ -43,22 +60,28 @@ KouziShop = {
         this.load(this.shopWrapper,"index");
     },
     
-    sendList: function(){
-        //send  list article
+    sendList: function(){   
+        var data = {
+            article:KouziList.article            
+        };        
+        this.ajaxReq('article',data);
     },
     
     sendOrder:function(){        
         if(!KouziOrder.checkOrder()){
             return false;
         }        
-        KouziOrder.getInputData();
-        
-        ///send ajax
+        KouziOrder.getInputData(); 
+        var data = {
+            article:KouziList.article,
+            order  :KouziOrder.order
+        };
+        this.ajaxReq('order',data);        
         return true;
     },
     
-    pay:function(){
-        //redireckt yandex kassa
+    pay:function(){        
+        window.location = "route.php?action=pay";
     },
     
     applay:function(){
@@ -102,36 +125,61 @@ KouziShop = {
                 }else{
                     jQuery("#order-info .client-info").html(KouziOrder.order.companyname+' (ИНН: '+KouziOrder.order.inn+')');
                     jQuery("#order-info .contact-info span").html(KouziOrder.order.cphone);
-                }
+                }                           
                 
-                if(KouziOrder.order.logistic === 0){
-                    jQuery("#order-info .address-info span").html('склада г.'+KouziOrder.order.city);                 
-                }else{
-                    jQuery("#order-info .address-info span").html('адреса г.'+KouziOrder.order.city+' '+KouziOrder.order.address);                 
-                }                
-                jQuery("#order-info .time-info span").html(CityPicker.getTime(KouziOrder.order.logistic,KouziOrder.order.city));
+                var true_city = CityPicker.getCityId(KouziOrder.order.city);
+                var delivery = 0;
+                var article = KouziList.getTotalPrice();
                 
-                var delivery = CityPicker.getPrice(KouziOrder.order.logistic,KouziOrder.order.city);
-                var article = KouziList.getTotalPrice();                
-                
-                if(KouziOrder.order.payment === 0){
-                    jQuery("#order-info .price-block span").html(Number(delivery)+Number(article));
-                    jQuery("#order-info .post-pay").hide();
-                }else{
-                    jQuery("#order-info .price-block span").html(delivery);
-                    jQuery("#order-info .post-pay").show();                    
-                }
+                if(true_city >= 0){
+                    if(KouziOrder.order.logistic === 0){
+                        jQuery("#order-info .address-info span").html('склада г. '+KouziOrder.order.city);                 
+                    }else{
+                        jQuery("#order-info .address-info span").html('адреса г. '+KouziOrder.order.city+' '+KouziOrder.order.address);                 
+                    }                    
+                    jQuery("#order-info .time-info").html(CityPicker.getTime(KouziOrder.order.logistic,KouziOrder.order.city)+' дн.'); 
+                    delivery = CityPicker.getPrice(KouziOrder.order.logistic,KouziOrder.order.city);
+                    jQuery("#order-info .price-block").show();
+                    if(KouziOrder.order.payment === 0){
+                        jQuery("#order-info .price-block span").html(Number(delivery)+Number(article));
+                        jQuery("#order-info .post-pay").hide();
+                    }else{
+                        jQuery("#order-info .price-block span").html(delivery);
+                        jQuery("#order-info .post-pay").show();                    
+                    }                    
+                    jQuery("#delivery-total").html(delivery + " руб.");
+                    jQuery("#total-all").html((Number(delivery)+Number(article)) + " руб.");
+
+                    jQuery("#delivery-info").show();
+                    jQuery("#all-info").show();
+
+                    if(KouziOrder.order.type === 0){    
+                        jQuery("#pay-btn").show(); 
+                        jQuery("#applay-btn").hide(); 
+                    }else{
+                        jQuery("#pay-btn").hide(); 
+                        jQuery("#applay-btn").show();                        
+                    }     
+                }else {
+                    if(KouziOrder.order.logistic === 0){
+                        jQuery("#order-info .address-info span").html('склада ');                 
+                    }else{
+                        jQuery("#order-info .address-info span").html('адреса '+KouziOrder.order.address);                 
+                    }                    
+                    jQuery("#order-info .time-info").html('необходимо уточнить у оператора');
+                    jQuery("#order-info .price-block").hide();
                     
-                jQuery("#delivery-total").html(delivery + " руб.");
-                jQuery("#total-all").html((Number(delivery)+Number(article)) + " руб.");
-                
+                    jQuery("#delivery-info").hide();
+                    jQuery("#all-info").hide();                    
+                    jQuery("#pay-btn").hide(); 
+                    jQuery("#applay-btn").show(); 
+                }
+                                   
                 jQuery(this.shopWrapper.idblock+" .order").hide();
                 jQuery("#action-2").hide();
 
                 jQuery("#order-info").show();
                 jQuery("#action-3").show();
-                jQuery("#delivery-info").show();
-                jQuery("#all-info").show();
 
                 jQuery('html, body').animate({ scrollTop: jQuery("#article-list").offset().top }, 500);
             }else{
@@ -197,24 +245,46 @@ KouziOrder = {
         });
         jQuery('.logistic-block input[name=payment]').click(function(){
             KouziOrder.order.payment=Number(jQuery('.logistic-block input[name=payment]:checked').val());
-        });    
-        
-        //set event check input city
+        });                    
     },
     
-    getInputData: function(){
-       ////  
+    getInputData: function(){       
+       this.order.lname     = jQuery('.client-block input[name=lname]').val();
+       this.order.fname     = jQuery('.client-block input[name=fname]').val();
+       this.order.pname     = jQuery('.client-block input[name=pname]').val();
+       this.order.phone     = jQuery('.client-block input[name=phone]').val();
+       this.order.email     = jQuery('.client-block input[name=email]').val();
+       
+       this.order.cname      = jQuery('.client-block input[name=cname]').val();
+       this.order.companyname= jQuery('.client-block input[name=companyname]').val();
+       this.order.inn        = jQuery('.client-block input[name=inn]').val();
+       this.order.cphone     = jQuery('.client-block input[name=cphone]').val();
+       this.order.cemail     = jQuery('.client-block input[name=cemail]').val();
+        
+       this.order.logistic = Number(jQuery('.logistic-block input[name=logistic]:checked').val());
+       this.order.address  = jQuery('.logistic-block input[name=address]').val();
+       this.order.city     = CityPicker.getCity();
+       
+       this.order.payment  = Number(jQuery('.payment-block input[name=payment]:checked').val());
+       
+       this.order.comment  = jQuery('#comment').val();
     },
     
     setClient: function(client,el){
         if(client === 'person'){
             jQuery("#person").show();
             jQuery("#company").hide();
-            this.order.type = 0;
+            this.order.type = 0;   
+            jQuery("#payment-2").show();
+            jQuery("label[for=payment-2]").show();
         }else{
             jQuery("#company").show();
             jQuery("#person").hide();                        
             this.order.type = 1;
+            this.order.payment = 0;
+            jQuery("#payment-1").prop('checked',true);
+            jQuery("#payment-2").hide();
+            jQuery("label[for=payment-2]").hide();            
         }
         jQuery(".client-select li").removeClass("active");
         jQuery(el).addClass("active");        
@@ -289,29 +359,84 @@ CityPicker = {
             0,
             500
         ],
+        curier: [
+            400,
+            0,
+            200
+        ],
+        time:[
+          '4-6',
+          '1-2',
+          '2-3'
+        ],
         name: [
             "Москва",
             "Челябинск",
             "Пермь"
         ]
-    },    
+    },
+    name:'',
     init : function(name,responseData){
+        this.name = name;
         if(responseData.city){
             this.city = responseData.city;   
         }
-        jQuery(name).autocomplete({
-          source: this.city.name
-        });         
+        this.city.name.forEach(function(item) {
+            jQuery(CityPicker.name).append('<option value="'+item+'" '+(KouziOrder.order.city === item ? 'selected' : '')+'>'+item+'</option>');
+        });
+        jQuery(this.name).chosen({
+            width: "350px", 
+            create_option: true,      
+            persistent_create_option: true,    
+            skip_no_results: true
+        });
+        this.setCityOrder();
+        $(this.name).on('change', function(evt, params){ 
+               CityPicker.setCityOrder();
+        });        
     },
     
+    setCityOrder:function(){
+            var city = CityPicker.getCity();
+            var id = CityPicker.getCityId(city);
+            if(id >= 0){
+                jQuery("label[for=logistic-1] span").html('г. '+city);                 
+                jQuery("label[for=logistic-2] span").html('( + '+CityPicker.city.curier[id]+' руб. )');             
+            }else{
+                jQuery("label[for=logistic-1] span").html('');
+                jQuery("label[for=logistic-2] span").html('');             
+            }        
+    },
+    
+    getCityId: function(name){
+        for(var i=0; i< this.city.name.length ; i++){
+            if(this.city.name[i] === name)
+                return i;
+        }        
+        return -1;
+    },
+    
+    getCity:function(){
+        return jQuery(CityPicker.name).val();
+    },
     getPrice:function(type,city){
-        ////
-        return 100; 
+        var id = this.getCityId(city);
+        if(id >= 0){
+            if(type === 0){
+                return this.city.price[id];
+            }else{
+                return Number(this.city.price[id])+Number(this.city.curier[id]);
+            }
+        }
+        return 0; 
     },
 
     getTime:function(type,city){
-        ////
-        return '1-2'; 
+        var id = this.getCityId(city);
+        if(id >= 0){      
+            return this.city.time[id];
+        }
+        return 'уточняется'; 
     }    
 };
    

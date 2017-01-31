@@ -155,10 +155,18 @@
         </div>
         <div class="logistic-block">
             <h3>Способ получения</h3>            
-            <label for="city">Ваш город<span>*</span></label><input id="city" type="text" name="city" value="" fm_check="y"><br>
+            <label for="city">Выберите город<span>*</span></label>            
+           <!-- 
+            <input id="city" type="text" name="city" value="" fm_check="y">
+           -->
+           
+           <select data-placeholder="Выберите ваш город..." class="chosen-select" style="width:350px;" id="city" name="city" >
+            <!--<option value="-">Другой город</option>-->
+           </select>
+            
             <p><span>*</span> - обязательные поля</p>
-            <input type="radio" id="logistic-1" name="logistic" value="0" checked><label for="logistic-1">Самовывоз со склада<span> в Челябинске</span></label><br>
-            <input type="radio" id="logistic-2" name="logistic" value="1" ><label for="logistic-2">Доставка курьером (+ 300 руб.)</label><br>
+            <input type="radio" id="logistic-1" name="logistic" value="0" checked><label for="logistic-1">Самовывоз со склада <span></span></label><br>
+            <input type="radio" id="logistic-2" name="logistic" value="1" ><label for="logistic-2">Доставка курьером <span>(+ 300 руб.)</span></label><br>
             <div class="address-block" style="display: none;">
             <label for="address">Адрес доставки</label><input id="address" type="text" name="address" value=""><br>
             </div>
@@ -181,12 +189,12 @@
         <a class="btn sale" onclick="KouziShop.nextStep(2);">Подтвердить заказ</a>              
     </div> 
     
-    <div class="#order-info" style="display: none;">
+    <div id="order-info" style="display: none;">
         <h3>Информация к заказу</h3>
         <h4>Доставка</h4>
         <p class="address-info">До <span>склада в г. Челябинск</span></p>
         <h4>Срок поставки</h4>
-        <p class="time-info"><span>2 - 3</span> раб. дней с учетом доставки</p>
+        <p class="time-info"><span>2 - 3</span> дн.</p>
         <h4>Получатель</h4>
         <p class="client-info">Иванов Иван Иванович</p>
         <p class="contact-info">Телефон <span>8 903090909</span></p>
@@ -198,8 +206,8 @@
 
     <div class="action-bar" id="action-3" style="display: none;">
         <a class="btn clear" onclick="KouziShop.nextStep(0);">Изменить заказ</a>
-        <a class="btn sale" onclick="KouziShop.pay();" style="display: none;">Оплатить</a>              
-        <a class="btn sale" onclick="KouziShop.applay();">Оформить заказ</a>              
+        <a class="btn sale" id="pay-btn" onclick="KouziShop.pay();" >Оплатить</a>              
+        <a class="btn sale" id="applay-btn" onclick="KouziShop.applay();">Оформить заказ</a>              
     </div>     
     
 </div>

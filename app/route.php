@@ -23,6 +23,12 @@ if(get_reqest('form')){
     echo json_encode($data);
     die();
 }
+elseif(get_reqest('sendorder')){
+    $data = array(  'status' => 'success' );
+    echo json_encode($data);
+    die();    
+}
+
 
 function getCity(){    
     $city = array(
@@ -37,9 +43,23 @@ function getCity(){
         500,
         0
     );
+    $curier = array(
+        500,
+        200,
+        100,
+        0
+    );  
+    $time = array(
+        "4-6",
+        "2-4",
+        "2-4",
+        "1-2"
+    );    
     $data = array(
         'name' => $city,
-        'price' => $price
+        'price' => $price,
+        'curier' => $curier,
+        'time' => $time
     );
     return $data;
 }
