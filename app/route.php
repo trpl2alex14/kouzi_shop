@@ -1,68 +1,63 @@
 <?php
+error_reporting(0);
+
 
 require_once  'include/function.php';
 require_once  'include/ral.php';
+require_once  'include/initshop.php';
 require_once  'config.php';
 
 
 if(get_reqest('form')){
     $form_name = get_reqest('form');
-    ob_start();
-        require_once ('template/'.$form_name.'.tpl.php');
-        $data_form = ob_get_contents();
-    ob_end_clean();
-    $data = array(  'status' => 'success', 
-                    'data'   => $data_form, 
-                    'form'   => $form_name);
-    if($form_name == 'index'){
-        $data['array']   = load_array($form_name);
-        $data['article'] = getArticleClient(get_cookie("ID_CART")); 
-        $data['ral'] = $ralclassic; 
-        $data['city'] = getCity();
+    
+    $shop = InitShop::getInstance($form_name);
+    
+    $data_form = $shop->getContent();
+    $id_client = $shop->getIdClient(get_cookie(ID_CART));
+    
+    $data = array(  
+        'status' => 'success', 
+        'data'   => $data_form, 
+        'form'   => $form_name,
+        'clientid' => $id_client
+    );
+          
+    if($form_name == 'index'){        
+        $data['ral']      = $ralclassic; 
+        $data['city']     = $shop->getCity();        
+        $data['array']    = load_array($form_name);        
+        $data['article']  = getArticleClient($data['clientid']);                         
     }
     echo json_encode($data);
     die();
-}
-elseif(get_reqest('sendorder')){
-    $data = array(  'status' => 'success' );
+}elseif(get_reqest('sendreq')){
+    $data = array();
+    $status = 'success';
+    
+    switch (get_reqest('sendreq')){
+        case 'article':
+            //post json: clientid,article
+        break;
+        case 'order':
+            //post json: clientid,article,order
+        break;
+        case 'createdeal':
+            //get:clientid
+        break;    
+        case 'pay':
+            //get:clientid
+        break;  
+        default:
+            $status = 'error';
+    }
+    $data['status'] = $status;
     echo json_encode($data);
     die();    
+}else{
+    die();
 }
 
-
-function getCity(){    
-    $city = array(
-        "Москва",
-        "Пермь",
-        "Курган",
-        "Челябинск"
-    );
-    $price = array(
-        1000,
-        800,
-        500,
-        0
-    );
-    $curier = array(
-        500,
-        200,
-        100,
-        0
-    );  
-    $time = array(
-        "4-6",
-        "2-4",
-        "2-4",
-        "1-2"
-    );    
-    $data = array(
-        'name' => $city,
-        'price' => $price,
-        'curier' => $curier,
-        'time' => $time
-    );
-    return $data;
-}
 
 function getArticleClient($id){
     $data = array();
@@ -77,8 +72,6 @@ function getArticleClient($id){
             'count'=> 3,
             'comment' => ''
         );    
-    }else{
-        setcookie('ID_CART',5,time()+60*60*24*30);
     }
     return $data;
 }

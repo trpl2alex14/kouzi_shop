@@ -27,6 +27,20 @@
     </div>    
 </div>
 
+<div id="load_modal">
+    <div class="win_modal">
+        <div class="modal_container">
+            <div class="info-applay">
+                <h3>Заказ принят</h3>
+                <p>Заказ принят в работу, наш сотрудник свяжится с вами в ближайшее рабочее время.</p>
+                <a class="btn back">Вернуться</a>
+            </div>
+            <div class="load-box"></div>
+            <div class="clearfix"></div>
+        </div>
+    </div>    
+</div>
+
 <div class="wrapper">
     <div class="catalog">
         <div class="title">

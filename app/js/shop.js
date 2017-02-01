@@ -1,5 +1,8 @@
 KouziShop = {
     url : '', 
+    successUrl:'/',
+    clientid: 0,
+    
     shopWrapper : {
         idblock : '',
         callbk: null        
@@ -21,7 +24,7 @@ KouziShop = {
     
     ajaxReq:function(req, data,callbk){        
         jQuery.ajax({type: "POST",
-                url: KouziShop.url+"route.php?sendorder="+req, 
+                url: KouziShop.url+"route.php?sendreq="+req, 
                 dataType: "json",
                 data: data,
                 success: function(data){                                                                                                                                
@@ -47,6 +50,11 @@ KouziShop = {
     },    
     
     ready:function(responseData){
+        if(responseData.clientid){
+            KouziShop.clientid = responseData.clientid;
+        }else{
+            //error no id clinet
+        }
         KouziCatalog.load(responseData);
         KouziList.load(responseData);
         RalPicker.load(responseData);
@@ -62,6 +70,7 @@ KouziShop = {
     
     sendList: function(){   
         var data = {
+            clientid: this.clientid,
             article:KouziList.article            
         };        
         this.ajaxReq('article',data);
@@ -73,6 +82,7 @@ KouziShop = {
         }        
         KouziOrder.getInputData(); 
         var data = {
+            clientid: this.clientid,
             article:KouziList.article,
             order  :KouziOrder.order
         };
@@ -81,11 +91,17 @@ KouziShop = {
     },
     
     pay:function(){        
-        window.location = "route.php?action=pay";
+        window.location = "route.php?sendreq=pay&clientid="+this.clientid;
     },
     
     applay:function(){
-        //create deal crm
+        jQuery("#action-3").hide();        
+        this.ajaxReq("createdeal&clientid="+this.clientid,null,function(responseData){
+            jQuery('#load_modal').show();
+            jQuery('#load_modal .back').click(function(){
+                window.location = KouziShop.successUrl;
+            });
+        });        
     },
     
     nextStep: function(step){

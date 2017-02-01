@@ -23,6 +23,63 @@
         }
     } 
     
+    #load_modal {
+        display: none; 
+        position: fixed;
+        overflow: auto;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,0.5);
+        z-index: 2000;    
+        text-align: center;
+        white-space: nowrap;
+
+        &::after {
+            display: inline-block;
+            vertical-align: middle;
+            width: 0;
+            height: 100%;
+            content: '';
+        }    
+        .win_modal {
+            display: inline-block;
+            vertical-align: middle;
+            .modal_container {
+                margin: 50px;
+                padding: 20px;
+                text-align: center;
+                white-space: normal;
+                background-color: #fff;    
+                color: #000;
+                h3{
+                    font-size: 1.5em;                    
+                    text-transform: uppercase;
+                }
+                p{
+                    font-size: 1.2em;
+                    margin: 10px 0 30px;
+                    max-width: 450px;
+                }
+                .btn {
+                    color: $link-color;
+                    display: inline-block;
+                }
+                .back{
+                    background: $color-orange;
+                    color: #fff;
+                    text-transform: uppercase;
+                    font-size: 1.1em;
+                    padding: 5px 60px;
+                    line-height:1.5em;
+                    text-align: center;
+                    border-radius: $border-radius-base;                    
+                };                
+            }
+        }
+    }    
+    
     #order-info{
         h3{
                 font-size: 1.5em;
@@ -236,7 +293,7 @@
     }
 }
     
-    
+   
 .fixed-overlay {
     display: none; 
     position: fixed;
