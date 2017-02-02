@@ -34,14 +34,31 @@ class InitShop {
         setcookie(ID_CART,$id,time()+60*60*24*30);
     }
         
-    public function getIdClient($id_cookie){
-        if($id_cookie){
-            return $id_cookie;
-        }else{
-            $new_id = 5;  /////random new client!!!
-            $this->setIdCart($new_id);
-            return $new_id;
+    public function createIdClient(){
+        $new_id = uniqid("kouzi_", true);
+        $this->setIdCart($new_id);          
+        $db = ShopDB::getInstance();
+        $db->run("INSERT INTO clients (id_cart) VALUES ('".$new_id."')");
+        if(!$db->isError()){               
+            return $db->getDB()->insert_id;    
         }
+        return 0;
+        ///error!!!!
+    }
+    
+    public function getIdClient($id_cookie){
+        $db = ShopDB::getInstance();  
+        if($id_cookie){        
+            $id_cookie = $db->getDB()->real_escape_string($id_cookie);
+            $res = $db->run("SELECT * FROM clients WHERE id_cart='".$id_cookie."'");      
+            if(!$db->isError()){
+                $res->data_seek(0);
+                if ($row = $res->fetch_assoc()) {        
+                    return $row['id'];                                 
+                }           
+            }
+        }
+        return $this->createIdClient();        
     }    
     
     public function getCity(){
@@ -55,8 +72,8 @@ class InitShop {
             $res->data_seek(0);
             while ($row = $res->fetch_assoc()) {        
                 $city[] = $row['name'];
-                $price[] = $row['price'];
-                $curier[] = $row['curier'];
+                $price[] = (int)$row['price'];
+                $curier[] = (int)$row['curier'];
                 $time[] = $row['time'];
             }           
         }   
@@ -72,17 +89,100 @@ class InitShop {
     public function getArticleClient($id){
         $data = array();
         $db = ShopDB::getInstance();                
-        $res = $db->run("SELECT * FROM articles,orders WHERE articles.id_order=orders.id AND orders.status=0 AND orders.id_clients=".$id);      //add db      
+        $res = $db->run("SELECT * FROM articles,orders WHERE articles.id_order=orders.id AND orders.status=0 AND orders.id_client=".$id);      
         if(!$db->isError()){
             $res->data_seek(0);
             while ($row = $res->fetch_assoc()) {        
                 $data[] = array(
                     'id'        => $row['articul'],
-                    'count'     => $row['count'],
+                    'count'     => (int)$row['count'],
                     'comment'   => $row['comment']
                 );                
             }           
         }           
+        return $data;
+    }
+    
+    public function getOrderClient($id){
+        $data = NULL;
+        $db = ShopDB::getInstance();                
+        $res = $db->run("SELECT ordersinfo.* FROM ordersinfo,orders WHERE ordersinfo.id=orders.id_info AND orders.id_client=".$id);      
+        if(!$db->isError()){
+            $res->data_seek(0);
+            if ($row = $res->fetch_assoc()) {        
+                $data = array(
+                    'type'        => (int) $row['type'],
+                    'payment'     => (int) $row['payment'],
+                    'logistic'    => (int) $row['logistic'],
+                    'fname'       => $row['fname'],
+                    'lname'       => $row['lname'],
+                    'pname'       => $row['pname'],
+                    'phone'   => $row['phone'],
+                    'email'   => $row['email'],
+                    'cname'   => $row['cname'],
+                    'inn'   => $row['inn'],
+                    'city'   => $row['city'],
+                    'address'   => $row['address'],
+                    'comment'   => $row['comment'],
+                    'companyname'   => $row['companyname'],
+                    'cphone'   => $row['cphone'],
+                    'cemail'   => $row['cemail']
+                );                
+            }           
+        }           
+        return $data;
+    }    
+    
+    public function getVariations($list){
+        $data = NULL;
+        $arr = explode(',',$list);
+        $db = ShopDB::getInstance();
+        if($arr && $stmt = $db->getDB()->prepare("SELECT * FROM variations,variationgroup WHERE variationgroup.id=variations.id_group AND variationgroup.id=?")){                                 
+                foreach($arr as $id_group) {                    
+                    $stmt->bind_param("i", $id_group);
+                    $stmt->execute();
+                    $res = $stmt->get_result();                    
+                    $tmparr = array();
+                    $type = '';
+                    $name = '';
+                    while ($row = $res->fetch_assoc()){
+                        $type = $row['type'];
+                        $name = $row['name'];                        
+                        $tmparr[] = array(
+                            'text'   => $row['text'],
+                            'artmod' => $row['artmod']
+                        ); 
+                    }
+                    $data[] = array(
+                        'type' =>$type,
+                        'name' =>$name,
+                        'item' =>$tmparr
+                    );
+                } 
+                $stmt->close();            
+        }
+        return $data;
+    }
+    
+    public function getProducts(){
+        $data = array();
+        $db = ShopDB::getInstance();
+        $prds = $db->run("SELECT * FROM products, abouts WHERE abouts.id=products.id_about");
+        if(!$db->isError()){
+            while ($rowp = $prds->fetch_assoc()) {
+                    $data[] = array(
+                        'id'        => (int) $rowp['articul'],
+                        'articul'   => (int) $rowp['articul'],
+                        'name'      => $rowp['name'],
+                        'img'       => $rowp['img'],
+                        'info'      => $rowp['info'],
+                        'about'     => $rowp['about'],
+                        'price'     => (int) $rowp['price'],                    
+                        'type'      => $rowp['type'],
+                        'model'     => $this->getVariations($rowp['model'])
+                    );            
+            }
+        }
         return $data;
     }
 }

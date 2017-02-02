@@ -574,7 +574,7 @@ KouziCatalog = {
         
         getItem:function(articul){
             for(var i=0;i<KouziCatalog.catalog.length;i++){
-                if(KouziCatalog.catalog[i].articul===articul){
+                if(KouziCatalog.catalog[i].articul==articul){
                     return KouziCatalog.catalog[i];
                 }
             }
@@ -744,7 +744,7 @@ KouziList = {
             comment='';
         }        
         for(var i=0;i<KouziList.article.length;i++){        
-            if(KouziList.article[i].id===articul && KouziList.article[i].comment===comment){
+            if(KouziList.article[i].id==articul && KouziList.article[i].comment===comment){ 
                 KouziList.article[i].count+=count;
                 KouziList.article[i].total = KouziList.article[i].price * KouziList.article[i].count;
                 KouziList.viev();
