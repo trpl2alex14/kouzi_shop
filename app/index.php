@@ -16,7 +16,8 @@
         <script src="lib/js/jquery.mask.min.js" type="text/javascript"></script>
         <script src="lib/js/jquery.autocompleter.js" type="text/javascript"></script>
          <script src="lib/js/chosen.jquery.js" type="text/javascript"></script>
-        <script src="lib/js/bootstrap.min.js" type="text/javascript"></script>        
+        <script src="lib/js/bootstrap.min.js" type="text/javascript"></script> 
+        <script src="lib/js/jquery.json.min.js" type="text/javascript"></script> 
     </head>
     <body>
         <div id="shop">

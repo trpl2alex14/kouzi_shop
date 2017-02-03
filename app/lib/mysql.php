@@ -32,6 +32,7 @@ class ShopDB
     public function connect() {
         $this->link = new mysqli($this->dbhost, $this->dblogin, $this->dbpass, $this->db);
         if ($this->link->connect_error) {
+            trigger_error('Connect Error (' . $this->link->connect_errno . ') ' . $this->link->connect_error);
             die('Connect Error (' . $this->link->connect_errno . ') ' . $this->link->connect_error);
         }         
         $this->link->query('SET NAMES utf8');

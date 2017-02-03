@@ -24,9 +24,9 @@ KouziShop = {
     
     ajaxReq:function(req, data,callbk){        
         jQuery.ajax({type: "POST",
-                url: KouziShop.url+"route.php?sendreq="+req, 
-                dataType: "json",
-                data: data,
+                url: KouziShop.url+"route.php",  
+                dataType: "json",                
+                data: 'sendreq='+req+'&jsonData=' + jQuery.toJSON(data),
                 success: function(data){                                                                                                                                
                         switch(data.status){
                             case 'success':	
@@ -769,7 +769,7 @@ KouziList = {
     
     del:function(id){
         for(var i=0;i<KouziList.article.length;i++){
-            if(KouziList.article[i].id===id){
+            if(KouziList.article[i].id==id){
                 KouziList.article.splice(i,1);
                 KouziList.viev();
                 KouziList.sendEdit();                

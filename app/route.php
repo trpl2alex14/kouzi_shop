@@ -1,15 +1,22 @@
 <?php
-//error_reporting(0);
-
+define('HOST_DEV', $_SERVER['REMOTE_ADDR'] == '127.0.0.1');
+define('IN_DEV', (HOST_DEV) ? 'On':'Off');
+error_reporting(-1);
+ini_set('display_errors', IN_DEV);
 
 require_once  'include/function.php';
 require_once  'include/ral.php';
 require_once  'include/initshop.php';
+require_once  'include/reqshop.php';
+require_once  SHOP_LIB.'ErrorLog.php';
 require_once  'config.php';
 
+$errorClass   = new ErrorLog('log/error.log', 1, (HOST_DEV?1:0), (HOST_DEV?0:1), 'av@itentaro.ru');
+$errorMethod  = 'handler';
+set_error_handler(array($errorClass, $errorMethod));
 
 if(get_reqest('form')){
-    $form_name = get_reqest('form');
+    $form_name = get_reqest('form');        
     
     $shop = InitShop::getInstance($form_name);
     
@@ -34,27 +41,32 @@ if(get_reqest('form')){
     die();
 }elseif(get_reqest('sendreq')){
     $data = array();
-    $status = 'success';
+    $status = 'error';
+
+    $json_str = $_POST;          
+    $json = json_decode($json_str['jsonData'],true);    
     
+    $shop = ReqShop::getInstance($json['clientid']);
+                
     switch (get_reqest('sendreq')){
-        case 'article':
-            //post json: clientid,article
+        case 'article':    
+
+            $shop->sendArticle($json['article']);
         break;
-        case 'order':
-            //post json: clientid,article,order
+        case 'order':            
+            $shop->sendOrder($json['article'],$json['order']);
         break;
         case 'createdeal':
-            //get:clientid
+            $shop->createDeal();
         break;    
         case 'pay':
-            //get:clientid
+            $shop->payOrder();
         break;  
-        default:
-            $status = 'error';
-    }
-    $data['status'] = $status;
+    }    
+    $data['status'] = $shop->getStatus();
     echo json_encode($data);
     die();    
-}else{
+}else{           
+    trigger_error('Не верный запрос');
     die();
 }

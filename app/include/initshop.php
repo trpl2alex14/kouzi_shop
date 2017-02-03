@@ -42,8 +42,8 @@ class InitShop {
         if(!$db->isError()){               
             return $db->getDB()->insert_id;    
         }
-        return 0;
-        ///error!!!!
+        trigger_error('Невозможно создать ID клиента');
+        return 0;        
     }
     
     public function getIdClient($id_cookie){
@@ -89,7 +89,7 @@ class InitShop {
     public function getArticleClient($id){
         $data = array();
         $db = ShopDB::getInstance();                
-        $res = $db->run("SELECT * FROM articles,orders WHERE articles.id_order=orders.id AND orders.status=0 AND orders.id_client=".$id);      
+        $res = $db->run("SELECT * FROM articles,orders WHERE articles.id_order=orders.id AND orders.status IN (0,1,2) AND orders.id_client=".$id." order by orders.date DESC");      
         if(!$db->isError()){
             $res->data_seek(0);
             while ($row = $res->fetch_assoc()) {        
@@ -106,7 +106,7 @@ class InitShop {
     public function getOrderClient($id){
         $data = NULL;
         $db = ShopDB::getInstance();                
-        $res = $db->run("SELECT ordersinfo.* FROM ordersinfo,orders WHERE ordersinfo.id=orders.id_info AND orders.id_client=".$id);      
+        $res = $db->run("SELECT ordersinfo.* FROM ordersinfo,orders WHERE ordersinfo.id=orders.id_info AND orders.id_client=".$id." order by orders.date DESC LIMIT 1");      
         if(!$db->isError()){
             $res->data_seek(0);
             if ($row = $res->fetch_assoc()) {        
