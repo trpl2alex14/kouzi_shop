@@ -2,6 +2,7 @@ KouziShop = {
     url : '', 
     successUrl:'/',
     clientid: 0,
+    orderid: 0,
     
     shopWrapper : {
         idblock : '',
@@ -86,17 +87,23 @@ KouziShop = {
             article:KouziList.article,
             order  :KouziOrder.order
         };
-        this.ajaxReq('order',data);        
+        this.ajaxReq('order',data,function(responseData){
+            KouziShop.orderid = responseData.orderid;
+        });        
         return true;
     },
     
     pay:function(){        
-        window.location = "route.php?sendreq=pay&clientid="+this.clientid;
+        window.location = "route.php?redirect=pay&clientid="+this.clientid+"&orderid="+this.orderid;
     },
     
     applay:function(){
-        jQuery("#action-3").hide();        
-        this.ajaxReq("createdeal&clientid="+this.clientid,null,function(responseData){
+        jQuery("#action-3").hide(); 
+        var data = {
+            clientid: this.clientid,
+            orderid :this.orderid
+        };        
+        this.ajaxReq("createdeal&orderid="+this.orderid,data,function(responseData){
             jQuery('#load_modal').show();
             jQuery('#load_modal .back').click(function(){
                 window.location = KouziShop.successUrl;
@@ -237,7 +244,7 @@ KouziOrder = {
         if(this.order.type === 0){
             this.setClient("person",jQuery(".client-select li:eq(0)"));
         }else{                        
-            this.setClient("person",jQuery(".client-select li:eq(1)"));
+            this.setClient("company",jQuery(".client-select li:eq(1)"));
         }        
         if(this.order.logistic === 0){            
             jQuery("#logistic-1").prop('checked',true);     

@@ -85,3 +85,11 @@
 [03.02.2017 12:53:00][Предупреждение пользователя] Не верный запрос in file C:\xampp\htdocs\kouzi_shop\app\route.php on in line 82 
 [03.02.2017 12:55:15][Предупреждение пользователя] Клиент ID: не найден в Базе in file C:\xampp\htdocs\kouzi_shop\app\include\reqshop.php on in line 23 
 [03.02.2017 12:56:13][Предупреждение пользователя] Клиент ID: не найден в Базе in file C:\xampp\htdocs\kouzi_shop\app\include\reqshop.php on in line 23 
+[06.02.2017 08:57:05][Предупреждение] Undefined index: jsonData in file C:\xampp\htdocs\kouzi_shop\app\route.php on in line 47 
+[06.02.2017 08:57:05][Предупреждение пользователя] Клиент ID: не найден в Базе in file C:\xampp\htdocs\kouzi_shop\app\include\reqshop.php on in line 23 
+[06.02.2017 09:17:25][Предупреждение] Undefined variable: id_info in file C:\xampp\htdocs\kouzi_shop\app\include\reqshop.php on in line 139 
+[06.02.2017 09:19:10][Предупреждение] Undefined variable: id_info in file C:\xampp\htdocs\kouzi_shop\app\include\reqshop.php on in line 139 
+[06.02.2017 11:58:01][Предупреждение] Undefined index: price in file C:\xampp\htdocs\kouzi_shop\app\include\reqshop.php on in line 235 
+[06.02.2017 11:58:01][Предупреждение] Undefined index: price in file C:\xampp\htdocs\kouzi_shop\app\include\reqshop.php on in line 237 
+[06.02.2017 11:58:01][Предупреждение] Undefined index: price in file C:\xampp\htdocs\kouzi_shop\app\include\reqshop.php on in line 235 
+[06.02.2017 11:58:01][Предупреждение] Undefined index: price in file C:\xampp\htdocs\kouzi_shop\app\include\reqshop.php on in line 237 

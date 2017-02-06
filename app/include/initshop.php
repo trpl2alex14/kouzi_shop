@@ -10,9 +10,6 @@ class InitShop {
     protected static $_instance;
     
     public static function getInstance($form_name = 'index'){
-        if($form_name == ''){
-            $form_name = 'index';
-        }
         if( self::$_instance === NULL ) {
             self::$_instance = new self($form_name);
         }

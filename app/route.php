@@ -42,31 +42,48 @@ if(get_reqest('form')){
 }elseif(get_reqest('sendreq')){
     $data = array();
     $status = 'error';
-
-    $json_str = $_POST;          
-    $json = json_decode($json_str['jsonData'],true);    
+    $data['status'] = $status;
     
-    $shop = ReqShop::getInstance($json['clientid']);
-                
-    switch (get_reqest('sendreq')){
-        case 'article':    
+    $json_str = $_POST;    
+    if(isset($json_str['jsonData'])){
+        $json = json_decode($json_str['jsonData'],true);        
+        
+        $shop = ReqShop::getInstance($json['clientid']);
 
-            $shop->sendArticle($json['article']);
-        break;
-        case 'order':            
-            $shop->sendOrder($json['article'],$json['order']);
-        break;
-        case 'createdeal':
-            $shop->createDeal();
-        break;    
-        case 'pay':
-            $shop->payOrder();
-        break;  
-    }    
-    $data['status'] = $shop->getStatus();
+        switch (get_reqest('sendreq')){
+            case 'article':    
+                $data['orderid'] = $shop->sendArticle($json['article']);
+            break;
+            case 'order':            
+                $data['orderid'] = $shop->sendOrder($json['article'],$json['order']);
+            break;
+            case 'createdeal':
+                $shop->createDeal($json['orderid']);
+            break;      
+        }    
+        $data['status'] = $shop->getStatus();    
+    }
     echo json_encode($data);
     die();    
-}else{           
+}elseif(get_reqest('redirect') && get_reqest('clientid')){
+    $data = array();
+    $status = 'error';
+    $data['status'] = $status;
+    
+    $shop = ReqShop::getInstance(get_reqest('clientid'));
+
+    switch (get_reqest('redirect')){  
+        case 'pay':
+            if(get_reqest('orderid')){
+                $shop->payOrder(get_reqest('orderid'));
+            }
+        break;  
+    }   
+    
+    $data['status'] = $shop->getStatus(); 
+    echo json_encode($data);
+    die();         
+}else{
     trigger_error('Не верный запрос');
     die();
 }
