@@ -56,6 +56,8 @@ class bx24class {
             }else{
                 return NULL;
             }
+        }else {
+            trigger_error('Ошибка:'.TOKEN_FILE. ' - отсутствует ключ CRM');
         }
         return NULL;
     }
@@ -141,7 +143,7 @@ class bx24class {
         return $this->html_content;
     }    
        
-    ////-----------------------------api--------------------------------
+    ////-----------------------------api bx24--------------------------------
     
     public function getCrmProduct($id){
         $this->load_token();    
@@ -150,8 +152,119 @@ class bx24class {
                 "auth" => $access_token,
                 "id" => $id
         ));    
-        return $data;        
+        if(isset($data["result"])){
+            return $data["result"];
+        }else{
+            return 0;
+        }    
     }    
+    
+    public function getCrmProductToArticul($articul){
+        $this->load_token();    
+        $access_token = $this->oauth_access();        
+        $data = $this->call("crm.product.list", array(
+                "auth" => $access_token,
+                "order" => array( "NAME" => "ASC" ),
+		"filter"  => array("PROPERTY_272" => $articul),
+		"select" => [ "ID", "NAME", "PRICE" ]
+        ));    
+        if($data["total"]>0){
+            return $data["result"][0];
+        }
+        return NULL;        
+    }      
+    
+    public function getCrmClientAtrToPhone($phone,$atr){
+        $this->load_token();    
+        $access_token = $this->oauth_access();        
+        $data = $this->call("crm.contact.list", array(
+                "auth" => $access_token,
+                "order" => array( "DATE_CREATE" => "ASC" ),
+		"filter"  => array("PHONE" => $phone),
+		"select" => ["ID", "NAME", "LAST_NAME",  "COMPANY_ID"]
+        ));            
+        if($data["total"]>0){
+            return (int)$data["result"][0][$atr];
+        }
+        return 0;        
+    }    
+    
+    public function getCrmClientIdToPhone($phone){
+        return $this->getCrmClientAtrToPhone($phone, "ID");        
+    }    
+    
+    public function getCrmClientCompanyToPhone($phone){
+        return $this->getCrmClientAtrToPhone($phone, "COMPANY_ID");        
+    }        
+    
+    public function createCrmClient($fields){
+        $this->load_token();    
+        $access_token = $this->oauth_access();                
+        $data = $this->call("crm.contact.add", array(
+                "auth" => $access_token,
+                "fields" =>  $fields,
+                "params" => array(
+                    "REGISTER_SONET_EVENT" => "Y"
+                )
+        ));        
+        if(isset($data["result"])){
+            return (int)$data["result"];
+        }else{
+            return 0;
+        }
+    }    
+    
+    public function createCrmCompany($fields){
+        $this->load_token();    
+        $access_token = $this->oauth_access();                
+        $fields['OPENED'] = 'Y'; 
+        $data = $this->call("crm.company.add", array(
+                "auth" => $access_token,
+                "fields" =>  $fields,
+                "params" => array(
+                    "REGISTER_SONET_EVENT" => "Y"
+                )
+        ));    
+        if(isset($data["result"])){
+            return (int)$data["result"];
+        }else{
+            return 0;
+        }        
+    }    
+    
+    public function createCrmDeal($fields){
+        $this->load_token();    
+        $access_token = $this->oauth_access();                
+        $fields['OPENED'] = 'Y'; 
+        $data = $this->call("crm.deal.add", array(
+                "auth" => $access_token,
+                "fields" =>  $fields,
+                "params" => array(
+                    "REGISTER_SONET_EVENT" => "Y"
+                )
+        ));    
+        if(isset($data["result"])){
+            return (int)$data["result"];
+        }else{
+            return 0;
+        }        
+    }    
+    
+    public function addCrmDealItems($id, $row){
+        $this->load_token();    
+        $access_token = $this->oauth_access();                        
+        $data = $this->call("crm.deal.productrows.set", array(
+                "auth" => $access_token,
+                "id" =>     $id,                
+                "rows" =>  $row
+        ));  
+        if(isset($data["result"])){
+            return (int)$data["result"];
+        }else{
+            return 0;
+        }        
+    }      
+    
     
     public function route(){
         if(isset($_REQUEST["code"])){

@@ -170,8 +170,12 @@ class ReqShop{
         }
     }
 
-    public function sendOrder($article,$order){        
-        return $this->sendArticle($article,$order);
+    public function sendOrder($article,$order){  
+        $id = $this->sendArticle($article,$order);
+        if($id>0){
+            $this->setOrderStatus($id,1);
+        }
+        return $id;
     }
     
     public function getArticleOrder($orderid){
@@ -221,36 +225,82 @@ class ReqShop{
             trigger_error('Заказ ID:'.$orderid. ' - отсутствует в базе');            
         }    
         return $data;
+    }   
+    
+    public function getPriceCity($city,$type){
+        $db = ShopDB::getInstance();                
+        $res = $db->run("SELECT * FROM city WHERE name='".$city."'");            
+        if(!$db->isError() && $row = $res->fetch_assoc()){
+            if($type==0){
+                return (int)$row['price'];
+            }else{
+                return (int)$row['price']+(int)$row['curier'];
+            }                                    
+        }   
+        return 0;
     }    
     
     public function createDeal($orderid){  
+        $i=1;
         $comment = '';        
         $article_crm = array();        
-        $crm = CRMconnector::getInstance();
+        $crm = CRMconnector::getInstance();        
         $article = $this->getArticleOrder($orderid);
+        $order = $this->getOrder($orderid);
+        
+        $article[] = array(
+            'id' =>   LOGISTIC_ID,
+            'count' => 1,
+            'price' => $this->getPriceCity($order['city'], $order['logistic']),
+            'comment' =>$order['city']
+        );        
         foreach($article as $item){
-            $id = $crm->getProductIdToArticul($item['id']);
+            $tmp = $crm->getProductToArticul($item['id']);
             $article_crm[] = array(
-                'id'    => $id,
+                'id'    => $tmp['ID'],
                 'count' =>$item['count'],
                 'price' =>$item['price']
             );
-            $comment.= $crm->getProductName($id).' - '.$item['count'].' x '.$item['price'].' ('.$item['comment'].') /n';
+            $comment.= $i.' '.$tmp['NAME'].' '.$item['comment'].' - '.$item['count'].' x '.$item['price'].' <br>';
+            $i++;
         }  
-        $crm->setArticle($article_crm);
-        $order = $this->getOrder($orderid);
-        if($order){            
+        $comment.='<hr>';
+        $crm->setArticle($article_crm);        
+        if($order['type']==0){
+            $comment.= 'Получатель: '.$order['lname'].' '.$order['fname'].' '.$order['pname'].'<br>';
+            $comment.= 'Контакты: '.$order['phone'].' '.$order['email'].'<br>';
+        }  else {
+            $comment.= 'Получатель: '.$order['companyname'].' ИНН:'.$order['inn'].' '.$order['cname'].'<br>';
+            $comment.= 'Контакты: '.$order['cphone'].' '.$order['cemail'].'<br>';            
+        }
+        if($order['logistic']==0){
+            $comment.= 'Доставка до склада: '.$order['city'].'<br>'; 
+        }else{
+            $comment.= 'Доставка до адреса: '.$order['city'].' '.$order['address'].'<br>'; 
+        }
+        if($order['payment']==0){
+            $comment.= 'Оплата: полная<br>'; 
+        }else{
+            $comment.= 'Оплата: только доставка<br>'; 
+        }
+        $comment.= 'Доп. информация: '.$order['comment'].'<br>';  
+        if($order){ 
+            $crm->setOrder($order);
             if($order['type']==0){
-                $crm->createClient($order);
+                $crm->createClient();
             }else{
-                $crm->createCompany($order);
+                $crm->createCompany();
             }
-            $crm->createDeal($comment);
+            if($crm->createDeal($orderid,$comment)){
+                $this->setOrderStatus($orderid,3);
+                $this->setStatus(true);                
+            }else{
+                $this->setOrderStatus($orderid,2);
+                $this->setStatus(false);                                
+            }
         }else{
             $this->setStatus(false);
-        }       
-        $this->setOrderStatus($orderid,2);
-        $this->setStatus(true);
+        }               
     }
     
     public function payOrder($orderid){
