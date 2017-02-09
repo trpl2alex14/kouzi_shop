@@ -103,35 +103,54 @@ class CRMconnector extends bx24class{
         }        
     }     
 
-    public function createDeal($orderid,$comment){                        
+    public function createDeal($orderid,$comment){
+        $this->company_id = 0;
+        $this->client_id  = 0;
         $fields = array(
             "TITLE"    => 'Интернет магазин - Заказ № '.$orderid,
             "STAGE_ID" => DEAL_STAT,
             "COMMENTS" => $comment,
-            "UF_CRM_1479793006" => $this->order['city']            
+            "UF_CRM_1479793006" => $this->order['city'],
+            "UF_CRM_1486632429" => $orderid
         );
+        if($this->order['type']==0){
+            $this->createClient();
+        }else{
+            $this->createCompany();
+        }                
         if($this->company_id > 0){
             $fields["COMPANY_ID"] = $this->company_id;
         }        
         if($this->client_id > 0){
             $fields["CONTACT_ID"] = $this->client_id;
-        }        
-        
+        }                
         $id = $this->createCrmDeal($fields);   
         if($id >0 ){            
             $articles = array();
             foreach ($this->products as $item){
                 $articles[] = array(
-                    "PRODUCT_ID" => $item['id'],
+                    "PRODUCT_ID" => $this->getProductToArticul($item['id']),  ////
                     "PRICE"      => $item['price'],
                     "QUANTITY"   => $item['count']
                 );
             }
             $this->addCrmDealItems($id, $articles);
-            return true;
+            return $id;
         }else {
              trigger_error('Ошибка: создания сделки Order ID:'.$orderid);
-            return false;
+            return $id;
         }
-    }     
+    }
+    
+    public function sendDeal($orderid,$comment){
+        $aBase = new actionBase(); 
+        $aBase->addTaskCreateDeal($orderid,$comment,$this->order,$this->products);
+        
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, TASK_SCRIPT_URL);
+        curl_setopt($ch, CURLOPT_FRESH_CONNECT, true);
+        curl_setopt($ch, CURLOPT_TIMEOUT_MS, 50); 
+        curl_exec($ch);
+        curl_close($ch);        
+    }
 }

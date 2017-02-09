@@ -1,11 +1,16 @@
 <?php
 require_once  'config.php';
 require_once  SHOP_LIB.'mysql.php';
+require_once  SHOP_LIB.'Log.php';
 require_once  SHOP_INC.'CRMconnector.bx24.php';
+require_once  SHOP_INC.'payConnector.ymoney.php';
+require_once  SHOP_INC.'actionBase.php';
 
-class ReqShop{
+
+class ReqShop  extends actionBase{
     private $cid;
     private $status;
+    private $log;
     protected static $_instance;
     
     public static function getInstance($cid){
@@ -24,7 +29,12 @@ class ReqShop{
             trigger_error('Клиент ID:'.$cid. ' не найден в Базе');
             return;
         }
+        $this->log = new shopLog();
     }
+    
+    private function log($str) {
+        $this->log->info($str);
+    }    
     
     public function setStatus($type){
         if($type){
@@ -71,7 +81,7 @@ class ReqShop{
                 trigger_error('Клиент ID:'.$this->cid. ' Order info не добавленно');
             }                                   
         }else{                    
-            $res = $db->run("SELECT orders.id_info FROM orders,ordersinfo WHERE ordersinfo.id=orders.id_info AND orders.status = 3 AND id_client=".$this->cid." order by orders.date DESC LIMIT 1"); 
+            $res = $db->run("SELECT orders.id_info FROM orders,ordersinfo WHERE ordersinfo.id=orders.id_info  AND id_client=".$this->cid." order by orders.date DESC LIMIT 1"); 
             if(!$db->isError() && $row = $res->fetch_assoc()){
                 $db->run("INSERT INTO `ordersinfo`(`type`, `fname`, `lname`, `pname`, `phone`, `email`, `cname`, `inn`, `companyname`, `cphone`, `cemail`, `city`, `address`, `comment`, `logistic`, `payment`, `date`)"
                        . " SELECT `type`, `fname`, `lname`, `pname`, `phone`, `email`, `cname`, `inn`, `companyname`, `cphone`, `cemail`, `city`, `address`, `comment`, `logistic`, `payment`, NOW() FROM ordersinfo WHERE ordersinfo.id=".$row['id_info']); 
@@ -114,7 +124,7 @@ class ReqShop{
     
     public function getLastOrder(){
         $db = ShopDB::getInstance();
-        $res = $db->run("SELECT id FROM orders WHERE orders.status IN (0,1,2) AND id_client=".$this->cid." order by orders.date DESC LIMIT 1");            
+        $res = $db->run("SELECT id FROM orders WHERE orders.status IN (".STATUS_ORDER_INIT.",".STATUS_ORDER_PROCESS.",".STATUS_ORDER_ERROR.") AND id_client=".$this->cid." order by orders.date DESC LIMIT 1");            
         if(!$db->isError() && $row = $res->fetch_assoc()){
             return $row['id'];
         }else{
@@ -125,7 +135,7 @@ class ReqShop{
     public function createOrder($order){
         $db = ShopDB::getInstance();
         $id_ordersinfo = $this->createOrderInfo($order);
-        $db->run("INSERT INTO `orders`(`id_client`, `id_info`, `status`, `date`) VALUES (".$this->cid.", ".$id_ordersinfo.", 0, NOW())");
+        $db->run("INSERT INTO `orders`(`id_client`, `id_info`, `status`, `date`) VALUES (".$this->cid.", ".$id_ordersinfo.", ".STATUS_ORDER_INIT.", NOW())");
         return $db->getDB()->insert_id;                    
     }
            
@@ -142,10 +152,6 @@ class ReqShop{
         }                
     }    
     
-    public function setOrderStatus($id,$status){
-        $db = ShopDB::getInstance();
-        $db->run("UPDATE `orders` SET `status`=".$status." WHERE status != 3 AND id=".$id);            
-    }    
     
     public function sendArticle($article,$order = NULL){
         $db = ShopDB::getInstance();                        
@@ -177,95 +183,9 @@ class ReqShop{
         }
         return $id;
     }
-    
-    public function getArticleOrder($orderid){
-        $data = array();
-        $db = ShopDB::getInstance();                        
-        $res = $db->run("SELECT * FROM articles,products WHERE products.articul=articles.articul AND articles.id_order=".$orderid);      
-        if(!$db->isError()){
-            $res->data_seek(0);
-            while ($row = $res->fetch_assoc()) {        
-                $data[] = array(
-                    'id'        => $row['articul'],
-                    'count'     => (int)$row['count'],
-                    'price'     => (int)$row['price'],
-                    'comment'   => $row['comment']
-                );                 
-            }            
-        }else{
-            trigger_error('Заказ ID:'.$orderid. ' - отсутствуют товары в заказе');            
-        }    
-        return $data;
-    }
-
-    public function getOrder($orderid){   
-        $data = NULL;
-        $db = ShopDB::getInstance();                        
-        $res = $db->run("SELECT * FROM orders,ordersinfo WHERE orders.id_info=ordersinfo.id AND orders.id=".$orderid);      
-        if(!$db->isError() && $row = $res->fetch_assoc()){                        
-               $data = array(
-                    'type'        => (int) $row['type'],
-                    'payment'     => (int) $row['payment'],
-                    'logistic'    => (int) $row['logistic'],
-                    'fname'       => $row['fname'],
-                    'lname'       => $row['lname'],
-                    'pname'       => $row['pname'],
-                    'phone'   => $row['phone'],
-                    'email'   => $row['email'],
-                    'cname'   => $row['cname'],
-                    'inn'   => $row['inn'],
-                    'city'   => $row['city'],
-                    'address'   => $row['address'],
-                    'comment'   => $row['comment'],
-                    'companyname'   => $row['companyname'],
-                    'cphone'   => $row['cphone'],
-                    'cemail'   => $row['cemail']
-                );                           
-        }else{
-            trigger_error('Заказ ID:'.$orderid. ' - отсутствует в базе');            
-        }    
-        return $data;
-    }   
-    
-    public function getPriceCity($city,$type){
-        $db = ShopDB::getInstance();                
-        $res = $db->run("SELECT * FROM city WHERE name='".$city."'");            
-        if(!$db->isError() && $row = $res->fetch_assoc()){
-            if($type==0){
-                return (int)$row['price'];
-            }else{
-                return (int)$row['price']+(int)$row['curier'];
-            }                                    
-        }   
-        return 0;
-    }    
-    
-    public function createDeal($orderid){  
-        $i=1;
-        $comment = '';        
-        $article_crm = array();        
-        $crm = CRMconnector::getInstance();        
-        $article = $this->getArticleOrder($orderid);
-        $order = $this->getOrder($orderid);
-        
-        $article[] = array(
-            'id' =>   LOGISTIC_ID,
-            'count' => 1,
-            'price' => $this->getPriceCity($order['city'], $order['logistic']),
-            'comment' =>$order['city']
-        );        
-        foreach($article as $item){
-            $tmp = $crm->getProductToArticul($item['id']);
-            $article_crm[] = array(
-                'id'    => $tmp['ID'],
-                'count' =>$item['count'],
-                'price' =>$item['price']
-            );
-            $comment.= $i.' '.$tmp['NAME'].' '.$item['comment'].' - '.$item['count'].' x '.$item['price'].' <br>';
-            $i++;
-        }  
-        $comment.='<hr>';
-        $crm->setArticle($article_crm);        
+         
+    public function getCommentInfoOrder($order){
+        $comment='<hr>';               
         if($order['type']==0){
             $comment.= 'Получатель: '.$order['lname'].' '.$order['fname'].' '.$order['pname'].'<br>';
             $comment.= 'Контакты: '.$order['phone'].' '.$order['email'].'<br>';
@@ -283,32 +203,74 @@ class ReqShop{
         }else{
             $comment.= 'Оплата: только доставка<br>'; 
         }
-        $comment.= 'Доп. информация: '.$order['comment'].'<br>';  
-        if($order){ 
+        $comment.= 'Доп. информация: '.$order['comment'].'<br>';          
+    }
+
+    public function createDeal($orderid){             
+        $order = $this->getOrder($orderid);
+        $article = $this->getArticleOrder($orderid);                
+        $article[] = array(
+            'id' =>   LOGISTIC_ID,
+            'name' => 'Доставка',
+            'count' => 1,
+            'price' => $this->getPriceCity($order['city'], $order['logistic']),
+            'comment' =>$order['city']
+        );        
+        
+        $i=1;
+        $comment = '';           
+        $article_crm = array();                
+        foreach($article as $item){            
+            $article_crm[] = array(
+                'id'    =>$item['id'],
+                'count' =>$item['count'],
+                'price' =>$item['price']
+            );
+            $comment.= ($i++).' '.$item['name'].' '.$item['comment'].' - '.$item['count'].' x '.$item['price'].' <br>';            
+        } 
+
+        $comment .= $this->getCommentInfoOrder($order);
+        $this->log($comment);
+        
+        if($order && $order['status']<STATUS_ORDER_SEND){
+            $crm = CRMconnector::getInstance();        
+            $crm->setArticle($article_crm);
             $crm->setOrder($order);
-            if($order['type']==0){
-                $crm->createClient();
-            }else{
-                $crm->createCompany();
-            }
-            if($crm->createDeal($orderid,$comment)){
-                $this->setOrderStatus($orderid,3);
-                $this->setStatus(true);                
-            }else{
-                $this->setOrderStatus($orderid,2);
-                $this->setStatus(false);                                
-            }
+            $crm->sendDeal($orderid,$comment);            
+            $this->setOrderStatus($orderid,STATUS_ORDER_SEND);
+            $this->setStatus(true);                
         }else{
             $this->setStatus(false);
-        }               
-    }
-    
+            trigger_error('Заказ ID:'.$orderid. ' - уже закрыт или отсутствует');
+        }            
+    }    
+      
     public function payOrder($orderid){
         $this->createDeal($orderid);
-        ///
-        ///send YD
-        ///
-        $this->setStatus(true);
+        $pay = payConnector::getInstance();
+        $order = $this->getOrder($orderid);
+        if($order){
+            $sum = (int)$this->getSumOrder($orderid);
+            $logistic = (int)$this->getPriceCity($order['city'], $order['logistic']);
+            $total = ($order['payment']==0)?$sum+$logistic:$logistic;
+            $data = array(
+                'orderNumber'    => $orderid,
+                'customerNumber' => $order['lname'].' '.$order['fname'].' '.$order['pname'],
+                'cps_phone'      => $order['phone'], 
+                'sum'            => $total  
+            );
+            if($order['email']!=''){
+                $data['cps_email'] = $order['email'];
+            }
+            if($total > 0){
+                $this->setOrderStatus($orderid,STATUS_ORDER_SEND);
+                $this->setStatus(true);                                
+                return $pay->sendForm($data);
+            }else{
+                trigger_error('Заказ ID:'.$orderid. ' - 0 стоимость заказа');
+            }
+        }
+        $this->setStatus(false);
     }    
         
 }

@@ -93,8 +93,18 @@ KouziShop = {
         return true;
     },
     
-    pay:function(){        
-        window.location = "route.php?redirect=pay&clientid="+this.clientid+"&orderid="+this.orderid;
+    pay:function(){                
+        jQuery("#action-3").hide(); 
+        var data = {
+            clientid: this.clientid,
+            orderid :this.orderid
+        };        
+        this.ajaxReq("pay&orderid="+this.orderid,data,function(responseData){            
+            if(responseData.payform){
+                jQuery('#payForm').html(responseData.payform);
+                jQuery('#payForm form').submit();
+            }
+        });        
     },
     
     applay:function(){
@@ -163,7 +173,7 @@ KouziShop = {
                     jQuery("#order-info .time-info").html(CityPicker.getTime(KouziOrder.order.logistic,KouziOrder.order.city)+' дн.'); 
                     delivery = CityPicker.getPrice(KouziOrder.order.logistic,KouziOrder.order.city);
                     jQuery("#order-info .price-block").show();
-                    if(KouziOrder.order.payment === 0){
+                    if(KouziOrder.order.payment === 0 || Number(delivery) === 0 ){
                         jQuery("#order-info .price-block span").html(Number(delivery)+Number(article));
                         jQuery("#order-info .post-pay").hide();
                     }else{
@@ -176,12 +186,14 @@ KouziShop = {
                     jQuery("#delivery-info").show();
                     jQuery("#all-info").show();
 
-                    if(KouziOrder.order.type === 0){    
-                        jQuery("#pay-btn").show(); 
-                        jQuery("#applay-btn").hide(); 
-                    }else{
-                        jQuery("#pay-btn").hide(); 
+                    jQuery("#pay-btn").hide(); 
+                    jQuery("#applay-btn").hide(); 
+
+
+                    if(KouziOrder.order.type === 1 || ( KouziOrder.order.payment === 1 && Number(delivery) === 0)){    
                         jQuery("#applay-btn").show();                        
+                    }else{
+                        jQuery("#pay-btn").show();                         
                     }     
                 }else {
                     if(KouziOrder.order.logistic === 0){

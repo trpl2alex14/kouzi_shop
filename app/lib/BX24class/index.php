@@ -18,8 +18,8 @@
     </head>
     <body>
         <?=$bx24->getContent()?>
-        <?php var_dump($bx24->getCrmProduct(451));?>
-        <?php var_dump($bx24->getCrmProductIdToArticul('601'));?>
+        <?php //var_dump($bx24->getCrmProduct(451));?>
+        <?php //var_dump($bx24->getCrmProductIdToArticul('601'));?>
         <?php //var_dump($bx24->getCrmClientIdToPhone("79080700755"));?>
     </body>
 </html>

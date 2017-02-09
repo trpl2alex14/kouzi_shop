@@ -223,5 +223,6 @@
         <a class="btn sale" id="pay-btn" onclick="KouziShop.pay();" >Оплатить</a>              
         <a class="btn sale" id="applay-btn" onclick="KouziShop.applay();">Оформить заказ</a>              
     </div>     
-    
+    <div id='payForm' style="display:none;">
+    </div>
 </div>
