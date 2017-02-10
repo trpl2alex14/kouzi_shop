@@ -164,8 +164,10 @@ class ReqShop  extends actionBase{
         
         if($id_order > 0){            
             $db->run("DELETE FROM articles WHERE articles.id_order = ".$id_order);            
-            foreach($article as $item){                
-                $db->run("INSERT INTO `articles`(`articul`, `count`, `comment`, `id_order`, `status`) VALUES (".$item['id'].", ".$item['count'].",\"".$item['comment']."\", ".$id_order.", 0)");
+            foreach($article as $item){
+                if($item['count']>0){
+                    $db->run("INSERT INTO `articles`(`articul`, `count`, `comment`, `id_order`, `status`) VALUES (".$item['id'].", ".$item['count'].",\"".$item['comment']."\", ".$id_order.", 0)");
+                }
             }
             $this->setStatus(true);
             return $id_order;

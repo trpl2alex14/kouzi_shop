@@ -763,6 +763,10 @@ KouziList = {
             alert('Невозможно добавить товар в корзину.(Максимум 100 позиций.)');
             return;
         }
+        if(count <=0){
+            alert('Невозможно добавить товар в корзину.');
+            return;            
+        }
         if(typeof comment === "undefined"){
             comment='';
         }        
