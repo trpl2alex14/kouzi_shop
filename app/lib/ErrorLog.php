@@ -46,7 +46,7 @@ class ErrorLog {
     }
 
     public function handler($errno, $errstr, $errfile, $errline){
-        $this->userMessage  = "Произошла ошибка, повторите операцию позднее";
+        $this->userMessage  = USER_ERROR_MSG;
         $this->debugMessage = $this->getDebugMessage($errno, $errstr, $errfile, $errline);
         $this->logMessage   = '['.date('d.m.Y H:i:s', time()).']' . "[".$this->errortype[$errno].
                               "] $errstr in file $errfile on in line $errline \r\n";

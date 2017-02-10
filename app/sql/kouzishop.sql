@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Хост: 127.0.0.1
--- Время создания: Фев 06 2017 г., 09:42
+-- Время создания: Фев 09 2017 г., 12:20
 -- Версия сервера: 10.1.13-MariaDB
 -- Версия PHP: 5.6.21
 
@@ -62,11 +62,6 @@ CREATE TABLE `articles` (
 -- Дамп данных таблицы `articles`
 --
 
-INSERT INTO `articles` (`id`, `articul`, `count`, `comment`, `id_order`, `status`) VALUES
-(120, 500, 2, '', 7, 0),
-(121, 10111, 2, '', 7, 0),
-(131, 500, 1, '', 8, 0),
-(132, 601, 1, '', 8, 0);
 
 -- --------------------------------------------------------
 
@@ -107,8 +102,23 @@ CREATE TABLE `clients` (
 -- Дамп данных таблицы `clients`
 --
 
-INSERT INTO `clients` (`id`, `id_cart`) VALUES
-(7, 'kouzi_589820dce84ac9.88019323');
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `ordercrm`
+--
+
+CREATE TABLE `ordercrm` (
+  `id` int(8) NOT NULL,
+  `order_id` int(11) NOT NULL,
+  `crm_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Дамп данных таблицы `ordercrm`
+--
+
 
 -- --------------------------------------------------------
 
@@ -121,16 +131,9 @@ CREATE TABLE `orders` (
   `id_client` int(8) NOT NULL DEFAULT '0',
   `id_info` int(8) NOT NULL DEFAULT '0',
   `status` int(8) NOT NULL DEFAULT '0',
-  `date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
+  `date` datetime NOT NULL 
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Дамп данных таблицы `orders`
---
-
-INSERT INTO `orders` (`id`, `id_client`, `id_info`, `status`, `date`) VALUES
-(7, 7, 3, 3, '2017-02-06 12:18:19'),
-(8, 7, 4, 0, '2017-02-06 13:28:22');
 
 -- --------------------------------------------------------
 
@@ -156,16 +159,9 @@ CREATE TABLE `ordersinfo` (
   `comment` varchar(500) NOT NULL,
   `logistic` int(8) NOT NULL DEFAULT '0',
   `payment` int(8) NOT NULL DEFAULT '0',
-  `date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
+  `date` datetime 
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Дамп данных таблицы `ordersinfo`
---
-
-INSERT INTO `ordersinfo` (`id`, `type`, `fname`, `lname`, `pname`, `phone`, `email`, `cname`, `inn`, `companyname`, `cphone`, `cemail`, `city`, `address`, `comment`, `logistic`, `payment`, `date`) VALUES
-(3, 0, 'Алексей1', 'Гарунович1', 'Владимирович1', '896307603691', 'av@it.rr', '', '', '', '', '', 'Екатеринбург', 'ул. Руставели д7 кв 121', 'все хорошо или нет1', 0, 0, '2017-02-06 13:27:27'),
-(4, 1, 'Алексей1', 'Гарунович1', 'Владимирович1', '896307603691', 'av@it.rr', 'А хз', '123123123123', 'ООО "Рога и Копыта"', '83512009050', 'test@it.com', 'Челябинск', 'далеко ', '', 1, 0, '2017-02-06 13:30:39');
 
 -- --------------------------------------------------------
 
@@ -239,9 +235,31 @@ INSERT INTO `products` (`id`, `name`, `img`, `info`, `id_about`, `price`, `artic
 (48, 'КОУЗИ Н3 750ВтK Белый', 'k750.jpg', 'КОУЗИ 750Вт - прогреет площадь 15м2', 4, 7100, 40521, 'i', ''),
 (49, 'КОУЗИ Н3 750ВтK ', 'k750.jpg', 'КОУЗИ 750Вт - прогреет площадь 15м2', 4, 7400, 40522, 'i', ''),
 (50, 'Терморегулятор', 'term.jpg', 'контролирует заданную температуру в помещении', 5, 1500, 500, 'v', ''),
-(51, 'Ножки М1-2', 'n1.jpg', 'Для КОУЗИ в корпусе М1 и М2', 6, 400, 601, 'v', ''),
-(52, 'Ножки М3', 'n1.jpg', 'Для КОУЗИ в корпусе М3', 6, 400, 602, 'v', ''),
-(53, 'Ножки Н2-3', 'n1.jpg', 'Для КОУЗИ в корпусе Н2-Н3', 6, 400, 603, 'v', '');
+(51, 'Ножки М1-2', 'n1.jpg', 'Для КОУЗИ в корпусе М1 и М2', 6, 400, 600, 'd', '4'),
+(52, 'Ножки М3', 'n1.jpg', 'Для КОУЗИ в корпусе М3', 6, 400, 700, 'd', '4'),
+(53, 'Ножки Н2-3', 'n1.jpg', 'Для КОУЗИ в корпусе Н2-Н3', 6, 400, 800, 'd', '4'),
+(54, 'Ножки М1-2 белые', 'n1.jpg', 'Для КОУЗИ в корпусе М1 и М2', 6, 400, 601, 'i', ''),
+(55, 'Ножки М1-2 ', 'n1.jpg', 'Для КОУЗИ в корпусе М1 и М2', 6, 400, 602, 'i', ''),
+(56, 'Ножки М3 белые', 'n1.jpg', 'Для КОУЗИ в корпусе М3', 6, 400, 701, 'i', ''),
+(57, 'Ножки М3 ', 'n1.jpg', 'Для КОУЗИ в корпусе М3', 6, 400, 702, 'i', ''),
+(58, 'Ножки Н2-3 белые', 'n1.jpg', 'Для КОУЗИ в корпусе Н2-Н3', 6, 400, 801, 'i', ''),
+(59, 'Ножки Н2-3 ', 'n1.jpg', 'Для КОУЗИ в корпусе Н2-Н3', 6, 400, 802, 'i', '');
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `taskcreatedeal`
+--
+
+CREATE TABLE `taskcreatedeal` (
+  `id` int(11) NOT NULL,
+  `order_id` int(11) NOT NULL,
+  `comment` text NOT NULL,
+  `orderinfo` text NOT NULL,
+  `products` text NOT NULL,
+  `status` int(11) NOT NULL DEFAULT '0'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
 
 -- --------------------------------------------------------
 
@@ -322,6 +340,12 @@ ALTER TABLE `clients`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Индексы таблицы `ordercrm`
+--
+ALTER TABLE `ordercrm`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Индексы таблицы `orders`
 --
 ALTER TABLE `orders`
@@ -337,6 +361,12 @@ ALTER TABLE `ordersinfo`
 -- Индексы таблицы `products`
 --
 ALTER TABLE `products`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Индексы таблицы `taskcreatedeal`
+--
+ALTER TABLE `taskcreatedeal`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -364,7 +394,7 @@ ALTER TABLE `abouts`
 -- AUTO_INCREMENT для таблицы `articles`
 --
 ALTER TABLE `articles`
-  MODIFY `id` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=133;
+  MODIFY `id` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=466;
 --
 -- AUTO_INCREMENT для таблицы `city`
 --
@@ -374,22 +404,32 @@ ALTER TABLE `city`
 -- AUTO_INCREMENT для таблицы `clients`
 --
 ALTER TABLE `clients`
-  MODIFY `id` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+--
+-- AUTO_INCREMENT для таблицы `ordercrm`
+--
+ALTER TABLE `ordercrm`
+  MODIFY `id` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT для таблицы `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
 --
 -- AUTO_INCREMENT для таблицы `ordersinfo`
 --
 ALTER TABLE `ordersinfo`
-  MODIFY `id` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 --
 -- AUTO_INCREMENT для таблицы `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=54;
+  MODIFY `id` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=60;
+--
+-- AUTO_INCREMENT для таблицы `taskcreatedeal`
+--
+ALTER TABLE `taskcreatedeal`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 --
 -- AUTO_INCREMENT для таблицы `variationgroup`
 --

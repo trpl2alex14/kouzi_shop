@@ -16,5 +16,5 @@ set_error_handler(array($errorClass, $errorMethod));
 
 
 $pay = payConnector::getInstance();
-$pay->processRequest($_REQUEST);
+$pay->Request($_REQUEST);
 

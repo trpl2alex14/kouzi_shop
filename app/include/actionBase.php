@@ -6,7 +6,7 @@ class actionBase {
     
     public function setOrderStatus($id,$status){
         $db = ShopDB::getInstance();
-        $db->run("UPDATE `orders` SET `status`=".$status." WHERE status != 3 AND id=".$id);            
+        $db->run("UPDATE `orders` SET `status`=".$status." WHERE (status != 3 OR status<".$status.") AND id=".$id);            
     }    
 
     public function getArticleOrder($orderid){
@@ -88,7 +88,9 @@ class actionBase {
         if(!$db->isError() && $row = $res->fetch_assoc()){
             trigger_error('Заказ ID:'.$id. ' - уже добавлен в базу');
         }else{
-            $db->run("INSERT INTO `taskcreatedeal`(`order_id`, `comment`, `orderinfo`, `products`) VALUES (".$id.",'".$comment."','".json_encode($order)."','".json_encode($products)."')");
+            $order=base64_encode( serialize($order));
+            $products=base64_encode( serialize($products));
+            $db->run("INSERT INTO `taskcreatedeal`(`order_id`, `comment`, `orderinfo`, `products`) VALUES (".$id.",'".$comment."','".$order."','".$products."')");
         }                            
     }
     

@@ -1,8 +1,6 @@
 <?php
     require_once  './../../config.php';
-    require_once  'bx24class.php';
-    
-    define('TOKEN_FILE','key.json');
+    require_once  'bx24class.php';        
     
     $bx24 = new bx24class();
     

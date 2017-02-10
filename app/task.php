@@ -25,8 +25,10 @@ if(get_reqest('sendreq')=='addDeal'){
     $res = $db->run("SELECT * FROM taskcreatedeal WHERE status=0");      
     while(!$db->isError() && $row = $res->fetch_assoc()){
         $db->run("UPDATE taskcreatedeal SET status=1 WHERE id=".$row['id']);        
-        $crm->setArticle(json_decode($row['products'],true));
-        $crm->setOrder(json_decode($row['orderinfo'],true));
+        $products  = unserialize( base64_decode($row['products']));
+        $orderinfo = unserialize( base64_decode($row['orderinfo']));      
+        $crm->setArticle($products);
+        $crm->setOrder($orderinfo);
         $orderid = (int)$row['order_id'];
         $id = $crm->createDeal($orderid,$row['comment']);
         if($id){

@@ -47,7 +47,7 @@ class payConnector extends YaMoneyCommonHttpProtocol{
                     $sum += (int)$aBase->getSumOrder($orderid);
                 }
                 if($sum == $request['orderSumAmount']){
-                    $this->log("Пришла оплата: сделка ID" . $request['orderNumber']);
+                    $this->log("Пришла оплата: сделка ID" . $orderid);
                     $aBase->setOrderStatus($orderid, STATUS_ORDER_PAY);                    
                     return 0;
                 }
@@ -76,7 +76,7 @@ class payConnector extends YaMoneyCommonHttpProtocol{
         return $result;
     }
     
-    public function processRequest($request){
+    public function Request($request){
         $req = array();
         if(isset($request['action'])){
             if($request['action'] == "checkOrder" || $request['action'] == "paymentAviso"){
@@ -89,6 +89,7 @@ class payConnector extends YaMoneyCommonHttpProtocol{
                 $req['invoiceId']      = isset($request['invoiceId']) ? $request['invoiceId'] : '';
                 $req['customerNumber'] = isset($request['customerNumber']) ? $request['customerNumber'] : '';
                 $req['orderNumber']    = isset($request['orderNumber']) ? $request['orderNumber'] : '';
+                $req['md5']    = isset($request['md5']) ? $request['md5'] : '';
                 
                 parent::$this->processRequest($req);
             }else{

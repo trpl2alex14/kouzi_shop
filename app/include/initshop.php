@@ -134,20 +134,24 @@ class InitShop {
         $data = NULL;
         $arr = explode(',',$list);
         $db = ShopDB::getInstance();
-        if($arr && $stmt = $db->getDB()->prepare("SELECT * FROM variations,variationgroup WHERE variationgroup.id=variations.id_group AND variationgroup.id=?")){                                 
+        if($arr && $stmt = $db->getDB()->prepare("SELECT type,name,text,artmod FROM variations,variationgroup WHERE variationgroup.id=variations.id_group AND variationgroup.id=?")){                                 
                 foreach($arr as $id_group) {                    
                     $stmt->bind_param("i", $id_group);
                     $stmt->execute();
-                    $res = $stmt->get_result();                    
+                        
+                    //$res = $stmt->get_result();                    
                     $tmparr = array();
                     $type = '';
                     $name = '';
-                    while ($row = $res->fetch_assoc()){
-                        $type = $row['type'];
-                        $name = $row['name'];                        
+                    
+                    $stmt->bind_result($stype, $sname, $stext, $sartmod);
+        
+                    while ($stmt->fetch()) {          
+                        $type = $stype;
+                        $name = $sname;                        
                         $tmparr[] = array(
-                            'text'   => $row['text'],
-                            'artmod' => $row['artmod']
+                            'text'   => $stext,
+                            'artmod' => $sartmod
                         ); 
                     }
                     $data[] = array(
@@ -160,6 +164,7 @@ class InitShop {
         }
         return $data;
     }
+
     
     public function getProducts(){
         $data = array();

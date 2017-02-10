@@ -7,13 +7,14 @@ define('SHOP_DB_USER',"root");
 define('SHOP_DB_PASS',"");
 
 ///dir shop
-define('SHOP_DIR',"");
+define('SHOP_DIR',__DIR__."/");
 define('SHOP_LIB',SHOP_DIR."lib/");
 define('SHOP_TEMPLATE',SHOP_DIR."template/");
 define('SHOP_INC',SHOP_DIR."include/");
 
 define('APP_SERVER', 'http://127.0.0.1/');
-define('TASK_SCRIPT_URL',APP_SERVER.'task.php?sendreq=addDeal');
+define('APP_URL_FOLDER', '');
+define('TASK_SCRIPT_URL',APP_SERVER.APP_URL_FOLDER.'task.php?sendreq=addDeal');
 
 /// log files
 define('ERROR_LOG','log/error.log');
@@ -27,8 +28,9 @@ define('ID_CART',"ID_CART");
 define('SHOP_CRM', 'kouzi.bitrix24.ru');
 define("CLIENT_ID", "local.58985b120280b6.48237630");
 define("CLIENT_SECRET", "ABciendQvnfWJfidRMhB2YSrNj2RDqjAMobU3FWA7eAxI7HO7L");
-define('APP_FOLDER', 'lib/BX24class/');
-define('REDIRECT_URI', APP_SERVER.APP_FOLDER);
+define('LIB_BX_FOLDER', 'lib/BX24class/');
+define('APP_FOLDER', SHOP_DIR.LIB_BX_FOLDER);
+define('REDIRECT_URI', APP_SERVER.LIB_BX_FOLDER);
 define('SCOPE', 'log,user,department,sonet_group');
 define('PROTOCOL', 'https://');
 
@@ -47,5 +49,7 @@ define('SHOP_YDURL','https://demomoney.yandex.ru/eshop.xml');
 define('SHOP_KEY_WORD','GGUx6Wyh4zLa');
 define('SHOP_ID',120256);
 define('SHOP_SCID',548743);
+
+define('USER_ERROR_MSG',"Server Error 500");
 
 

@@ -1,6 +1,5 @@
 <?php
 
-define('TOKEN_FILE',APP_FOLDER.'key.json');
 
 require_once  'config.php';
 require_once  SHOP_LIB.'BX24class/bx24class.php';
@@ -128,8 +127,9 @@ class CRMconnector extends bx24class{
         if($id >0 ){            
             $articles = array();
             foreach ($this->products as $item){
+                $pr = $this->getProductToArticul($item['id']);
                 $articles[] = array(
-                    "PRODUCT_ID" => $this->getProductToArticul($item['id']),  ////
+                    "PRODUCT_ID" => $pr['ID'],
                     "PRICE"      => $item['price'],
                     "QUANTITY"   => $item['count']
                 );
@@ -149,6 +149,8 @@ class CRMconnector extends bx24class{
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, TASK_SCRIPT_URL);
         curl_setopt($ch, CURLOPT_FRESH_CONNECT, true);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);          
         curl_setopt($ch, CURLOPT_TIMEOUT_MS, 50); 
         curl_exec($ch);
         curl_close($ch);        
