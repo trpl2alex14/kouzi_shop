@@ -58,6 +58,7 @@ class bx24class {
             }
         }else {
             trigger_error('Ошибка:'.TOKEN_FILE. ' - отсутствует ключ CRM');
+            die();
         }
         return NULL;
     }

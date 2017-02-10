@@ -203,7 +203,8 @@ class ReqShop  extends actionBase{
         }else{
             $comment.= 'Оплата: только доставка<br>'; 
         }
-        $comment.= 'Доп. информация: '.$order['comment'].'<br>';          
+        $comment.= 'Доп. информация: '.$order['comment'].'<br>'; 
+        return $comment;
     }
 
     public function createDeal($orderid){             

@@ -759,6 +759,10 @@ KouziList = {
     },
     
     add:function(articul,count,comment){ 
+        if(KouziList.article.length>99){
+            alert('Невозможно добавить товар в корзину.(Максимум 100 позиций.)');
+            return;
+        }
         if(typeof comment === "undefined"){
             comment='';
         }        

@@ -25,10 +25,9 @@
                   
         <script src="js/shop.js" type="text/javascript"></script>
         <script type="text/javascript">
-            KouziShop.url="/";
+            KouziShop.url="/addon/shopdemo/";
+            KouziShop.successUrl="/addon/shopdemo/";
             KouziShop.init("#shop");            
-        </script>
-        
-                        
+        </script>                                
     </body>
 </html>

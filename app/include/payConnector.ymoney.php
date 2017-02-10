@@ -91,7 +91,7 @@ class payConnector extends YaMoneyCommonHttpProtocol{
                 $req['orderNumber']    = isset($request['orderNumber']) ? $request['orderNumber'] : '';
                 $req['md5']    = isset($request['md5']) ? $request['md5'] : '';
                 
-                parent::$this->processRequest($req);
+                $this->processRequest($req);
             }else{
                 trigger_error('Ошибка:'.$request['action']. ' неверен');
             }

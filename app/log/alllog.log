@@ -1,0 +1,168 @@
+[2017-02-10 12:07:59] 1 КОУЗИ М1 250Вт Белый  - 1 x 5200 <br>2 Доставка Челябинск - 1 x 0 <br>
+[2017-02-10 12:10:02] 1 КОУЗИ М1 250Вт Белый  - 1 x 5200 <br>2 Доставка Челябинск - 1 x 0 <br>
+[2017-02-10 12:24:00] 1 КОУЗИ М1 250Вт Белый  - 1 x 5200 <br>2 Терморегулятор  - 1 x 1500 <br>3 Доставка Челябинск - 1 x 0 <br>
+[2017-02-10 12:30:18] start task: addDeal
+[2017-02-10 12:30:37] 1 КОУЗИ М1 250Вт Белый  - 1 x 5200 <br>2 Доставка Челябинск - 1 x 0 <br>
+[2017-02-10 12:33:06] 1 КОУЗИ М1 250Вт Белый  - 1 x 5200 <br>2 Доставка Челябинск - 1 x 0 <br>
+[2017-02-10 12:33:06] Curl result: 1
+[2017-02-10 12:40:18] 1 КОУЗИ М1 250Вт Белый  - 1 x 5200 <br>2 Доставка Челябинск - 1 x 0 <br>
+[2017-02-10 12:40:18] Curl result: 1   
+[2017-02-10 12:45:35] 1 Терморегулятор  - 1 x 1500 <br>2 Доставка Челябинск - 1 x 0 <br>
+[2017-02-10 12:45:35] Curl result: 1
+[2017-02-10 12:46:24] 1 КОУЗИ М1 450Вт Белый  - 1 x 5200 <br>2 Доставка Челябинск - 1 x 0 <br>
+[2017-02-10 12:46:24] Curl result: 1
+[2017-02-10 12:50:22] 1 КОУЗИ М1 250Вт Белый  - 1 x 5200 <br>2 Доставка Челябинск - 1 x 0 <br>
+[2017-02-10 12:50:22] Start task: addDeal
+[2017-02-10 12:50:32] Curl result: 1
+[2017-02-10 12:52:35] 1 КОУЗИ Н2 750Вт Белый  - 1 x 6900 <br>2 Терморегулятор  - 1 x 1500 <br>3 Доставка Челябинск - 1 x 0 <br>
+[2017-02-10 12:52:36] Curl result: 1
+[2017-02-10 12:53:19] 1 Ножки М1-2 белые  - 1 x 400 <br>2 Доставка Челябинск - 1 x 0 <br>
+[2017-02-10 12:56:02] 1 КОУЗИ М1 250Вт Белый  - 1 x 5200 <br>2 Доставка Челябинск - 1 x 0 <br>
+[2017-02-10 12:56:02] Start task: addDeal
+[2017-02-10 12:57:43] 1 КОУЗИ М1 320Вт Белый  - 2 x 5200 <br>2 Доставка Москва - 1 x 1000 <br>
+[2017-02-10 12:57:43] Start task: addDeal
+[2017-02-10 12:57:44] Send form: <form action="https://demomoney.yandex.ru/eshop.xml" method="post">
+        <input name="shopId" value="120256" type="hidden"/>
+        <input name="scid" value="548743" type="hidden"/>
+        <input name="sum" value="11400" type="hidden">
+        <input name="customerNumber" value="Иванов Иван Иванович" type="hidden"/>
+        <input name="paymentType" value="" type="hidden"/>
+        <input name="orderNumber" value="60" type="hidden"/>
+        <input name="cps_phone" value="8333223322" type="hidden"/>
+        <input name="cps_email" value="" type="hidden"/>
+        <input type="submit" value="Pay"/>
+        </form>
+[2017-02-10 12:58:04] Start checkOrder
+[2017-02-10 12:58:04] Security type MD5
+[2017-02-10 12:58:04] Request: Array
+(
+    [action] => checkOrder
+    [orderSumAmount] => 11400.00
+    [orderSumCurrencyPaycash] => 10643
+    [orderSumBankPaycash] => 1003
+    [shopId] => 120256
+    [invoiceId] => 2000001035221
+    [customerNumber] => Иванов Иван Иванович
+    [orderNumber] => 60
+    [md5] => 0EE2F1B331A99CFE18EA448039C2BC39
+)
+
+[2017-02-10 12:58:04] String to md5: checkOrder;11400.00;10643;1003;120256;2000001035221;Иванов Иван Иванович;GGUx6Wyh4zLa
+[2017-02-10 12:58:04] Response: <?xml version="1.0" encoding="UTF-8"?><checkOrderResponse performedDatetime="2017-02-10T12:58:04.000+03:00" code="0"  invoiceId="2000001035221" shopId="120256"/>
+[2017-02-10 12:58:04] Start paymentAviso
+[2017-02-10 12:58:04] Security type MD5
+[2017-02-10 12:58:04] Request: Array
+(
+    [action] => paymentAviso
+    [orderSumAmount] => 11400.00
+    [orderSumCurrencyPaycash] => 10643
+    [orderSumBankPaycash] => 1003
+    [shopId] => 120256
+    [invoiceId] => 2000001035221
+    [customerNumber] => Иванов Иван Иванович
+    [orderNumber] => 60
+    [md5] => ACD698D374FB6B229EB1337889C4491D
+)
+
+[2017-02-10 12:58:04] String to md5: paymentAviso;11400.00;10643;1003;120256;2000001035221;Иванов Иван Иванович;GGUx6Wyh4zLa
+[2017-02-10 12:58:04] Пришла оплата: сделка ID60
+[2017-02-10 12:58:04] Response: <?xml version="1.0" encoding="UTF-8"?><paymentAvisoResponse performedDatetime="2017-02-10T12:58:04.000+03:00" code="0"  invoiceId="2000001035221" shopId="120256"/>
+[2017-02-10 13:44:25] 1 Ножки Н2-3 белые  - 1 x 400 <br>2 Доставка Челябинск - 1 x 0 <br>
+[2017-02-10 13:44:25] Start task: addDeal
+[2017-02-10 13:44:26] Send form: <form action="https://demomoney.yandex.ru/eshop.xml" method="post">
+        <input name="shopId" value="120256" type="hidden"/>
+        <input name="scid" value="548743" type="hidden"/>
+        <input name="sum" value="400" type="hidden">
+        <input name="customerNumber" value="Иванов Петр Иванович" type="hidden"/>
+        <input name="paymentType" value="" type="hidden"/>
+        <input name="orderNumber" value="61" type="hidden"/>
+        <input name="cps_phone" value="72009050" type="hidden"/>
+        <input name="cps_email" value="" type="hidden"/>
+        <input type="submit" value="Pay"/>
+        </form>
+[2017-02-10 13:44:44] Start checkOrder
+[2017-02-10 13:44:44] Security type MD5
+[2017-02-10 13:44:44] Request: Array
+(
+    [action] => checkOrder
+    [orderSumAmount] => 400.00
+    [orderSumCurrencyPaycash] => 10643
+    [orderSumBankPaycash] => 1003
+    [shopId] => 120256
+    [invoiceId] => 2000001035274
+    [customerNumber] => Иванов Петр Иванович
+    [orderNumber] => 61
+    [md5] => B12C5D653F3ED9E45204C2E6576C8EA6
+)
+
+[2017-02-10 13:44:44] String to md5: checkOrder;400.00;10643;1003;120256;2000001035274;Иванов Петр Иванович;GGUx6Wyh4zLa
+[2017-02-10 13:44:44] Response: <?xml version="1.0" encoding="UTF-8"?><checkOrderResponse performedDatetime="2017-02-10T13:44:44.000+03:00" code="0"  invoiceId="2000001035274" shopId="120256"/>
+[2017-02-10 13:44:44] Start paymentAviso
+[2017-02-10 13:44:44] Security type MD5
+[2017-02-10 13:44:44] Request: Array
+(
+    [action] => paymentAviso
+    [orderSumAmount] => 400.00
+    [orderSumCurrencyPaycash] => 10643
+    [orderSumBankPaycash] => 1003
+    [shopId] => 120256
+    [invoiceId] => 2000001035274
+    [customerNumber] => Иванов Петр Иванович
+    [orderNumber] => 61
+    [md5] => D58269EC6EEDC693B60BDD174C395164
+)
+
+[2017-02-10 13:44:44] String to md5: paymentAviso;400.00;10643;1003;120256;2000001035274;Иванов Петр Иванович;GGUx6Wyh4zLa
+[2017-02-10 13:44:44] Пришла оплата: сделка ID61
+[2017-02-10 13:44:44] Response: <?xml version="1.0" encoding="UTF-8"?><paymentAvisoResponse performedDatetime="2017-02-10T13:44:44.000+03:00" code="0"  invoiceId="2000001035274" shopId="120256"/>
+[2017-02-10 13:53:26] 1 КОУЗИ М1 250Вт Белый  - 1 x 5200 <br>2 КОУЗИ М1 320Вт Белый  - 1 x 5200 <br>3 КОУЗИ М1 450Вт Белый  - 1 x 5200 <br>4 КОУЗИ Н2 750Вт Белый  - 1 x 6900 <br>5 Терморегулятор  - 1 x 1500 <br>6 Ножки М1-2 белые  - 1 x 400 <br>7 Ножки М3 белые  - 1 x 400 <br>8 Ножки Н2-3 белые  - 1 x 400 <br>9 Доставка Екатеринбург - 1 x 1100 <br>
+[2017-02-10 13:53:26] Start task: addDeal
+[2017-02-10 13:53:27] Send form: <form action="https://demomoney.yandex.ru/eshop.xml" method="post">
+        <input name="shopId" value="120256" type="hidden"/>
+        <input name="scid" value="548743" type="hidden"/>
+        <input name="sum" value="1100" type="hidden">
+        <input name="customerNumber" value="Иванов Петр Иванович" type="hidden"/>
+        <input name="paymentType" value="" type="hidden"/>
+        <input name="orderNumber" value="62" type="hidden"/>
+        <input name="shopDefaultUrl" value="https://kouzi.ru/addon/shopdemo/" type="hidden"/>        
+        <input name="cps_phone" value="72009050" type="hidden"/>
+        <input name="cps_email" value="" type="hidden"/>
+        <input type="submit" value="Pay"/>
+        </form>
+[2017-02-10 13:55:18] Start checkOrder
+[2017-02-10 13:55:18] Security type MD5
+[2017-02-10 13:55:18] Request: Array
+(
+    [action] => checkOrder
+    [orderSumAmount] => 1100.00
+    [orderSumCurrencyPaycash] => 10643
+    [orderSumBankPaycash] => 1003
+    [shopId] => 120256
+    [invoiceId] => 2000001035288
+    [customerNumber] => Иванов Петр Иванович
+    [orderNumber] => 62
+    [md5] => 0B1A10C81C6C5070EBF35E87AC93BBB2
+)
+
+[2017-02-10 13:55:18] String to md5: checkOrder;1100.00;10643;1003;120256;2000001035288;Иванов Петр Иванович;GGUx6Wyh4zLa
+[2017-02-10 13:55:18] Response: <?xml version="1.0" encoding="UTF-8"?><checkOrderResponse performedDatetime="2017-02-10T13:55:18.000+03:00" code="0"  invoiceId="2000001035288" shopId="120256"/>
+[2017-02-10 13:55:19] Start paymentAviso
+[2017-02-10 13:55:19] Security type MD5
+[2017-02-10 13:55:19] Request: Array
+(
+    [action] => paymentAviso
+    [orderSumAmount] => 1100.00
+    [orderSumCurrencyPaycash] => 10643
+    [orderSumBankPaycash] => 1003
+    [shopId] => 120256
+    [invoiceId] => 2000001035288
+    [customerNumber] => Иванов Петр Иванович
+    [orderNumber] => 62
+    [md5] => A0310A0443EFA20569423919EDC5AB34
+)
+
+[2017-02-10 13:55:19] String to md5: paymentAviso;1100.00;10643;1003;120256;2000001035288;Иванов Петр Иванович;GGUx6Wyh4zLa
+[2017-02-10 13:55:19] Пришла оплата: сделка ID62
+[2017-02-10 13:55:19] Response: <?xml version="1.0" encoding="UTF-8"?><paymentAvisoResponse performedDatetime="2017-02-10T13:55:19.000+03:00" code="0"  invoiceId="2000001035288" shopId="120256"/>
+[2017-02-10 14:10:33] 1 КОУЗИ М1 250Вт Белый  - 2 x 5200 <br>2 Терморегулятор  - 1 x 1500 <br>3 Ножки Н2-3 белые  - 1 x 400 <br>4 Доставка Москва - 1 x 1000 <br><hr>Получатель: ООО "КиР" ИНН:123555000999 Василий<br>Контакты: 81232221122 test@test.com<br>Доставка до склада: Москва<br>Оплата: полная<br>Доп. информация: <br>
+[2017-02-10 14:10:33] Start task: addDeal

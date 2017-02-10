@@ -165,7 +165,6 @@ class InitShop {
         return $data;
     }
 
-    
     public function getProducts(){
         $data = array();
         $db = ShopDB::getInstance();

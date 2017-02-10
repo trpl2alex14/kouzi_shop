@@ -16,6 +16,8 @@ $errorClass   = new ErrorLog(ERROR_LOG, 1, (HOST_DEV?1:0), (HOST_DEV?0:1), ERROR
 $errorMethod  = 'handler';
 set_error_handler(array($errorClass, $errorMethod));
 
+$log = new shopLog();
+$log->info('Start task: '.get_reqest('sendreq'));
 
 if(get_reqest('sendreq')=='addDeal'){
     $orderid=0;

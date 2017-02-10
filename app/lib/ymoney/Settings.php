@@ -7,6 +7,7 @@ class paySettings {
     public $SHOP_PASSWORD = SHOP_KEY_WORD;
     public $SHOP_ID = SHOP_ID; 
     public $SHOP_SCID = SHOP_SCID;
+    public $SHOP_URL = SHOP_URL;
     public $SHOP_PTYPE = "";
     public $YMONEY_URL = SHOP_YDURL; 
     public $SECURITY_TYPE;

@@ -1,8 +1,8 @@
 <?php
 
-
 require_once  'config.php';
 require_once  SHOP_LIB.'BX24class/bx24class.php';
+require_once  SHOP_LIB.'Log.php';
 
 class CRMconnector extends bx24class{
     protected static $_instance;
@@ -151,7 +151,7 @@ class CRMconnector extends bx24class{
         curl_setopt($ch, CURLOPT_FRESH_CONNECT, true);
         curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
         curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);          
-        curl_setopt($ch, CURLOPT_TIMEOUT_MS, 50); 
+        curl_setopt($ch, CURLOPT_TIMEOUT_MS, 500);
         curl_exec($ch);
         curl_close($ch);        
     }

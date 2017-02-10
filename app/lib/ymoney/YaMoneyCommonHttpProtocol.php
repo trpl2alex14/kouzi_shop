@@ -18,6 +18,8 @@ abstract class YaMoneyCommonHttpProtocol {
         <input name="customerNumber" value="{customerNumber}" type="hidden"/>
         <input name="paymentType" value="{paymentType}" type="hidden"/>
         <input name="orderNumber" value="{orderNumber}" type="hidden"/>
+        <input name="shopDefaultUrl" value="{shopDefaultUrl}" type="hidden"/>        
+        <input name="shopSuccessURL" value="{shopSuccessURL}" type="hidden"/>        
         <input name="cps_phone" value="{cps_phone}" type="hidden"/>
         <input name="cps_email" value="{cps_email}" type="hidden"/>
         <input type="submit" value="Pay"/>
@@ -36,7 +38,9 @@ abstract class YaMoneyCommonHttpProtocol {
             'url'         => $this->getUrlYM(),
             'shopId'      => $this->settings->SHOP_ID,
             'scid'        => $this->settings->SHOP_SCID,
-            'paymentType' => $this->settings->SHOP_PTYPE
+            'paymentType' => $this->settings->SHOP_PTYPE,
+            'shopDefaultUrl' => $this->settings->SHOP_URL,
+            'shopSuccessURL' => $this->settings->SHOP_URL
         );        
         $search = array();
         $replace = array();
