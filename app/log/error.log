@@ -1,1 +1,2 @@
 [10.02.2017 12:52:35][Предупреждение] Undefined variable: result in file /var/www/kouzi/data/www/kouzi.ru/addon/shopdemo/include/CRMconnector.bx24.php on in line 159 
+[10.02.2017 15:32:42][Предупреждение пользователя] Заказ ID:69 - 0 стоимость заказа in file /var/www/kouzi/data/www/kouzi.ru/addon/shopdemo/include/reqshop.php on in line 271 

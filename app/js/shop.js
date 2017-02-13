@@ -570,7 +570,7 @@ KouziCatalog = {
                 
                 components['count'] = {
                                         type:'count',
-                                        data:'Укажите колличество',
+                                        data:'Укажите количество',
                                         value:1
                 }; 
                 components['footer'] = {

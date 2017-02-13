@@ -35,6 +35,10 @@ class ReqShop  extends actionBase{
     private function log($str) {
         $this->log->info($str);
     }    
+
+    private function mail($title,$str) {
+        $this->log->mail($title,$str);
+    }    
     
     public function setStatus($type){
         if($type){
@@ -154,7 +158,7 @@ class ReqShop  extends actionBase{
     
     
     public function sendArticle($article,$order = NULL){
-        $db = ShopDB::getInstance();                        
+        $db = ShopDB::getInstance();       
         $id_order = $this->getLastOrder();
         if($id_order > 0 && $order){
             $this->updateOrder($id_order,$order);
@@ -179,6 +183,8 @@ class ReqShop  extends actionBase{
     }
 
     public function sendOrder($article,$order){  
+        $this->log("sendArticle: CID-".$this->cid." Article: ".print_r($article,true));        
+        $this->log("sendOrder: CID-".$this->cid." Order: ".print_r($order,true));
         $id = $this->sendArticle($article,$order);
         if($id>0){
             $this->setOrderStatus($id,1);
@@ -221,7 +227,7 @@ class ReqShop  extends actionBase{
         );        
         
         $i=1;
-        $comment = '';           
+        $comment = 'Заказ №'.$orderid.' <br>';           
         $article_crm = array();                
         foreach($article as $item){            
             $article_crm[] = array(
@@ -233,7 +239,8 @@ class ReqShop  extends actionBase{
         } 
 
         $comment .= $this->getCommentInfoOrder($order);
-        $this->log($comment);
+        $this->log("createDeal: OID-".$orderid." Info:".$comment);
+        $this->mail("Интернет магазин. Новая сделка №: ".$orderid,$comment);
         
         if($order && $order['status']<STATUS_ORDER_SEND){
             $crm = CRMconnector::getInstance();        

@@ -19,6 +19,7 @@ define('TASK_SCRIPT_URL',APP_SERVER.APP_URL_FOLDER.'task.php?sendreq=addDeal');
 /// log files
 define('ERROR_LOG','log/error.log');
 define('ERROR_MAIL','av@itentaro.ru');
+define('INFO_MAIL','av@itentaro.ru');
 define('ALL_LOG','log/alllog.log');
 
 //user cookies id

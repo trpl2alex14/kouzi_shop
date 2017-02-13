@@ -61,10 +61,8 @@ if(get_reqest('form')){
             case 'createdeal':
                 $shop->createDeal($json['orderid']);
             break;  
-            case 'pay':
-                if(get_reqest('orderid')){
-                    $data['payform'] = $shop->payOrder(get_reqest('orderid'));
-                }
+            case 'pay':                
+                $data['payform'] = $shop->payOrder($json['orderid']);                
             break;        
         }    
         $data['status'] = $shop->getStatus();    

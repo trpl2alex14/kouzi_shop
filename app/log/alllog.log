@@ -166,3 +166,41 @@
 [2017-02-10 13:55:19] Response: <?xml version="1.0" encoding="UTF-8"?><paymentAvisoResponse performedDatetime="2017-02-10T13:55:19.000+03:00" code="0"  invoiceId="2000001035288" shopId="120256"/>
 [2017-02-10 14:10:33] 1 КОУЗИ М1 250Вт Белый  - 2 x 5200 <br>2 Терморегулятор  - 1 x 1500 <br>3 Ножки Н2-3 белые  - 1 x 400 <br>4 Доставка Москва - 1 x 1000 <br><hr>Получатель: ООО "КиР" ИНН:123555000999 Василий<br>Контакты: 81232221122 test@test.com<br>Доставка до склада: Москва<br>Оплата: полная<br>Доп. информация: <br>
 [2017-02-10 14:10:33] Start task: addDeal
+[2017-02-10 15:22:35] 1 КОУЗИ М1 320Вт Белый  - 1 x 5200 <br>2 КОУЗИ Н2 750Вт Белый  - 1 x 6900 <br>3 Ножки М3 белые  - 1 x 400 <br>4 Ножки М1-2  RAL 7008 - 1 x 400 <br>5 КОУЗИ М1 250Вт  RAL 1004 - 1 x 5500 <br>6 КОУЗИ М1 450Вт Белый  - 2147483647 x 5200 <br>7 Ножки М1-2 белые  - 2 x 400 <br>8 КОУЗИ М1 450Вт  RAL 6037 - 1 x 5500 <br>9 Доставка Москва - 1 x 1000 <br><hr>Получатель: 123 123 123<br>Контакты: 22222222 <br>Доставка до склада: Москва<br>Оплата: полная<br>Доп. информация: <br>
+[2017-02-10 15:22:35] Start task: addDeal
+[2017-02-10 15:22:36] Send form: <form action="https://demomoney.yandex.ru/eshop.xml" method="post">
+        <input name="shopId" value="120256" type="hidden"/>
+        <input name="scid" value="548743" type="hidden"/>
+        <input name="sum" value="11166914990100" type="hidden">
+        <input name="customerNumber" value="123 123 123" type="hidden"/>
+        <input name="paymentType" value="" type="hidden"/>
+        <input name="orderNumber" value="65" type="hidden"/>
+        <input name="shopDefaultUrl" value="https://kouzi.ru/addon/shopdemo/" type="hidden"/>        
+        <input name="shopSuccessURL" value="https://kouzi.ru/addon/shopdemo/" type="hidden"/>        
+        <input name="cps_phone" value="22222222" type="hidden"/>
+        <input name="cps_email" value="" type="hidden"/>
+        <input type="submit" value="Pay"/>
+        </form>
+[2017-02-10 15:25:43] 1 КОУЗИ М3 450Вт  RAL 5023 - 6 x 5500 <br>2 КОУЗИ М3 320Вт  RAL 6024 - 5 x 5500 <br>3 Терморегулятор  - 4 x 1500 <br>4 КОУЗИ М1 320Вт Белый  - 1 x 5200 <br>5 КОУЗИ М2 320Вт Белый  - 1 x 5200 <br>6 КОУЗИ М3 320Вт Белый  - 1 x 5200 <br>7 КОУЗИ М1 450Вт Белый  - 1 x 5200 <br>8 КОУЗИ Н2 750Вт Белый  - 1 x 6900 <br>9 КОУЗИ М2 250Вт Белый  - 1 x 5200 <br>10 Ножки М1-2 белые  - 1 x 400 <br>11 Ножки М3 белые  - 1 x 400 <br>12 Ножки Н2-3 белые  - 1 x 400 <br>13 Доставка Челябинск - 1 x 0 <br><hr>Получатель: Иван Иваныч Иваныч<br>Контакты: 1121212121212 12344@mali.ruf<br>Доставка до склада: Челябинск<br>Оплата: только доставка<br>Доп. информация: <br>
+[2017-02-10 15:25:43] Start task: addDeal
+[2017-02-10 15:26:21] 1 Ножки М3 белые  - 1 x 400 <br>2 Доставка Челябинск - 1 x 0 <br><hr>Получатель: Иван Иваныч Иваныч<br>Контакты: 1121212121212 12344@mali.ruf<br>Доставка до склада: Челябинск<br>Оплата: полная<br>Доп. информация: <br>
+[2017-02-10 15:26:21] Start task: addDeal
+[2017-02-10 15:26:21] Send form: <form action="https://demomoney.yandex.ru/eshop.xml" method="post">
+        <input name="shopId" value="120256" type="hidden"/>
+        <input name="scid" value="548743" type="hidden"/>
+        <input name="sum" value="400" type="hidden">
+        <input name="customerNumber" value="Иван Иваныч Иваныч" type="hidden"/>
+        <input name="paymentType" value="" type="hidden"/>
+        <input name="orderNumber" value="67" type="hidden"/>
+        <input name="shopDefaultUrl" value="https://kouzi.ru/addon/shopdemo/" type="hidden"/>        
+        <input name="shopSuccessURL" value="https://kouzi.ru/addon/shopdemo/" type="hidden"/>        
+        <input name="cps_phone" value="1121212121212" type="hidden"/>
+        <input name="cps_email" value="12344@mali.ruf" type="hidden"/>
+        <input type="submit" value="Pay"/>
+        </form>
+[2017-02-10 15:30:42] 1 КОУЗИ М2 320ВтK Белый  - 1 x 5400 <br>2 КОУЗИ М1 320Вт Белый  - 199999999 x 5200 <br>3 КОУЗИ М1 450Вт Белый  - 0 x 5200 <br>4 Доставка Челябинск - 1 x 0 <br><hr>Получатель: https://kouzi.ru/addon/shopdemo/ ИНН:https://kouzi.ru/addon/shopdemo/ https://kouzi.ru/addon/shopdemo/<br>Контакты: 567567567567576 1@2.ru<br>Доставка до адреса: Челябинск https://kouzi.ru/addon/shopdemo/<br>Оплата: полная<br>Доп. информация: https://kouzi.ru/addon/shopdemo/<br>
+[2017-02-10 15:30:42] Start task: addDeal
+[2017-02-10 15:32:42] 1 Терморегулятор  - -2000 x 1500 <br>2 Доставка Челябинск - 1 x 0 <br><hr>Получатель: Иван Иваныч Иваныч<br>Контакты: 1121212121212 12344@mali.ruf<br>Доставка до адреса: Челябинск https://kouzi.ru/addon/shopdemo/<br>Оплата: полная<br>Доп. информация: https://kouzi.ru/addon/shopdemo/<br>
+[2017-02-10 15:32:42] Start task: addDeal
+[2017-02-10 15:37:31] 1 Ножки М3 белые  - 0 x 400 <br>2 Доставка Челябинск - 1 x 0 <br><hr>Получатель: Иван Иваныч Иваныч<br>Контакты: 1121212121212 12344@mali.ruf<br>Доставка до адреса: Челябинск https://kouzi.ru/addon/shopdemo/<br>Оплата: только доставка<br>Доп. информация: https://kouzi.ru/addon/shopdemo/<br>
+[2017-02-10 15:37:31] Start task: addDeal

@@ -105,7 +105,3 @@ class ErrorLog {
         return "<table><tr><td class=\"num\">\n$lines\n</td><td>\n$content\n</td></tr></table>";
     }  
 }
-
-        //$errorClass   = new Error('error.log', 1, 1);
-        //$errorMethod  = 'handler';
-        //set_error_handler(array($errorClass, $errorMethod));

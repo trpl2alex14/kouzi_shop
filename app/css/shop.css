@@ -429,8 +429,13 @@ header, nav, section, article, aside, footer {
             color: #222; }
           #shop .fixed-overlay__modal .win_modal .modal_container .action-block .cancel {
             float: left; }
+  #shop #action-1 {
+    position: fixed;
+    bottom: 0;
+    width: 960px;
+    background: #fff; }
   #shop .lists {
-    padding: 10px 0;
+    padding: 10px 0 50px;
     border-top: 1px solid #ccc; }
     #shop .lists .title {
       text-align: center;

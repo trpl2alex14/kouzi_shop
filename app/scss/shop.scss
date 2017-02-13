@@ -416,11 +416,16 @@
 }
 
  
-
+    #action-1 {
+        position: fixed;
+        bottom: 0;
+        width: 960px;
+        background: #fff;    
+    }
 
 
     .lists {
-        padding: 10px 0;
+        padding: 10px 0 50px;
         border-top:1px solid $color-grey;
         
         .title{
