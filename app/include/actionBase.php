@@ -4,6 +4,124 @@ require_once  SHOP_LIB.'mysql.php';
 
 class actionBase {
     
+    public function createOrder($cid,$order){
+        $db = ShopDB::getInstance();
+        $id_ordersinfo = $this->createOrderInfo($order);
+        $db->run("INSERT INTO `orders`(`id_client`, `id_info`, `status`, `date`) VALUES (".$cid.", ".$id_ordersinfo.", ".STATUS_ORDER_INIT.", NOW())");
+        return $db->getDB()->insert_id;                    
+    }    
+    
+    public function getLastOrder($cid){
+        $db = ShopDB::getInstance();
+        $res = $db->run("SELECT id FROM orders WHERE orders.status IN (".STATUS_ORDER_INIT.",".STATUS_ORDER_PROCESS.",".STATUS_ORDER_ERROR.") AND id_client=".$cid." order by orders.date DESC LIMIT 1");            
+        if(!$db->isError() && $row = $res->fetch_assoc()){
+            return $row['id'];
+        }else{
+            return 0;
+        }
+    }    
+    
+    public function updateOrder($id,$order){
+        $db = ShopDB::getInstance();
+        $res = $db->run("SELECT id_info FROM orders WHERE id=".$id);            
+        if(!$db->isError() && $row = $res->fetch_assoc()){
+            if($row['id_info']==0){
+                $id_info = $this->createOrderInfo($order);
+                $db->run("UPDATE `orders` SET `id_info`=".$id_info." WHERE id=".$id);            
+            }else{
+                $this->updateOrderInfo($row['id_info'],$order);
+            }
+        }                
+    } 
+
+    public function insertArticle($id_order,$article){
+        $db = ShopDB::getInstance();                
+        $db->run("DELETE FROM articles WHERE articles.id_order = ".$id_order);            
+        foreach($article as $item){
+            if($item['count']>0){
+                $db->run("INSERT INTO `articles`(`articul`, `count`, `comment`, `id_order`, `status`) VALUES (".$item['id'].", ".$item['count'].",\"".$item['comment']."\", ".$id_order.", 0)");
+            }
+        }                                
+    }    
+    
+    public function updateOrderInfo($id,$order){
+        $db = ShopDB::getInstance();
+        $sqlr =  "UPDATE `ordersinfo` SET `type`=?, `fname`=?, `lname`=?, `pname`=?, `phone`=?, `email`=?, `cname`=?, `inn`=?, `companyname`=?, `cphone`=?, `cemail`=?,"
+                ." `city`=?, `address`=?, `comment`=?, `logistic`=?, `payment`=?, `date`=NOW() WHERE id=?";                
+                
+        if($stmt = $db->getDB()->prepare($sqlr)){
+            $stmt->bind_param("isssssssssssssiii",
+                    $order['type'],
+                    $order['fname'],
+                    $order['lname'],
+                    $order['pname'],
+                    $order['phone'],
+                    $order['email'],
+                    $order['cname'],
+                    $order['inn'],
+                    $order['companyname'],
+                    $order['cphone'],
+                    $order['cemail'],
+                    $order['city'],
+                    $order['address'],
+                    $order['comment'],
+                    $order['logistic'],
+                    $order['payment'],
+                    $id);
+            $stmt->execute();            
+            $stmt->close();
+        }else{
+            trigger_error('Order ID:'.$id. ' не обнавлен');
+        }                                           
+    }    
+    
+    public function insertOrderInfo($order){
+        $db = ShopDB::getInstance();
+        $sqlr =  "INSERT INTO `ordersinfo`(`type`, `fname`, `lname`, `pname`, `phone`, `email`, `cname`, `inn`, `companyname`, `cphone`, `cemail`,"
+                ." `city`, `address`, `comment`, `logistic`, `payment`, `date`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, NOW())";        
+        $id_ordersinfo = 0;
+                
+        if( $order && $stmt = $db->getDB()->prepare($sqlr)){
+                $stmt->bind_param("isssssssssssssii",
+                        $order['type'],
+                        $order['fname'],
+                        $order['lname'],
+                        $order['pname'],
+                        $order['phone'],
+                        $order['email'],
+                        $order['cname'],
+                        $order['inn'],
+                        $order['companyname'],
+                        $order['cphone'],
+                        $order['cemail'],
+                        $order['city'],
+                        $order['address'],
+                        $order['comment'],
+                        $order['logistic'],
+                        $order['payment']);
+                $stmt->execute();
+                $id_ordersinfo =  $stmt->insert_id;
+                $stmt->close();
+            }else{
+                trigger_error('Клиент ID:'.$this->cid. ' Order info не добавленно');
+            }                                   
+        return $id_ordersinfo;
+    }
+
+    public function copyOrderInfo($cid){                  
+        $id_ordersinfo = 0;        
+        $db = ShopDB::getInstance();
+        $res = $db->run("SELECT orders.id_info FROM orders,ordersinfo WHERE ordersinfo.id=orders.id_info  AND id_client=".$cid." order by orders.date DESC LIMIT 1"); 
+        if(!$db->isError() && $row = $res->fetch_assoc()){
+            $db->run("INSERT INTO `ordersinfo`(`type`, `fname`, `lname`, `pname`, `phone`, `email`, `cname`, `inn`, `companyname`, `cphone`, `cemail`, `city`, `address`, `comment`, `logistic`, `payment`, `date`)"
+                   . " SELECT `type`, `fname`, `lname`, `pname`, `phone`, `email`, `cname`, `inn`, `companyname`, `cphone`, `cemail`, `city`, `address`, `comment`, `logistic`, `payment`, NOW() FROM ordersinfo WHERE ordersinfo.id=".$row['id_info']); 
+            $id_ordersinfo = $db->getDB()->insert_id;       
+        }                        
+        return $id_ordersinfo;
+    }
+
+    
+    
     public function setOrderStatus($id,$status){
         $db = ShopDB::getInstance();
         $db->run("UPDATE `orders` SET `status`=".$status." WHERE (status != 3 OR status<".$status.") AND id=".$id);            

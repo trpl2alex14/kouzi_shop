@@ -89,6 +89,7 @@ KouziShop = {
         };
         this.ajaxReq('order',data,function(responseData){
             KouziShop.orderid = responseData.orderid;
+            jQuery("#article-list .title h3 span").html('№ '+responseData.orderid);
         });        
         return true;
     },
@@ -134,6 +135,7 @@ KouziShop = {
             jQuery(this.shopWrapper.idblock+" .catalog").show();
             jQuery("#action-1").show();            
             jQuery("#article-list .item-block .del").show();
+            jQuery("#article-list .title h3 span").html('');
 
             jQuery('html, body').animate({ scrollTop: jQuery(this.shopWrapper.idblock+" .catalog").offset().top }, 500);
         }else

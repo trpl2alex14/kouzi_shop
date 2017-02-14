@@ -94,7 +94,7 @@
     
     <div id="article-list" class="lists">
         <div class="title">
-            <h3>Ваш заказ</h3>
+            <h3>Ваш заказ <span></span></h3>
             <p>Список товаров в заказе</p>
         </div>        
         <div class="table">

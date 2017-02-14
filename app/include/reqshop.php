@@ -2,7 +2,6 @@
 require_once  'config.php';
 require_once  SHOP_LIB.'mysql.php';
 require_once  SHOP_LIB.'Log.php';
-require_once  SHOP_INC.'CRMconnector.bx24.php';
 require_once  SHOP_INC.'payConnector.ymoney.php';
 require_once  SHOP_INC.'actionBase.php';
 
@@ -22,13 +21,7 @@ class ReqShop  extends actionBase{
     
     protected function __construct($cid){ 
         $this->cid = $cid;
-        $this->setStatus(false);
-        $db = ShopDB::getInstance();                
-        $db->run("SELECT * FROM clients WHERE id=".$cid);            
-        if($db->isError()){
-            trigger_error('Клиент ID:'.$cid. ' не найден в Базе');
-            return;
-        }
+        $this->setStatus(false);                        
         $this->log = new shopLog();
     }
     
@@ -53,126 +46,25 @@ class ReqShop  extends actionBase{
     }   
     
     
-    public function createOrderInfo($order){
-        $db = ShopDB::getInstance();
-        $sqlr =  "INSERT INTO `ordersinfo`(`type`, `fname`, `lname`, `pname`, `phone`, `email`, `cname`, `inn`, `companyname`, `cphone`, `cemail`,"
-                ." `city`, `address`, `comment`, `logistic`, `payment`, `date`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, NOW())";        
-        $id_ordersinfo = 0;
-        
+    public function createOrderInfo($order){        
         if($order){
-            if($stmt = $db->getDB()->prepare($sqlr)){
-                $stmt->bind_param("isssssssssssssii",
-                        $order['type'],
-                        $order['fname'],
-                        $order['lname'],
-                        $order['pname'],
-                        $order['phone'],
-                        $order['email'],
-                        $order['cname'],
-                        $order['inn'],
-                        $order['companyname'],
-                        $order['cphone'],
-                        $order['cemail'],
-                        $order['city'],
-                        $order['address'],
-                        $order['comment'],
-                        $order['logistic'],
-                        $order['payment']);
-                $stmt->execute();
-                $id_ordersinfo =  $stmt->insert_id;
-                $stmt->close();
-            }else{
-                trigger_error('Клиент ID:'.$this->cid. ' Order info не добавленно');
-            }                                   
+            return $this->insertOrderInfo($order);                               
         }else{                    
-            $res = $db->run("SELECT orders.id_info FROM orders,ordersinfo WHERE ordersinfo.id=orders.id_info  AND id_client=".$this->cid." order by orders.date DESC LIMIT 1"); 
-            if(!$db->isError() && $row = $res->fetch_assoc()){
-                $db->run("INSERT INTO `ordersinfo`(`type`, `fname`, `lname`, `pname`, `phone`, `email`, `cname`, `inn`, `companyname`, `cphone`, `cemail`, `city`, `address`, `comment`, `logistic`, `payment`, `date`)"
-                       . " SELECT `type`, `fname`, `lname`, `pname`, `phone`, `email`, `cname`, `inn`, `companyname`, `cphone`, `cemail`, `city`, `address`, `comment`, `logistic`, `payment`, NOW() FROM ordersinfo WHERE ordersinfo.id=".$row['id_info']); 
-                $id_ordersinfo = $db->getDB()->insert_id;       
-            }                
-        }
-        return $id_ordersinfo;
-    }
-    
-    public function updateOrderInfo($id,$order){
-        $db = ShopDB::getInstance();
-        $sqlr =  "UPDATE `ordersinfo` SET `type`=?, `fname`=?, `lname`=?, `pname`=?, `phone`=?, `email`=?, `cname`=?, `inn`=?, `companyname`=?, `cphone`=?, `cemail`=?,"
-                ." `city`=?, `address`=?, `comment`=?, `logistic`=?, `payment`=?, `date`=NOW() WHERE id=?";                
-                
-        if($stmt = $db->getDB()->prepare($sqlr)){
-            $stmt->bind_param("isssssssssssssiii",
-                    $order['type'],
-                    $order['fname'],
-                    $order['lname'],
-                    $order['pname'],
-                    $order['phone'],
-                    $order['email'],
-                    $order['cname'],
-                    $order['inn'],
-                    $order['companyname'],
-                    $order['cphone'],
-                    $order['cemail'],
-                    $order['city'],
-                    $order['address'],
-                    $order['comment'],
-                    $order['logistic'],
-                    $order['payment'],
-                    $id);
-            $stmt->execute();            
-            $stmt->close();
-        }else{
-            trigger_error('Order ID:'.$id. ' не обнавлен');
-        }                                           
-    }
-    
-    public function getLastOrder(){
-        $db = ShopDB::getInstance();
-        $res = $db->run("SELECT id FROM orders WHERE orders.status IN (".STATUS_ORDER_INIT.",".STATUS_ORDER_PROCESS.",".STATUS_ORDER_ERROR.") AND id_client=".$this->cid." order by orders.date DESC LIMIT 1");            
-        if(!$db->isError() && $row = $res->fetch_assoc()){
-            return $row['id'];
-        }else{
-            return 0;
-        }
-    }
-    
-    public function createOrder($order){
-        $db = ShopDB::getInstance();
-        $id_ordersinfo = $this->createOrderInfo($order);
-        $db->run("INSERT INTO `orders`(`id_client`, `id_info`, `status`, `date`) VALUES (".$this->cid.", ".$id_ordersinfo.", ".STATUS_ORDER_INIT.", NOW())");
-        return $db->getDB()->insert_id;                    
-    }
-           
-    public function updateOrder($id,$order){
-        $db = ShopDB::getInstance();
-        $res = $db->run("SELECT id_info FROM orders WHERE id=".$id);            
-        if(!$db->isError() && $row = $res->fetch_assoc()){
-            if($row['id_info']==0){
-                $id_info = $this->createOrderInfo($order);
-                $db->run("UPDATE `orders` SET `id_info`=".$id_info." WHERE id=".$id);            
-            }else{
-                $this->updateOrderInfo($row['id_info'],$order);
-            }
-        }                
-    }    
-    
-    
+            return $this->copyOrderInfo($this->cid);
+        }        
+    }        
+               
     public function sendArticle($article,$order = NULL){
         $db = ShopDB::getInstance();       
-        $id_order = $this->getLastOrder();
+        $id_order = $this->getLastOrder($this->cid);
         if($id_order > 0 && $order){
             $this->updateOrder($id_order,$order);
         }else if($id_order == 0){
-             $id_order = $this->createOrder($order);            
+             $id_order = $this->createOrder($this->cid,$order);            
         }
         
         if($id_order > 0){            
-            $db->run("DELETE FROM articles WHERE articles.id_order = ".$id_order);            
-            foreach($article as $item){
-                if($item['count']>0){
-                    $db->run("INSERT INTO `articles`(`articul`, `count`, `comment`, `id_order`, `status`) VALUES (".$item['id'].", ".$item['count'].",\"".$item['comment']."\", ".$id_order.", 0)");
-                }
-            }
+            $this->insertArticle($id_order, $article);
             $this->setStatus(true);
             return $id_order;
         }else{
@@ -189,6 +81,7 @@ class ReqShop  extends actionBase{
         if($id>0){
             $this->setOrderStatus($id,1);
         }
+        $this->log("resultOrder: OID-".$id);
         return $id;
     }
          
@@ -243,12 +136,10 @@ class ReqShop  extends actionBase{
         $this->mail("Интернет магазин. Новая сделка №: ".$orderid,$comment);
         
         if($order && $order['status']<STATUS_ORDER_SEND){
-            $crm = CRMconnector::getInstance();        
-            $crm->setArticle($article_crm);
-            $crm->setOrder($order);
-            $crm->sendDeal($orderid,$comment);            
+            $this->addTaskCreateDeal($orderid,$comment,$order,$article_crm);
             $this->setOrderStatus($orderid,STATUS_ORDER_SEND);
-            $this->setStatus(true);                
+            $this->setStatus(true);    
+            
         }else{
             $this->setStatus(false);
             trigger_error('Заказ ID:'.$orderid. ' - уже закрыт или отсутствует');
@@ -282,5 +173,15 @@ class ReqShop  extends actionBase{
         }
         $this->setStatus(false);
     }    
-        
+    
+    public function startTask(){
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, TASK_SCRIPT_URL);
+        curl_setopt($ch, CURLOPT_FRESH_CONNECT, true);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);          
+        curl_setopt($ch, CURLOPT_TIMEOUT_MS, 500);
+        curl_exec($ch);
+        curl_close($ch);        
+    }            
 }

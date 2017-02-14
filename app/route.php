@@ -44,7 +44,7 @@ if(get_reqest('form')){
     $data = array();
     $status = 'error';
     $data['status'] = $status;
-    
+    ob_start();
     $json_str = $_POST;    
     if(isset($json_str['jsonData'])){
         $json = json_decode($json_str['jsonData'],true);        
@@ -60,13 +60,17 @@ if(get_reqest('form')){
             break;
             case 'createdeal':
                 $shop->createDeal($json['orderid']);
+                $shop->strtTask();
             break;  
             case 'pay':                
-                $data['payform'] = $shop->payOrder($json['orderid']);                
+                $data['payform'] = $shop->payOrder($json['orderid']);  
+                $shop->strtTask();
             break;        
         }    
         $data['status'] = $shop->getStatus();    
     }
+    $data['html'] = ob_get_contents();
+    ob_end_clean();
     echo json_encode($data);
     die();    
 }else{

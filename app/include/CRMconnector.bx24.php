@@ -140,19 +140,5 @@ class CRMconnector extends bx24class{
              trigger_error('Ошибка: создания сделки Order ID:'.$orderid);
             return $id;
         }
-    }
-    
-    public function sendDeal($orderid,$comment){
-        $aBase = new actionBase(); 
-        $aBase->addTaskCreateDeal($orderid,$comment,$this->order,$this->products);
-        
-        $ch = curl_init();
-        curl_setopt($ch, CURLOPT_URL, TASK_SCRIPT_URL);
-        curl_setopt($ch, CURLOPT_FRESH_CONNECT, true);
-        curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
-        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);          
-        curl_setopt($ch, CURLOPT_TIMEOUT_MS, 500);
-        curl_exec($ch);
-        curl_close($ch);        
-    }
+    }    
 }
