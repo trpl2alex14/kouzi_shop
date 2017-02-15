@@ -468,8 +468,10 @@ CityPicker = {
             var city = CityPicker.getCity();
             var id = CityPicker.getCityId(city);
             if(id >= 0){
-                jQuery("label[for=logistic-1] span").html('г. '+city);                 
-                jQuery("label[for=logistic-2] span").html('( + '+CityPicker.city.curier[id]+' руб. )');             
+                var l1 = CityPicker.city.price[id]>0 ? ' ( + '+CityPicker.city.price[id]+' руб. к стоимости заказа)':' (бесплатно)';
+                var l2 = (Number(CityPicker.city.price[id])+Number(CityPicker.city.curier[id]))>0 ? '( + '+(Number(CityPicker.city.price[id])+Number(CityPicker.city.curier[id]))+' руб. к стоимости заказа)':' (бесплатно)';
+                jQuery("label[for=logistic-1] span").html('г. '+city+l1);                 
+                jQuery("label[for=logistic-2] span").html(l2);             
             }else{
                 jQuery("label[for=logistic-1] span").html('');
                 jQuery("label[for=logistic-2] span").html('');             
@@ -539,7 +541,8 @@ RalPicker = {
     
     select: function(element){
         var col = jQuery(element).html();
-        RalPicker.callbk(col);
+        var hex = jQuery(element).css("background");
+        RalPicker.callbk(col,hex);
         RalPicker.close();
     }
 };
@@ -641,7 +644,7 @@ KouziModal = {
     components : null,
     
     create:function(components,callbk){
-        $('#content_modal').html('');
+        jQuery('#content_modal').html('');
         var tmp = '';
         if(components){            
             this.components = components;
@@ -665,32 +668,38 @@ KouziModal = {
                 }                
             }
         }
-        $('#content_modal').append(tmp);
-        $('#content_modal input[id=color-1]').click(function(){RalPicker.show(function(color){KouziModal.components.config.color=color;});});
+        jQuery('#content_modal').append(tmp);
+        jQuery('#content_modal input[id=color-1]').click(function(){
+            RalPicker.show(function(color,hex){
+                KouziModal.components.config.color=color;
+                jQuery('#content_modal label[for=color-1] span').css({"background":hex, "color":hex, "border":"1px solid #000"});
+                jQuery('#content_modal label[for=color-1] span').html(color);
+            });
+        });
         $('#content_modal input').change(function(){KouziModal.viewPrice.call(KouziModal);});        
         this.viewPrice();
         this.callbk = callbk;
-        $('.fixed-overlay .price-box').show();
-        $('.fixed-overlay .action-block .btn').hide();
-        $('.fixed-overlay .action-block .cancel').show();        
-        $('.fixed-overlay .action-block .btn-add').show();        
-        $('.fixed-overlay').show();
+        jQuery('.fixed-overlay .price-box').show();
+        jQuery('.fixed-overlay .action-block .btn').hide();
+        jQuery('.fixed-overlay .action-block .cancel').show();        
+        jQuery('.fixed-overlay .action-block .btn-add').show();        
+        jQuery('.fixed-overlay').show();
     },
     
     viewPrice:function(){
         var param = this.getParams();
         var art = KouziCatalog.getItem(param.config.articul);
         if(art){
-            $('.price-box span').html(art.price);
+            jQuery('.price-box span').html(art.price);
         }
     },
     
     showModalInfo: function(content){
-                $('#content_modal').html('<div class="info-modal">'+content+'</div>');
-                $('.fixed-overlay').show();
-                $('.fixed-overlay .action-block .btn').hide();
-                $('.fixed-overlay .action-block .about').show(); 
-                $('.fixed-overlay .price-box').hide();
+                jQuery('#content_modal').html('<div class="info-modal">'+content+'</div>');
+                jQuery('.fixed-overlay').show();
+                jQuery('.fixed-overlay .action-block .btn').hide();
+                jQuery('.fixed-overlay .action-block .about').show(); 
+                jQuery('.fixed-overlay .price-box').hide();
     },
     
     getParams:function(){
@@ -724,8 +733,8 @@ KouziModal = {
     },
     
     aboutBtn:function(){                
-                $('.fixed-overlay .action-block .btn').show();                
-                $('.fixed-overlay').hide();
+                jQuery('.fixed-overlay .action-block .btn').show();                
+                jQuery('.fixed-overlay').hide();
     },
     
     cancelBtn:function(){                

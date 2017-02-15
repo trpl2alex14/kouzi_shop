@@ -1,4 +1,5 @@
 <div class="fixed-overlay fixed-overlay__modal">
+    <div class="close_hover" onclick="KouziModal.cancelBtn();"></div>
     <div class="win_modal">
         <div class="modal_container">
             <div id="content_modal">
@@ -20,6 +21,7 @@
 </div>
 
 <div id="ral_modal">
+    <div class="close_hover" onclick="RalPicker.close();"></div>
     <div class="win_modal">
         <div class="modal_container">
             <div class="clearfix"></div>
