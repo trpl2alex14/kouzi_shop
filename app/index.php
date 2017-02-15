@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">  
         <link href="favicon.ico" rel="icon" type="image/x-icon" />
-        <title>Тест Коузи</title>
+        <title>Интернет Магазин Коузи</title>
               
         <link rel="stylesheet" type="text/css" href="lib/css/bootstrap.css" media="screen" />
         <link rel="stylesheet" type="text/css" href="lib/css/jquery-ui.css" media="screen" />

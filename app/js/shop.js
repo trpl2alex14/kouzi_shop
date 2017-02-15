@@ -122,6 +122,10 @@ KouziShop = {
         });        
     },
     
+    scrollList: function(){
+        jQuery('html, body').animate({ scrollTop: jQuery("#article-list").offset().top }, 500);  
+    },
+    
     nextStep: function(step){
         if(step === 0){
             jQuery(this.shopWrapper.idblock+" .order").hide();
@@ -135,25 +139,41 @@ KouziShop = {
             jQuery(this.shopWrapper.idblock+" .catalog").show();
             jQuery("#action-1").show();            
             jQuery("#article-list .item-block .del").show();
+            
+            jQuery("#article-list .action").show();
+            jQuery("#article-list .action .clear").show();
+            jQuery("#article-list .action .edit").hide();
+            
             jQuery("#article-list .title h3 span").html('');
 
             jQuery('html, body').animate({ scrollTop: jQuery(this.shopWrapper.idblock+" .catalog").offset().top }, 500);
         }else
         if(step === 1){
             if(KouziList.article.length > 0){
-                this.sendList();                      
+                this.sendList();   
+                jQuery("#article-list .action").show();
+                jQuery("#article-list .action .clear").hide();
+                jQuery("#article-list .action .edit").show();
+                
+                
                 jQuery(this.shopWrapper.idblock+" .catalog").hide();
-                jQuery("#action-1").hide();            
+                jQuery("#action-1").hide(); 
+                jQuery("#action-3").hide();
                 jQuery("#article-list .item-block .del").hide();
                 jQuery("#order-info").hide();
 
                 jQuery(this.shopWrapper.idblock+" .order").show();
                 jQuery("#action-2").show();
                 jQuery('html, body').animate({ scrollTop: jQuery("#article-list").offset().top }, 500);
+            }else{
+                alert('Товар не выбран!');
             }
         }else 
         if(step === 2){
-            if(this.sendOrder()){                  
+            if(this.sendOrder()){
+                jQuery("#article-list .action").show();
+                jQuery("#article-list .action .clear").hide();
+                jQuery("#article-list .action .edit").show();                
                 if(KouziOrder.order.type === 0){
                     jQuery("#order-info .client-info").html(KouziOrder.order.lname+' '+KouziOrder.order.fname+' '+KouziOrder.order.pname );
                     jQuery("#order-info .contact-info span").html(KouziOrder.order.phone);
@@ -333,7 +353,7 @@ KouziOrder = {
                         case 'phone':
                         case 'cphone':
                             var regCheck = new RegExp('[^0-9\s-]+');
-                            if(regCheck.test(value)){
+                            if(regCheck.test(value) || value.length<6){
                                 error = false;
                             }                            
                         break;
@@ -348,10 +368,21 @@ KouziOrder = {
         return error;
     },
     
+    parseInput: function(name,element){
+        str = jQuery(element).val();
+        switch(name){
+            case 'phone':
+            case 'cphone':
+                jQuery(element).val(str.replace(/[^0-9]/gim,''));  
+            break;                  
+        }                
+    },
+    
     elementChecking:function(element){
         var name = jQuery(element).prop("name");
         var box = jQuery(element).attr("fm_box");
         var error = true;
+        KouziOrder.parseInput(name,element);
         if(typeof box === "undefined" || box == KouziOrder.order.type){                                            
             if(jQuery(element).attr("fm_check") === "y"){                        
                 if(jQuery(element).val().length === 0){
@@ -727,7 +758,8 @@ KouziList = {
             jQuery('#article-list .item-block').html('');
             if (KouziList.article === null || KouziList.article.length === 0){                
                 jQuery('#article-list .list-clear').show();
-                jQuery('#article-list #total-price').html('0');                
+                jQuery('#article-list #total-price').html('0'); 
+                jQuery('#action-1 p span').html('0 руб.');
             }else{
                 var ind=1;                
                 var total=0;
@@ -742,6 +774,7 @@ KouziList = {
                                 total+=item['total'];
                                 jQuery('#article-list .item-block').append(tmp);
                                 jQuery('#article-list #total-price').html(total+' руб.');
+                                jQuery('#action-1 p span').html(total+' руб.');
                 });   
             }        
     },
@@ -771,10 +804,14 @@ KouziList = {
         }
         if(typeof comment === "undefined"){
             comment='';
-        }        
+        }      
+        if(count > 100){
+            count = 100;
+        }
         for(var i=0;i<KouziList.article.length;i++){        
             if(KouziList.article[i].id==articul && KouziList.article[i].comment===comment){ 
                 KouziList.article[i].count+=count;
+                if(KouziList.article[i].count > 100)KouziList.article[i].count = 100;
                 KouziList.article[i].total = KouziList.article[i].price * KouziList.article[i].count;
                 KouziList.viev();
                 KouziList.sendEdit();                

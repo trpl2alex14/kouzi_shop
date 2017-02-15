@@ -1,20 +1,12 @@
 <?php
-define('HOST_DEV', $_SERVER['REMOTE_ADDR'] == '127.0.0.1');
-define('IN_DEV', (HOST_DEV) ? 'On':'Off');
-error_reporting(-1);
-ini_set('display_errors', IN_DEV);
-
 require_once  'config.php';
+require_once  SHOP_LIB.'ErrorLog.php';
+
 require_once  'include/function.php';
 require_once  'include/ral.php';
 require_once  'include/initshop.php';
 require_once  'include/reqshop.php';
-require_once  SHOP_LIB.'ErrorLog.php';
 
-
-$errorClass   = new ErrorLog(ERROR_LOG, 1, (HOST_DEV?1:0), (HOST_DEV?0:1), ERROR_MAIL);
-$errorMethod  = 'handler';
-set_error_handler(array($errorClass, $errorMethod));
 
 if(get_reqest('form')){
     $form_name = get_reqest('form');        
@@ -60,11 +52,11 @@ if(get_reqest('form')){
             break;
             case 'createdeal':
                 $shop->createDeal($json['orderid']);
-                $shop->strtTask();
+                $shop->startTask();
             break;  
             case 'pay':                
                 $data['payform'] = $shop->payOrder($json['orderid']);  
-                $shop->strtTask();
+                $shop->startTask();
             break;        
         }    
         $data['status'] = $shop->getStatus();    

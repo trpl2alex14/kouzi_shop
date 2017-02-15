@@ -114,7 +114,7 @@
         h3{
                 font-size: 1.5em;
                 text-align: center;                
-                margin: 40px 0 20px;
+                margin: 10px 0 20px;
                 text-transform: uppercase;
         }
         
@@ -421,13 +421,35 @@
         bottom: 0;
         width: 960px;
         background: #fff;    
+        p{
+            float: left;
+            line-height: 30px;
+            font-size: 1.2em;
+            font-weight: bold;        
+        }        
     }
-
+    
 
     .lists {
         padding: 10px 0 50px;
         border-top:1px solid $color-grey;
-        
+        .action{
+            margin-bottom: 40px;
+            .btn {
+                color: $color-orange;
+                display: inline-block;
+                margin: 0 5px;
+            }
+            .btn.edit{
+                border: 1px solid $color-orange;                
+                font-size: 1.1em;
+                padding: 5px 15px;
+                line-height:1.5em;
+                text-align: center;
+                border-radius: $border-radius-base;
+                float: left;                
+            };            
+        }
         .title{
             text-align: center;            
             padding: 5px 0 10px;
@@ -500,8 +522,9 @@
         border-top:1px solid $color-grey;
         
         .btn {
-            color: $link-color;
+            color: $color-orange;
             display: inline-block;
+            margin: 0 5px;
         }
         .btn.sale{
             background: $color-orange;
@@ -515,8 +538,21 @@
             text-transform: uppercase;
         };
         .btn.clear {
-            border: 1px solid $color-grey;
+            border: 1px solid $color-orange;
             padding: 5px 15px;
-            line-height: 1.5em;
+            line-height: 1.5em;            
         };
+        .btn.view {            
+            padding: 0;
+            font-size: 1em;
+            &:hover{                
+                box-shadow: none !important;
+            }
+        };        
+}
+
+#action-1 {
+        .btn.clear {
+            float: right;
+        };    
 }

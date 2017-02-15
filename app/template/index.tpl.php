@@ -135,12 +135,16 @@
             </div>                         
             
         </div>
+        <div class="action">            
+            <a class="btn clear edit" onclick="KouziShop.nextStep(0);" style="display: none;">Изменить заказ</a>
+        </div>
     </div>
     
     
     <div class="action-bar" id="action-1">
-        <a class="btn clear" onclick="KouziList.clear();">Очистить корзину</a>
+        <p>В заказе товаров на сумму: <span>0 руб.</span> (<a class="btn view" onclick="KouziShop.scrollList();">Просмотреть товары</a>)</p>                    
         <a class="btn sale" onclick="KouziShop.nextStep(1);">Оформить заказ</a>              
+        <a class="btn clear" onclick="KouziList.clear();">Очистить корзину</a>
     </div>    
     
     <div class="order" style="display: none;">
@@ -154,7 +158,7 @@
                 <label for="lname">Фамилия<span>*</span></label><input id="lname" type="text" name="lname" value="" fm_check="y" fm_box="0"><p class="error-text lname-error">Обязательное поле</p><br>
                 <label for="fname">Имя<span>*</span></label><input id="fname" type="text" name="fname" value="" fm_check="y" fm_box="0"><p class="error-text fname-error">Обязательное поле</p><br>
                 <label for="pname">Отчество<span>*</span></label><input id="pname" type="text" name="pname" value="" fm_check="y" fm_box="0"><p class="error-text pname-error">Обязательное поле</p><br>
-                <label for="phone">Телефон<span>*</span></label><input id="phone" type="text" name="phone" value="" fm_check="y" fm_box="0"><p class="error-text phone-error">Обязательное поле</p><br>
+                <label for="phone">Телефон<span>*</span></label><input id="phone" type="text" name="phone" value="" fm_check="y" fm_box="0"><p class="error-text phone-error">Обязательное поле (Пример телефона: 73512009050)</p><br>
                 <label for="email">E-mail</label><input id="email" type="text" name="email" value="" fm_check="n" fm_box="0"><p class="error-text email-error">Неверный адрес</p><br>
                 <p><span>*</span> - обязательные поля</p>
             </div>
@@ -162,7 +166,7 @@
                 <label for="cname">Контактное лицо<span>*</span></label><input id="cname" type="text" name="cname" value="" fm_check="y" fm_box="1"><p class="error-text cname-error">Обязательное поле</p><br>
                 <label for="companyname">Название компании<span>*</span></label><input id="companyname" type="text" name="companyname" value="" fm_check="y" fm_box="1"><p class="error-text companyname-error">Обязательное поле</p><br>
                 <label for="inn">ИНН<span>*</span></label><input id="inn" type="text" name="inn" value="" fm_check="y" fm_box="1"><p class="error-text inn-error">Обязательное поле</p><br>
-                <label for="cphone">Телефон<span>*</span></label><input id="cphone" type="text" name="cphone" value="" fm_check="y" fm_box="1"><p class="error-text cphone-error">Обязательное поле</p><br>
+                <label for="cphone">Телефон<span>*</span></label><input id="cphone" type="text" name="cphone" value="" fm_check="y" fm_box="1"><p class="error-text cphone-error">Обязательное поле (Пример телефона: 73512009050)</p><br>
                 <label for="cemail">E-mail<span>*</span></label><input id="cemail" type="text" name="cemail" value="" fm_check="y" fm_box="1"><p class="error-text cemail-error">Обязательное поле</p><br>                                
                 <p><span>*</span> - обязательные поля</p>
             </div>            
@@ -219,7 +223,7 @@
     </div>
 
     <div class="action-bar" id="action-3" style="display: none;">
-        <a class="btn clear" onclick="KouziShop.nextStep(0);">Изменить заказ</a>
+        <a class="btn clear" onclick="KouziShop.nextStep(1);">Изменить информацию к заказу</a>
         <a class="btn sale" id="pay-btn" onclick="KouziShop.pay();" >Оплатить</a>              
         <a class="btn sale" id="applay-btn" onclick="KouziShop.applay();">Оформить заказ</a>              
     </div>     

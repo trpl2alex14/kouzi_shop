@@ -1,4 +1,13 @@
 <?php
+define('HOST_DEV', $_SERVER['REMOTE_ADDR'] == '127.0.0.1');
+define('IN_DEV', (HOST_DEV) ? 'On':'Off');
+error_reporting(-1);
+ini_set('display_errors', IN_DEV);
+
+
+$errorClass   = new ErrorLog(ERROR_LOG, 1, (HOST_DEV?1:0), (HOST_DEV?0:1), ERROR_MAIL);
+$errorMethod  = 'handler';
+set_error_handler(array($errorClass, $errorMethod));
 
 class ErrorLog {
 

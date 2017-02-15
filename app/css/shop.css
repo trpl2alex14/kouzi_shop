@@ -200,7 +200,7 @@ header, nav, section, article, aside, footer {
   #shop .order h3 {
     font-size: 1.5em;
     text-align: center;
-    margin: 40px 0 20px;
+    margin: 10px 0 20px;
     text-transform: uppercase; }
   #shop .order input.error-check {
     border: 1px solid #c9002f; }
@@ -434,9 +434,28 @@ header, nav, section, article, aside, footer {
     bottom: 0;
     width: 960px;
     background: #fff; }
+    #shop #action-1 p {
+      float: left;
+      line-height: 30px;
+      font-size: 1.2em;
+      font-weight: bold; }
   #shop .lists {
     padding: 10px 0 50px;
     border-top: 1px solid #ccc; }
+    #shop .lists .action {
+      margin-bottom: 40px; }
+      #shop .lists .action .btn {
+        color: #e67e21;
+        display: inline-block;
+        margin: 0 5px; }
+      #shop .lists .action .btn.edit {
+        border: 1px solid #e67e21;
+        font-size: 1.1em;
+        padding: 5px 15px;
+        line-height: 1.5em;
+        text-align: center;
+        border-radius: 4px;
+        float: left; }
     #shop .lists .title {
       text-align: center;
       padding: 5px 0 10px; }
@@ -488,8 +507,9 @@ header, nav, section, article, aside, footer {
   padding: 10px 0;
   border-top: 1px solid #ccc; }
   .action-bar .btn {
-    color: #05628a;
-    display: inline-block; }
+    color: #e67e21;
+    display: inline-block;
+    margin: 0 5px; }
   .action-bar .btn.sale {
     background: #e67e21;
     color: #fff;
@@ -501,8 +521,16 @@ header, nav, section, article, aside, footer {
     float: right;
     text-transform: uppercase; }
   .action-bar .btn.clear {
-    border: 1px solid #ccc;
+    border: 1px solid #e67e21;
     padding: 5px 15px;
     line-height: 1.5em; }
+  .action-bar .btn.view {
+    padding: 0;
+    font-size: 1em; }
+    .action-bar .btn.view:hover {
+      box-shadow: none !important; }
+
+#action-1 .btn.clear {
+  float: right; }
 
 /*# sourceMappingURL=shop.css.map */
