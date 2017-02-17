@@ -379,15 +379,21 @@ header, nav, section, article, aside, footer {
         text-align: left;
         white-space: normal;
         background-color: #fff;
-        color: #000; }
+        color: #000;
+        max-width: 750px; }
         #shop .fixed-overlay__modal .win_modal .modal_container h3, #shop .fixed-overlay__modal .win_modal .modal_container h2 {
           font-size: 1.5em;
           text-align: center;
           font-weight: bold;
           margin: 5px 0; }
+        #shop .fixed-overlay__modal .win_modal .modal_container .info-modal p {
+          font-size: 1.2em; }
+        #shop .fixed-overlay__modal .win_modal .modal_container .info-modal strong {
+          font-weight: bold; }
         #shop .fixed-overlay__modal .win_modal .modal_container .info-block {
           float: left;
-          padding: 10px; }
+          padding: 10px;
+          width: 45%; }
           #shop .fixed-overlay__modal .win_modal .modal_container .info-block h3 {
             font-size: 1.5em;
             text-align: center;
@@ -395,7 +401,8 @@ header, nav, section, article, aside, footer {
             margin: 5px 0; }
         #shop .fixed-overlay__modal .win_modal .modal_container .components-block {
           float: right;
-          padding: 10px 10px 5px 10px; }
+          padding: 10px 10px 5px 10px;
+          width: 55%; }
           #shop .fixed-overlay__modal .win_modal .modal_container .components-block h3 {
             font-size: 1.1em;
             text-align: center;
@@ -412,6 +419,17 @@ header, nav, section, article, aside, footer {
             #shop .fixed-overlay__modal .win_modal .modal_container .components-block .component input[name=count] {
               width: 50px;
               text-align: center; }
+            #shop .fixed-overlay__modal .win_modal .modal_container .components-block .component label[for=color-0] {
+              height: 2em; }
+            #shop .fixed-overlay__modal .win_modal .modal_container .components-block .component label[for=color-1] {
+              line-height: 1em; }
+              #shop .fixed-overlay__modal .win_modal .modal_container .components-block .component label[for=color-1] small {
+                line-height: 0.5em;
+                font-size: 0.8em; }
+            #shop .fixed-overlay__modal .win_modal .modal_container .components-block .component input[id=color-1] {
+              line-height: 1.5em;
+              margin: 10px 5px 10px;
+              float: left; }
         #shop .fixed-overlay__modal .win_modal .modal_container .price-box {
           font-size: 1.3em;
           text-align: center;
@@ -502,8 +520,19 @@ header, nav, section, article, aside, footer {
       #shop .lists .table .line .price {
         width: 15%; }
       #shop .lists .table .line .count {
+        -moz-user-select: none;
+        -khtml-user-select: none;
+        user-select: none;
         width: 10%;
         text-align: center; }
+        #shop .lists .table .line .count .edit-list {
+          cursor: pointer;
+          font-weight: bold;
+          padding: 0 5px; }
+        #shop .lists .table .line .count .min {
+          color: #c9002f; }
+        #shop .lists .table .line .count .pls {
+          color: #c9002f; }
       #shop .lists .table .line .total {
         width: 20%;
         text-align: right;

@@ -3,6 +3,8 @@ KouziShop = {
     successUrl:'/',
     clientid: 0,
     orderid: 0,
+    step: 0,
+    phone: '',
     
     shopWrapper : {
         idblock : '',
@@ -127,6 +129,7 @@ KouziShop = {
     },
     
     nextStep: function(step){
+        KouziShop.step = step;
         if(step === 0){
             jQuery(this.shopWrapper.idblock+" .order").hide();
             jQuery("#action-2").hide();
@@ -139,6 +142,7 @@ KouziShop = {
             jQuery(this.shopWrapper.idblock+" .catalog").show();
             jQuery("#action-1").show();            
             jQuery("#article-list .item-block .del").show();
+            jQuery("#article-list .item-block .edit-list").show();
             
             jQuery("#article-list .action").show();
             jQuery("#article-list .action .clear").show();
@@ -153,13 +157,17 @@ KouziShop = {
                 this.sendList();   
                 jQuery("#article-list .action").show();
                 jQuery("#article-list .action .clear").hide();
-                jQuery("#article-list .action .edit").show();
-                
+                jQuery("#article-list .action .edit").show();                                
                 
                 jQuery(this.shopWrapper.idblock+" .catalog").hide();
                 jQuery("#action-1").hide(); 
                 jQuery("#action-3").hide();
-                jQuery("#article-list .item-block .del").hide();
+                if(KouziList.article.length===1){
+                    jQuery("#article-list .item-block .del").hide();
+                }else{
+                    jQuery("#article-list .item-block .del").show();
+                }
+                jQuery("#article-list .item-block .edit-list").show();
                 jQuery("#order-info").hide();
 
                 jQuery(this.shopWrapper.idblock+" .order").show();
@@ -173,7 +181,10 @@ KouziShop = {
             if(this.sendOrder()){
                 jQuery("#article-list .action").show();
                 jQuery("#article-list .action .clear").hide();
-                jQuery("#article-list .action .edit").show();                
+                jQuery("#article-list .action .edit").show();    
+                jQuery("#article-list .item-block .del").hide();
+                jQuery("#article-list .item-block .edit-list").hide();
+                
                 if(KouziOrder.order.type === 0){
                     jQuery("#order-info .client-info").html(KouziOrder.order.lname+' '+KouziOrder.order.fname+' '+KouziOrder.order.pname );
                     jQuery("#order-info .contact-info span").html(KouziOrder.order.phone);
@@ -503,8 +514,10 @@ CityPicker = {
 
     getTime:function(type,city){
         var id = this.getCityId(city);
-        if(id >= 0){      
-            return this.city.time[id];
+        if(id >= 0){  
+            var tm = Number(this.city.time[id]);
+            var step = (type===0)? Math.ceil(tm/2) : Math.ceil(tm/3);
+            return String((tm-step)===0 ? 1 : tm-step)+'-'+String(tm+step);
         }
         return 'уточняется'; 
     }    
@@ -550,12 +563,12 @@ RalPicker = {
 KouziCatalog = {
         tpl_item : '<div class="item">\n\
                     <h4>{name}</h4>\n\
-                    <img src="image/{img}">\n\
+                    <img src="image/{img}" onclick="KouziCatalog.addArticle({id});">\n\
                     <p>{info}</p>\n\
                     <div class="price">{price} руб.</div> \n\
                     <div class="action-block">\n\
                     <a class="btn about" onclick="KouziCatalog.infoArticle({id});">Подробнее</a>\n\
-                    <a class="btn btn-add" onclick="KouziCatalog.addArticle({id});">В корзину</a>\n\
+                    <a class="btn btn-add" onclick="KouziCatalog.addArticle({id});">Выбрать</a>\n\
                     </div>\n\
                     </div>',
         
@@ -656,7 +669,7 @@ KouziModal = {
                         tmp += item.data;
                     break;           
                     case 'count':
-                       tmp += '<div class="component"><input type="number" size="2" name="count" min="1" max="99" value="1">'+item.data+'</div>';
+                       tmp += '<div class="component"><h3>Количество</h3><input type="number" size="2" name="count" min="1" max="99" value="1">'+item.data+'</div>';
                     break;
                     case 'checkbox':
                         tmp += '<div class="component">'+item.data;                        
@@ -747,13 +760,40 @@ KouziList = {
                 <div class="col number">{ind}.</div>\n\
                 <div class="col name">{name}{comment}</div>\n\
                 <div class="col price">{price} руб.</div>\n\
-                <div class="col count">{count}</div>\n\
+                <div class="col count"><span class="edit-list min" onclick="KouziList.mCount({id});">-</span> {count} <span class="edit-list pls" onclick="KouziList.pCount({id});">+</span></div>\n\
                 <div class="col total">{total} руб.</div>\n\
                 <div class="col del" onclick="KouziList.del({id});">Х</div>\n\
                 <div class="clearfix"></div>\n\
             </div>',
         
     article: null,
+    
+    getIndexToId: function(id){
+        for(var i=0;i<KouziList.article.length;i++){
+            if(KouziList.article[i].id==id){
+                return i;
+            }
+        }
+        return -1;
+    },
+    
+    mCount: function(id){
+        var ind = KouziList.getIndexToId(id);
+        if(ind>=0 && KouziList.article[ind].count>1){
+            KouziList.article[ind].count--;
+            KouziList.article[ind].total = KouziList.article[ind].price * KouziList.article[ind].count;
+            KouziList.viev();        
+        }
+    },
+    
+    pCount: function(id){
+        var ind = KouziList.getIndexToId(id);
+        if(ind>=0 && KouziList.article[ind].count<100){
+            KouziList.article[ind].count++;
+            KouziList.article[ind].total = KouziList.article[ind].price * KouziList.article[ind].count;
+            KouziList.viev();        
+        }        
+    },
     
     getTotalPrice: function(){
         var total = 0;
@@ -785,7 +825,12 @@ KouziList = {
                                 jQuery('#article-list #total-price').html(total+' руб.');
                                 jQuery('#action-1 p span').html(total+' руб.');
                 });   
-            }        
+            }  
+            if(KouziShop.step===1 && KouziList.article.length===1){
+                    jQuery("#article-list .item-block .del").hide();
+            }else{
+                    jQuery("#article-list .item-block .del").show();
+            }            
     },
     
     load:function(responseData){
@@ -802,6 +847,10 @@ KouziList = {
             KouziList.viev();
     },
     
+    errorCount: function(){
+        alert('Для согласования сроков поставки и способах оплаты, более 100 единиц товара, обратитесь к менеджеру по телефону '+KouziShop.phone);
+    },
+    
     add:function(articul,count,comment){ 
         if(KouziList.article.length>99){
             alert('Невозможно добавить товар в корзину.(Максимум 100 позиций.)');
@@ -816,11 +865,15 @@ KouziList = {
         }      
         if(count > 100){
             count = 100;
+            KouziList.errorCount();
         }
         for(var i=0;i<KouziList.article.length;i++){        
             if(KouziList.article[i].id==articul && KouziList.article[i].comment===comment){ 
                 KouziList.article[i].count+=count;
-                if(KouziList.article[i].count > 100)KouziList.article[i].count = 100;
+                if(KouziList.article[i].count > 100){
+                    KouziList.article[i].count = 100;
+                    KouziList.errorCount();
+                }
                 KouziList.article[i].total = KouziList.article[i].price * KouziList.article[i].count;
                 KouziList.viev();
                 KouziList.sendEdit();                

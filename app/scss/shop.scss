@@ -347,15 +347,25 @@
             white-space: normal;
             background-color: #fff;    
             color: #000;
+            max-width: 750px;
             h3,h2 {
                 font-size: 1.5em;
                 text-align: center;
                 font-weight: bold;
                 margin: 5px 0;
-            }     
+            }   
+            .info-modal{ 
+                p{
+                    font-size: 1.2em;
+                }
+                strong{
+                    font-weight: bold;
+                }                
+            }
             .info-block{
                 float:left;
                 padding: 10px;
+                width:45%;
                 h3 {
                     font-size: 1.5em;
                     text-align: center;
@@ -366,6 +376,7 @@
             .components-block{
                 float:right;
                 padding: 10px 10px 5px 10px;
+                width:55%;
                 h3 {
                     font-size: 1.1em;
                     text-align: center;
@@ -384,6 +395,21 @@
                     input[name=count]{
                         width: 50px;
                         text-align: center;
+                    }
+                    label[for=color-0]{
+                        height: 2em;
+                    }
+                    label[for=color-1]{
+                        line-height: 1em;
+                        small{
+                            line-height: 0.5em;
+                            font-size: 0.8em;                            
+                        }
+                    }                    
+                    input[id=color-1]{
+                        line-height: 1.5em;
+                        margin: 10px 5px 10px;
+                        float: left;                        
                     }
                 }
             }
@@ -507,8 +533,22 @@
                     width: 15%;
                 }
                 .count{
+                    -moz-user-select: none;
+                    -khtml-user-select: none;
+                    user-select: none;  
                     width: 10%;
                     text-align: center;
+                    .edit-list {
+                        cursor: pointer;
+                        font-weight: bold;
+                        padding: 0 5px;
+                    }                    
+                    .min{
+                        color: $color-red;
+                    }
+                    .pls{
+                        color: $color-red;
+                    }                    
                 }
                 .total{
                     width: 20%;

@@ -27,6 +27,7 @@
         <script type="text/javascript">
             KouziShop.url="/addon/shopdemo/";
             KouziShop.successUrl="/addon/shopdemo/";
+            KouziShop.phone="8-800-333-81-98";
             KouziShop.init("#shop");            
         </script>                                
     </body>

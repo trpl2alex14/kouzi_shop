@@ -138,7 +138,7 @@
             
         </div>
         <div class="action">            
-            <a class="btn clear edit" onclick="KouziShop.nextStep(0);" style="display: none;">Изменить заказ</a>
+            <a class="btn clear edit" onclick="KouziShop.nextStep(0);" style="display: none;">Добавить товар</a>
         </div>
     </div>
     
