@@ -39,6 +39,9 @@ define('TOKEN_FILE',APP_FOLDER.'key.json');
 ///CRM status
 define('DEAL_STAT', 2);   //create Deal 
 define('LOGISTIC_ID' ,1); //id articul deliveri crm
+define('TAX_ID' ,2); //id articul tax crm
+define('TAX_SIZE' ,0.05); //% tax
+$NOTAX_CITY = array('Челябинск'); //city no tax
 
 define('STATUS_ORDER_INIT',0);
 define('STATUS_ORDER_PROCESS',1);

@@ -33,8 +33,8 @@
     <div class="win_modal">
         <div class="modal_container">
             <div class="info-applay">
-                <h3>Заказ принят</h3>
-                <p>Заказ принят в работу, наш сотрудник свяжется с вами в ближайшее рабочее время.</p>
+                <h3>Ваш заказа <span></span> успешно принят</h3>
+                <p>Заказ уже обрабатывается. По всем возникшим вопросам вы можете связаться с нами по телефону <span></span></p>
                 <a class="btn back">Вернуться</a>
             </div>
             <div class="load-box"></div>
@@ -125,11 +125,16 @@
                 <div id="total-price" class="col total">10400 руб.</div>                
                 <div class="clearfix"></div>
             </div>                         
+            <div class="line" id="tax-info" style="display: none;">                
+                <div class="col total-line">Комиссия за наложенный платеж:</div>
+                <div id="tax-total" class="col total">500 руб.</div>                
+                <div class="clearfix"></div>
+            </div>                 
             <div class="line" id="delivery-info" style="display: none;">                
                 <div class="col total-line">Стоимость доставки:</div>
                 <div id="delivery-total" class="col total">500 руб.</div>                
                 <div class="clearfix"></div>
-            </div>                         
+            </div>                                    
             <div class="line" id="all-info" style="display: none;">                
                 <div class="col total-line">Итого:</div>
                 <div id="total-all" class="col total">500 руб.</div>                
@@ -151,7 +156,7 @@
     
     <div class="order" style="display: none;">
         <div class="client-block">
-            <h3>Укажите информацию о покупателе</h3>
+            <h3>Укажите ваши данные</h3>
             <ul class="client-select">
                 <li class="active" onclick="KouziOrder.setClient('person',this);">Физ. лицо</li>
                 <li onclick="KouziOrder.setClient('company',this);">Юр. лицо</li>
@@ -174,7 +179,7 @@
             </div>            
         </div>
         <div class="logistic-block">
-            <h3>Способ получения</h3>            
+            <h3>Выберите способ получения заказа</h3>            
             <label for="city">Выберите город<span>*</span></label>            
            <!-- 
             <input id="city" type="text" name="city" value="" fm_check="y">
@@ -185,22 +190,30 @@
            </select>
             
             <p><span>*</span> - обязательные поля</p>
-            <input type="radio" id="logistic-1" name="logistic" value="0" checked><label for="logistic-1">Самовывоз со склада <span></span></label><br>
-            <input type="radio" id="logistic-2" name="logistic" value="1" ><label for="logistic-2">Доставка курьером <span>(+ 300 руб.)</span></label><br>
+            <input type="radio" id="logistic-1" name="logistic" value="0" checked>
+            <label for="logistic-1">
+                Самовывоз с пункта выдачи <span></span> <div class="help" data-text="Доставка осуществляется до терминала транспортной кампании в вашем городе. С полным списком адресов вы можете ознакомиться в разделе информации 'Доставка/оплата'. Вы также можете указать название желаемой транспортной кампании в поле 'Комментарий к заказу'">?</div>
+            </label><br>
+            <input type="radio" id="logistic-2" name="logistic" value="1" >
+            <label for="logistic-2">
+                Доставка курьером <span>(+ 300 руб.)</span>
+            </label><br>
             <div class="address-block" style="display: none;">
             <label for="address">Адрес доставки</label><input id="address" type="text" name="address" value=""><br>
+            <p>Пример: ул. Ленина, д. 15, кв. 121</p>
             </div>
         </div>
         <div class="payment-block">    
-            <h3>Способ оплаты</h3>
-            <input type="radio" id="payment-1" name="payment" value="0" checked><label for="payment-1">Предоплата
-            <p>Оплачивается полная стоимость заказа и доставки</p></label><br>
-            <input type="radio" id="payment-2" name="payment" value="1" ><label for="payment-2">Оплата заказа при получение            
-            <p>Оплачивается только стоимость доставки, товар оплачивается в момент получения.</p></label><br>
+            <h3>Выберите способ оплаты заказа</h3>
+            <input type="radio" id="payment-1" name="payment" value="0" checked>
+            <label for="payment-1">Оплата на сайте (комиссия 0 руб.)
+            <p>Оплачивается доставка и полная стоимость заказа банковской картой, через терминалы или салоны связи</p></label><br>
+            <input type="radio" id="payment-2" name="payment" value="1" ><label for="payment-2">Оплата заказа при получение <span></span>
+            <p>Предварительно оплачивается только стоимость доставки. Оплата заказа происходит в момент его получения</p></label><br>
         </div>
         <div class="other-block">  
             <label>Комментарий к заказу</label>
-            <textarea id="comment" name="comment" rows="5"  tabindex="18" placeholder="Какую дополнительную информацию вы хотите сообщить к заказу?"></textarea>
+            <textarea id="comment" name="comment" rows="5"  tabindex="18" placeholder="Оставьте здесь ваши комментарии и вопросы к заказу. Например название предпочитаемой транспортной кампании, дополнительные данные по доставке."></textarea>
         </div>        
     </div>
     
@@ -210,7 +223,7 @@
     </div> 
     
     <div id="order-info" style="display: none;">
-        <h3>Информация к заказу</h3>
+        <h3>Информация по заказу</h3>
         <h4>Доставка</h4>
         <p class="address-info">До <span>склада в г. Челябинск</span></p>
         <h4>Срок поставки</h4>
@@ -218,16 +231,16 @@
         <h4>Получатель</h4>
         <p class="client-info">Иванов Иван Иванович</p>
         <p class="contact-info">Телефон <span>8 903090909</span></p>
+        <a class="btn clear" onclick="KouziShop.nextStep(1);">Изменить информацию по заказу</a>
         <div class="price-block">
             Сумма к оплате <span>100</span> руб. 
             <p class="post-pay" style="display: none;">Оплачивается только доставка, заказ в момент получения.</p>
         </div>            
     </div>
 
-    <div class="action-bar" id="action-3" style="display: none;">
-        <a class="btn clear" onclick="KouziShop.nextStep(1);">Изменить информацию к заказу</a>
-        <a class="btn sale" id="pay-btn" onclick="KouziShop.pay();" >Оплатить</a>              
-        <a class="btn sale" id="applay-btn" onclick="KouziShop.applay();">Оформить заказ</a>              
+    <div class="action-bar" id="action-3" style="display: none;">                
+        <a class="btn pay" id="pay-btn" onclick="KouziShop.pay();" >Оплатить</a>              
+        <a class="btn pay" id="applay-btn" onclick="KouziShop.applay();">Оформить заказ</a>              
     </div>     
     <div id='payForm' style="display:none;">
     </div>

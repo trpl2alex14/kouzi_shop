@@ -5,6 +5,8 @@ KouziShop = {
     orderid: 0,
     step: 0,
     phone: '',
+    tax: 0.05,
+    freetax: ['Челябинск'],
     
     shopWrapper : {
         idblock : '',
@@ -117,6 +119,8 @@ KouziShop = {
             orderid :this.orderid
         };        
         this.ajaxReq("createdeal&orderid="+this.orderid,data,function(responseData){
+            jQuery('#load_modal .info-applay h3 span').html(' № '+data.orderid);
+            jQuery('#load_modal .info-applay p span').html(KouziShop.phone);
             jQuery('#load_modal').show();
             jQuery('#load_modal .back').click(function(){
                 window.location = KouziShop.successUrl;
@@ -136,6 +140,7 @@ KouziShop = {
             
             jQuery("#action-3").hide();
             jQuery("#delivery-info").hide();
+            jQuery("#tax-info").hide();
             jQuery("#all-info").hide();
             jQuery("#order-info").hide();
                         
@@ -150,13 +155,18 @@ KouziShop = {
             
             jQuery("#article-list .title h3 span").html('');
 
-            jQuery('html, body').animate({ scrollTop: jQuery(this.shopWrapper.idblock+" .catalog").offset().top }, 500);
+            //jQuery('html, body').animate({ scrollTop: jQuery(this.shopWrapper.idblock+" .catalog").offset().top }, 500);
+            jQuery('html, body').animate({ scrollTop: jQuery("#article-list").offset().top }, 500);
         }else
         if(step === 1){
             if(KouziList.article.length > 0){
-                this.sendList();   
+                this.sendList(); 
+                KouziList.setTax();
                 jQuery("#article-list .action").show();
                 jQuery("#article-list .action .clear").hide();
+                jQuery("#delivery-info").hide();
+                jQuery("#tax-info").hide();
+                jQuery("#all-info").hide();
                 jQuery("#article-list .action .edit").show();                                
                 
                 jQuery(this.shopWrapper.idblock+" .catalog").hide();
@@ -212,9 +222,16 @@ KouziShop = {
                     }else{
                         jQuery("#order-info .price-block span").html(delivery);
                         jQuery("#order-info .post-pay").show();                    
-                    }                    
+                    }       
+                    var tax = KouziList.getTax();
+                    if(tax>0 && KouziOrder.order.payment===1){
+                        jQuery("#tax-total").html(tax + " руб.");
+                        jQuery("#tax-info").show();
+                    }else{
+                        tax=0;
+                    }
                     jQuery("#delivery-total").html(delivery + " руб.");
-                    jQuery("#total-all").html((Number(delivery)+Number(article)) + " руб.");
+                    jQuery("#total-all").html((Number(delivery)+Number(article)+Number(tax)) + " руб.");
 
                     jQuery("#delivery-info").show();
                     jQuery("#all-info").show();
@@ -234,7 +251,7 @@ KouziShop = {
                     }else{
                         jQuery("#order-info .address-info span").html('адреса '+KouziOrder.order.address);                 
                     }                    
-                    jQuery("#order-info .time-info").html('необходимо уточнить у оператора');
+                    jQuery("#order-info .time-info").html('необходимо уточнить у оператора по телефону: '+KouziShop.phone);
                     jQuery("#order-info .price-block").hide();
                     
                     jQuery("#delivery-info").hide();
@@ -345,6 +362,7 @@ KouziOrder = {
             this.order.type = 0;   
             jQuery("#payment-2").show();
             jQuery("label[for=payment-2]").show();
+            jQuery("label[for=payment-1]").html("Оплата на сайте (комиссия 0 руб.)<p>Оплачивается доставка и полная стоимость заказа банковской картой, через терминалы или салоны связи</p>");
         }else{
             jQuery("#company").show();
             jQuery("#person").hide();                        
@@ -353,6 +371,7 @@ KouziOrder = {
             jQuery("#payment-1").prop('checked',true);
             jQuery("#payment-2").hide();
             jQuery("label[for=payment-2]").hide();            
+            jQuery("label[for=payment-1]").html("Оплата по счету (комиссия 0 руб.)<p>Оплачивается доставка и полная стоимость заказа</p>");
         }
         jQuery(".client-select li").removeClass("active");
         jQuery(el).addClass("active");        
@@ -480,13 +499,14 @@ CityPicker = {
             var id = CityPicker.getCityId(city);
             if(id >= 0){
                 var l1 = CityPicker.city.price[id]>0 ? ' ( + '+CityPicker.city.price[id]+' руб. к стоимости заказа)':' (бесплатно)';
-                var l2 = (Number(CityPicker.city.price[id])+Number(CityPicker.city.curier[id]))>0 ? '( + '+(Number(CityPicker.city.price[id])+Number(CityPicker.city.curier[id]))+' руб. к стоимости заказа)':' (бесплатно)';
+                var l2 = (Number(CityPicker.city.price[id])+Number(CityPicker.city.curier[id]))>0 ? ' ( + '+(Number(CityPicker.city.price[id])+Number(CityPicker.city.curier[id]))+' руб. к стоимости заказа)':' (бесплатно)';
                 jQuery("label[for=logistic-1] span").html('г. '+city+l1);                 
-                jQuery("label[for=logistic-2] span").html(l2);             
+                jQuery("label[for=logistic-2] span").html('по г. '+city+l2);             
             }else{
                 jQuery("label[for=logistic-1] span").html('');
                 jQuery("label[for=logistic-2] span").html('');             
-            }        
+            }      
+            KouziList.setTax();
     },
     
     getCityId: function(name){
@@ -768,6 +788,24 @@ KouziList = {
         
     article: null,
     
+    getTax:function(){
+        var city = CityPicker.getCity();
+        if(KouziShop.freetax.some( function(item){return item===city;})){
+            return 0;
+        }else{
+            return Number(KouziList.getTotalPrice())*KouziShop.tax;
+        }
+    },
+    
+    setTax:function(){
+            var tax = KouziList.getTax();
+            if(tax>0){
+                jQuery("label[for=payment-2] span").html('( + '+tax+' руб. комиссия за наложенный платеж )');             
+            }else{
+                jQuery("label[for=payment-2] span").html('(комиссия 0 руб.)');                             
+            }
+    },
+    
     getIndexToId: function(id){
         for(var i=0;i<KouziList.article.length;i++){
             if(KouziList.article[i].id==id){
@@ -830,7 +868,8 @@ KouziList = {
                     jQuery("#article-list .item-block .del").hide();
             }else{
                     jQuery("#article-list .item-block .del").show();
-            }            
+            }       
+            KouziList.setTax();
     },
     
     load:function(responseData){

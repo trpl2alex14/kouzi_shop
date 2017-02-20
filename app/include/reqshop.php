@@ -108,9 +108,28 @@ class ReqShop  extends actionBase{
         return $comment;
     }
 
+    public function getTax($article){             
+        $sum = 0;
+        foreach($article as $item){            
+            $sum +=$item['price']*$item['count'];
+        }
+        $sum *= TAX_SIZE;        
+        return $sum;
+    }
+    
     public function createDeal($orderid){             
         $order = $this->getOrder($orderid);
-        $article = $this->getArticleOrder($orderid);                
+        $article = $this->getArticleOrder($orderid);      
+        global $NOTAX_CITY;
+        if($order['payment']==1 && !in_array($order['city'],$NOTAX_CITY)){            
+            $article[] = array(
+                'id' =>   TAX_ID,
+                'name' => 'Комиссия',
+                'count' => 1,
+                'price' => $this->getTax($article),
+                'comment' =>''
+            );          
+        }
         $article[] = array(
             'id' =>   LOGISTIC_ID,
             'name' => 'Доставка',
@@ -118,7 +137,6 @@ class ReqShop  extends actionBase{
             'price' => $this->getPriceCity($order['city'], $order['logistic']),
             'comment' =>$order['city']
         );        
-        
         $i=1;
         $comment = 'Заказ №'.$orderid.' <br>';           
         $article_crm = array();                
