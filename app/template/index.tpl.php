@@ -50,46 +50,7 @@
             <p>Выберите интересующую вас продукцию</p>
         </div>
         <div id="catalog-article" class="items">
-            <div class="item">
-                <h4>КОУЗИ 250В</h4>
-                <img src="image/k250.jpg">                
-                <p>КОУЗИ 250Вт - прогреет площадь 5м2</p>
-                <div class="price">5200 руб.</div>
-                <div class="action-block">
-                    <a class="btn btn-add">В корзину</a>
-                    <a class="btn about">Подробнее</a>
-                </div>
-            </div>
-            <div class="item">
-                <h4>КОУЗИ 250В</h4>
-                <img src="image/k250.jpg">                
-                <p>КОУЗИ 250Вт - прогреет площадь 5м2</p>
-                <div class="price">5200 руб.</div>
-                <div class="action-block">
-                    <a class="btn btn-add">В корзину</a>
-                    <a class="btn about">Подробнее</a>
-                </div>
-            </div>    
-            <div class="item">
-                <h4>КОУЗИ 250В</h4>
-                <img src="image/k250.jpg">                
-                <p>КОУЗИ 250Вт - прогреет площадь 5м2</p>
-                <div class="price">5200 руб.</div>
-                <div class="action-block">
-                    <a class="btn btn-add">В корзину</a>
-                    <a class="btn about">Подробнее</a>
-                </div>
-            </div>             
-            <div class="item">
-                <h4>Терморегулятор</h4>
-                <img src="image/term.jpg">                
-                <p>контролирует заданную температуру в помещении</p>
-                <div class="price">1500 руб.</div>
-                <div class="action-block">
-                    <a class="btn btn-add">В корзину</a>
-                    <a class="btn about">Подробнее</a>
-                </div>
-            </div>
+
         </div>
         <div class="clearfix"></div>
     </div>
@@ -149,9 +110,11 @@
     
     
     <div class="action-bar" id="action-1">
-        <p>В заказе товаров на сумму: <span>0 руб.</span> (<a class="btn view" onclick="KouziShop.scrollList();">Просмотреть товары</a>)</p>                    
-        <a class="btn sale" onclick="KouziShop.nextStep(1);">Оформить заказ</a>              
-        <a class="btn clear" onclick="KouziList.clear();">Очистить корзину</a>
+        <div class="wrapper-action">
+            <p>В заказе товаров на сумму: <span>0 руб.</span> (<a class="btn view" onclick="KouziShop.scrollList();">Просмотреть товары</a>)</p>                    
+            <a class="btn sale" onclick="KouziShop.nextStep(1);">Оформить заказ</a>              
+            <a class="btn clear" onclick="KouziList.clear();">Очистить корзину</a>
+        </div>
     </div>    
     
     <div class="order" style="display: none;">
@@ -213,7 +176,7 @@
         </div>
         <div class="other-block">  
             <label>Комментарий к заказу</label>
-            <textarea id="comment" name="comment" rows="5"  tabindex="18" placeholder="Оставьте здесь ваши комментарии и вопросы к заказу. Например название предпочитаемой транспортной кампании, дополнительные данные по доставке."></textarea>
+            <textarea id="comment" name="comment" rows="5"  tabindex="18" placeholder="Оставьте здесь ваши комментарии и вопросы к заказу. Например, название предпочитаемой транспортной кампании, дополнительные данные по доставке."></textarea>
         </div>        
     </div>
     

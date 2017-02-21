@@ -489,7 +489,7 @@ CityPicker = {
             skip_no_results: true
         });
         this.setCityOrder();
-        $(this.name).on('change', function(evt, params){ 
+        jQuery(this.name).on('change', function(evt, params){ 
                CityPicker.setCityOrder();
         });        
     },
@@ -583,7 +583,7 @@ RalPicker = {
 KouziCatalog = {
         tpl_item : '<div class="item">\n\
                     <h4>{name}</h4>\n\
-                    <img src="image/{img}" onclick="KouziCatalog.addArticle({id});">\n\
+                    <img src="{imgsrc}image/{img}" onclick="KouziCatalog.addArticle({id});">\n\
                     <p>{info}</p>\n\
                     <div class="price">{price} руб.</div> \n\
                     <div class="action-block">\n\
@@ -599,7 +599,7 @@ KouziCatalog = {
             jQuery('#catalog-article').html('');
             KouziCatalog.catalog.forEach(function(item) {
                         if(item['type']==='d' || item['type']==='v'){
-                            var tmp = KouziCatalog.tpl_item;                            
+                            var tmp = KouziCatalog.tpl_item.replace(new RegExp('{imgsrc}','g'),KouziShop.url);                            
                             for (var key in item){                                  
                                 tmp = tmp.replace(new RegExp('{'+key+'}','g'),item[key]);                 
                             }
@@ -619,7 +619,7 @@ KouziCatalog = {
                                     },
                                     line1  : {
                                         type:'text',
-                                        data:'<div class="info-block"><p><img src="image/'+art.img+'"></p><h3>'+art.name+'</h3><p>'+art.info+'</p></div><div class="components-block">'
+                                        data:'<div class="info-block"><p><img src="'+KouziShop.url+'image/'+art.img+'"></p><h3>'+art.name+'</h3><p>'+art.info+'</p></div><div class="components-block">'
                                     }                                   
                                  };
                 if(art.type==='d' && art.model){
@@ -709,7 +709,7 @@ KouziModal = {
                 jQuery('#content_modal label[for=color-1] span').html(color);
             });
         });
-        $('#content_modal input').change(function(){KouziModal.viewPrice.call(KouziModal);});        
+        jQuery('#content_modal input').change(function(){KouziModal.viewPrice.call(KouziModal);});        
         this.viewPrice();
         this.callbk = callbk;
         jQuery('.fixed-overlay .price-box').show();

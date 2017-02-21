@@ -2,16 +2,76 @@
 
 @import "variables";
 
-@import "lib/normalize";
+//@import "lib/normalize";
 @import "lib/fonts";
 @import "lib/mixins";
 
-@import "catalog";
+
 
 #shop{ 
+    
+    @import "catalog";
+    
     font: normal $font-size-base/$line-height-base $font-family-base;
     font-family: $font-family-base;
     color: $text-color-base;     
+    background: #fff;
+    padding: 5px 10px;   
+    
+    
+    * {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;        
+        font-family: $font-family-base !important;        
+    } 
+    p {
+        font-size: 14px;
+        line-height: normal;
+        margin: 0 0 10px;
+    }  
+    label {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        font-size: 100%;
+        font: inherit;
+        vertical-align: baseline;      
+        display: inline-block;
+    }
+    input, button, select, textarea {    
+        font-size: 16px;
+        line-height: inherit;
+    }
+    .btn {
+        display: inline-block;
+        padding: 6px 12px;
+        margin-bottom: 0;
+        font-size: 14px;
+        font-weight: normal;
+        line-height: 1.42857143;
+        text-align: center;
+        white-space: nowrap;
+        vertical-align: middle;
+        -ms-touch-action: manipulation;
+        touch-action: manipulation;
+        cursor: pointer;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        background-image: none;
+        border: 1px solid transparent;
+        border-radius: 4px; 
+        text-shadow: none;
+    }
+    .title{
+        font-size: 14px;
+    }
+    
+    
+    
+    
     .wrapper {
         max-width:960px;    
         margin: 0 auto;    
@@ -505,8 +565,19 @@
     #action-1 {
         position: fixed;
         bottom: 0;
-        width: 960px;
-        background: #fff;    
+        left: 0;
+        right: 0;
+        padding: 0;
+        z-index: 200000;
+        border:none;
+        .wrapper-action{
+            width: 960px;
+            background: #fff;
+            margin: 0 auto;
+            padding: 10px 10px 0;
+            height: 55px;
+            border: 1px solid #ccc;
+        }
         p{
             float: left;
             line-height: 30px;
@@ -615,7 +686,6 @@
             }            
         }
     }
-}
 
 .action-bar{
         padding: 10px 0;
@@ -665,8 +735,9 @@
         };        
 }
 
-#action-1 {
-        .btn.clear {
-            float: right;
-        };    
+    #action-1 {
+            .btn.clear {
+                float: right;
+            };    
+    }
 }
