@@ -499,15 +499,20 @@
           #shop .fixed-overlay__modal .win_modal .modal_container .action-block .cancel {
             float: left; }
   #shop #action-1 {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
+    border: none;
     padding: 0;
-    z-index: 200000;
-    border: none; }
+    transition: all 1s ease-in-out;
+    -webkit-transition: all 1s ease-in-out;
+    -o-transition: all 1s ease-in-out;
+    -moz-transition: all 1s ease-in-out; }
+    #shop #action-1.fixed {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 900; }
     #shop #action-1 .wrapper-action {
-      width: 960px;
+      max-width: 960px;
       background: #fff;
       margin: 0 auto;
       padding: 10px 10px 0;

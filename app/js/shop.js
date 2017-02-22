@@ -65,7 +65,19 @@ KouziShop = {
         KouziList.load(responseData);
         RalPicker.load(responseData);
         KouziOrder.load(responseData);
-        CityPicker.init("#city",responseData);        
+        CityPicker.init("#city",responseData); 
+        jQuery('<div class="clone-action-1"></div>').insertAfter('#article-list').css('height', jQuery('#action-1').outerHeight(true)).hide();
+        jQuery(window).scroll(function() {
+            winPos = jQuery(window).scrollTop()+jQuery(window).height()-jQuery('#action-1').outerHeight(true);
+            navPos = jQuery('#article-list').offset().top+jQuery('#article-list').outerHeight(true);            
+            if (winPos >= navPos) {
+                jQuery('#action-1').removeClass('fixed');  
+                jQuery('.clone-action-1').hide();
+            }else {
+                jQuery('#action-1').addClass('fixed');                          
+                jQuery('.clone-action-1').show();
+            }
+        });        
     },
     
     init:function(wrapper){
