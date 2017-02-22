@@ -21,7 +21,7 @@
 </div>
 
 <div id="ral_modal">
-    <div class="close_hover" onclick="RalPicker.close();"></div>
+    <div class="close_hover" onclick="RalPicker.cancel();"></div>
     <div class="win_modal">
         <div class="modal_container">
             <div class="clearfix"></div>

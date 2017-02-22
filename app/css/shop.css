@@ -50,6 +50,8 @@
       border: 1px solid #ccc;
       padding: 5px;
       text-align: center; }
+      #shop .catalog .items .item:hover {
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.4); }
       #shop .catalog .items .item img {
         width: 100%;
         text-align: center; }
@@ -66,7 +68,7 @@
       #shop .catalog .items .item .action-block .btn {
         color: #05628a; }
       #shop .catalog .items .item .action-block .btn.btn-add {
-        background: #e67e21;
+        background: #cc3300;
         color: #fff;
         text-transform: uppercase;
         font-size: 1.1em;
@@ -160,7 +162,7 @@
           color: #05628a;
           display: inline-block; }
         #shop #load_modal .win_modal .modal_container .back {
-          background: #e67e21;
+          background: #cc3300;
           color: #fff;
           text-transform: uppercase;
           font-size: 1.1em;
@@ -192,10 +194,10 @@
       text-transform: none;
       font-weight: normal; }
   #shop #order-info .btn.clear {
-    color: #e67e21;
+    color: #cc3300;
     display: inline-block;
     margin: 10px 5px;
-    border: 1px solid #e67e21;
+    border: 1px solid #cc3300;
     padding: 5px 15px;
     line-height: 1.5em; }
   #shop .order h3 {
@@ -213,10 +215,10 @@
   #shop .order .client-block {
     line-height: 2em; }
     #shop .order .client-block .client-select {
-      border-bottom: 3px solid #e67e21; }
+      border-bottom: 3px solid #cc3300; }
       #shop .order .client-block .client-select .active {
         color: #fff;
-        background: #e67e21; }
+        background: #cc3300; }
       #shop .order .client-block .client-select li {
         display: inline-block;
         width: 20%;
@@ -251,9 +253,9 @@
     height: 20px;
     text-align: center;
     border-radius: 10px;
-    box-shadow: 0px 0px 5px #e67e21;
-    border: 1px solid #e67e21;
-    color: #e67e21;
+    box-shadow: 0px 0px 5px #cc3300;
+    border: 1px solid #cc3300;
+    color: #cc3300;
     font-weight: bold;
     font-size: 0.8em;
     line-height: 18px; }
@@ -480,7 +482,7 @@
             color: #05628a;
             display: inline-block; }
           #shop .fixed-overlay__modal .win_modal .modal_container .action-block .btn-add {
-            background: #e67e21;
+            background: #cc3300;
             color: #fff;
             text-transform: uppercase;
             font-size: 1.1em;
@@ -522,11 +524,11 @@
     #shop .lists .action {
       margin-bottom: 40px; }
       #shop .lists .action .btn {
-        color: #e67e21;
+        color: #cc3300;
         display: inline-block;
         margin: 0 5px; }
       #shop .lists .action .btn.edit {
-        border: 1px solid #e67e21;
+        border: 1px solid #cc3300;
         font-size: 1.1em;
         padding: 5px 15px;
         line-height: 1.5em;
@@ -594,11 +596,11 @@
     padding: 10px 0;
     border-top: 1px solid #ccc; }
     #shop .action-bar .btn {
-      color: #e67e21;
+      color: #cc3300;
       display: inline-block;
       margin: 0 5px; }
     #shop .action-bar .btn.sale {
-      background: #e67e21;
+      background: #cc3300;
       color: #fff;
       font-size: 1.1em;
       padding: 5px 15px;
@@ -608,7 +610,7 @@
       float: right;
       text-transform: uppercase; }
     #shop .action-bar .btn.clear {
-      border: 1px solid #e67e21;
+      border: 1px solid #cc3300;
       padding: 5px 15px;
       line-height: 1.5em; }
     #shop .action-bar .btn.view {
@@ -617,7 +619,7 @@
       #shop .action-bar .btn.view:hover {
         box-shadow: none !important; }
     #shop .action-bar .btn.pay {
-      background: #e67e21;
+      background: #cc3300;
       color: #fff;
       font-size: 1.5em;
       padding: 0;

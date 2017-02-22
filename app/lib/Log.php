@@ -30,7 +30,8 @@ class shopLog {
         }
         $str = $str . "\n";        
         $str = str_replace('<br>', " \r\n ", $str);                  
-        $str = str_replace('<hr>', " \r\n  \r\n ", $str);                  
+        $str = str_replace('<hr>', " \r\n  \r\n ", $str); 
+        $this->info("Send mail: ".$this->adminMail." Str: ".$str);
         if(filter_var($this->adminMail, FILTER_VALIDATE_EMAIL)){        
             mail($this->adminMail, $title, $str);
         }        

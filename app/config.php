@@ -54,7 +54,7 @@ define('SHOP_YDURL','https://demomoney.yandex.ru/eshop.xml');
 define('SHOP_KEY_WORD','GGUx6Wyh4zLa');
 define('SHOP_ID',120256);
 define('SHOP_SCID',548743);
-define('SHOP_URL',APP_SERVER.APP_URL_FOLDER);
+define('SHOP_URL',APP_SERVER.'shop');
 
 define('USER_ERROR_MSG',"Server Error 500");
 

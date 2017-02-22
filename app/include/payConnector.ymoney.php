@@ -48,7 +48,7 @@ class payConnector extends YaMoneyCommonHttpProtocol{
                 }
                 if($sum == $request['orderSumAmount']){
                     $this->log("Пришла оплата: сделка ID" . $orderid);
-                    $this->mail("Интернет магазин. Пришла оплата сделка №: ".$orderid,"Информация:<br>".print_r($request));
+                    $this->mail("Интернет магазин. Пришла оплата сделка №: ".$orderid,"Информация:<br>".print_r($request,true));
                     $aBase->setOrderStatus($orderid, STATUS_ORDER_PAY);                    
                     return 0;
                 }

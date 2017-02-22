@@ -117,6 +117,10 @@ abstract class YaMoneyCommonHttpProtocol {
     public function log($str) {
         $this->log->info($str);
     }
+    
+    public function mail($title,$str) {
+        $this->log->mail($title,$str);
+    }      
 
     private function sendResponse($responseBody) {
         $this->log("Response: " . $responseBody);

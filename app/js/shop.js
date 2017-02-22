@@ -7,6 +7,7 @@ KouziShop = {
     phone: '',
     tax: 0.05,
     freetax: ['Челябинск'],
+    maketime: '20 дн.',
     
     shopWrapper : {
         idblock : '',
@@ -213,7 +214,7 @@ KouziShop = {
                     }else{
                         jQuery("#order-info .address-info span").html('адреса г. '+KouziOrder.order.city+' '+KouziOrder.order.address);                 
                     }                    
-                    jQuery("#order-info .time-info").html(CityPicker.getTime(KouziOrder.order.logistic,KouziOrder.order.city)+' дн.'); 
+                    jQuery("#order-info .time-info").html(KouziList.getMakeTime()+'Доставка: '+CityPicker.getTime(KouziOrder.order.logistic,KouziOrder.order.city)+' дн.'); 
                     delivery = CityPicker.getPrice(KouziOrder.order.logistic,KouziOrder.order.city);
                     jQuery("#order-info .price-block").show();
                     if(KouziOrder.order.payment === 0 || Number(delivery) === 0 ){
@@ -567,6 +568,12 @@ RalPicker = {
         jQuery('#ral_modal .modal_container').html(tmp);
         jQuery('#ral_modal').show();
     },
+
+    cancel:function(){
+        RalPicker.close();
+        RalPicker.callbk("","#fff");
+    },
+    
     
     close:function(){
         jQuery('#ral_modal').hide();
@@ -704,9 +711,13 @@ KouziModal = {
         jQuery('#content_modal').append(tmp);
         jQuery('#content_modal input[id=color-1]').click(function(){
             RalPicker.show(function(color,hex){
-                KouziModal.components.config.color=color;
-                jQuery('#content_modal label[for=color-1] span').css({"background":hex, "color":hex, "border":"1px solid #000"});
-                jQuery('#content_modal label[for=color-1] span').html(color);
+                if(color){
+                    KouziModal.components.config.color=color;
+                    jQuery('#content_modal label[for=color-1] span').css({"background":hex, "color":hex, "border":"1px solid #000"});
+                    jQuery('#content_modal label[for=color-1] span').html(color);
+                }else if(!KouziModal.components.config.color){
+                    jQuery("#content_modal input[id=color-0]").prop('checked',true);    
+                }
             });
         });
         jQuery('#content_modal input').change(function(){KouziModal.viewPrice.call(KouziModal);});        
@@ -787,6 +798,15 @@ KouziList = {
             </div>',
         
     article: null,
+    
+    getMakeTime: function(){
+        for(var i=0;i<KouziList.article.length;i++){
+            if(KouziList.article[i].comment){
+                return 'Производство: '+KouziShop.maketime+'<br>';
+            }
+        }        
+        return "";
+    },
     
     getTax:function(){
         var city = CityPicker.getCity();

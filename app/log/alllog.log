@@ -5849,3 +5849,2566 @@
 )
 
 [2017-02-17 15:37:57] resultOrder: OID-132
+[2017-02-17 15:42:21] sendArticle: CID-16 Article: Array
+(
+    [0] => Array
+        (
+            [id] => 801
+            [count] => 1
+            [comment] => 
+            [price] => 400
+            [name] => Ножки Н2-3 белые
+            [total] => 400
+        )
+
+)
+
+[2017-02-17 15:42:21] sendOrder: CID-16 Order: Array
+(
+    [type] => 0
+    [payment] => 1
+    [logistic] => 1
+    [fname] => ТестИмя
+    [lname] => Тест
+    [pname] => ТестО
+    [phone] => 8222123
+    [email] => 
+    [cname] => 
+    [inn] => 
+    [city] => Челябинск
+    [address] => 
+    [comment] => 
+    [companyname] => 
+    [cphone] => 
+    [cemail] => 
+)
+
+[2017-02-17 15:42:21] resultOrder: OID-132
+[2017-02-17 15:42:28] sendArticle: CID-16 Article: Array
+(
+    [0] => Array
+        (
+            [id] => 801
+            [count] => 1
+            [comment] => 
+            [price] => 400
+            [name] => Ножки Н2-3 белые
+            [total] => 400
+        )
+
+)
+
+[2017-02-17 15:42:28] sendOrder: CID-16 Order: Array
+(
+    [type] => 0
+    [payment] => 0
+    [logistic] => 1
+    [fname] => ТестИмя
+    [lname] => Тест
+    [pname] => ТестО
+    [phone] => 8222123
+    [email] => 
+    [cname] => 
+    [inn] => 
+    [city] => Челябинск
+    [address] => 
+    [comment] => 
+    [companyname] => 
+    [cphone] => 
+    [cemail] => 
+)
+
+[2017-02-17 15:42:28] resultOrder: OID-132
+[2017-02-17 15:43:12] sendArticle: CID-16 Article: Array
+(
+    [0] => Array
+        (
+            [id] => 801
+            [count] => 1
+            [comment] => 
+            [price] => 400
+            [name] => Ножки Н2-3 белые
+            [total] => 400
+        )
+
+)
+
+[2017-02-17 15:43:12] sendOrder: CID-16 Order: Array
+(
+    [type] => 0
+    [payment] => 0
+    [logistic] => 1
+    [fname] => ТестИмя
+    [lname] => Тест
+    [pname] => ТестО
+    [phone] => 8222123
+    [email] => 
+    [cname] => 
+    [inn] => 
+    [city] => Челябинск
+    [address] => 
+    [comment] => 
+    [companyname] => 
+    [cphone] => 
+    [cemail] => 
+)
+
+[2017-02-17 15:43:12] resultOrder: OID-132
+[2017-02-17 15:43:26] sendArticle: CID-16 Article: Array
+(
+    [0] => Array
+        (
+            [id] => 801
+            [count] => 1
+            [comment] => 
+            [price] => 400
+            [name] => Ножки Н2-3 белые
+            [total] => 400
+        )
+
+)
+
+[2017-02-17 15:43:26] sendOrder: CID-16 Order: Array
+(
+    [type] => 0
+    [payment] => 1
+    [logistic] => 1
+    [fname] => ТестИмя
+    [lname] => Тест
+    [pname] => ТестО
+    [phone] => 8222123
+    [email] => 
+    [cname] => 
+    [inn] => 
+    [city] => Челябинск
+    [address] => 
+    [comment] => 
+    [companyname] => 
+    [cphone] => 
+    [cemail] => 
+)
+
+[2017-02-17 15:43:26] resultOrder: OID-132
+[2017-02-17 15:43:35] sendArticle: CID-16 Article: Array
+(
+    [0] => Array
+        (
+            [id] => 801
+            [count] => 1
+            [comment] => 
+            [price] => 400
+            [name] => Ножки Н2-3 белые
+            [total] => 400
+        )
+
+)
+
+[2017-02-17 15:43:35] sendOrder: CID-16 Order: Array
+(
+    [type] => 0
+    [payment] => 1
+    [logistic] => 1
+    [fname] => ТестИмя
+    [lname] => Тест
+    [pname] => ТестО
+    [phone] => 8222123
+    [email] => 
+    [cname] => 
+    [inn] => 
+    [city] => Уфа
+    [address] => 
+    [comment] => 
+    [companyname] => 
+    [cphone] => 
+    [cemail] => 
+)
+
+[2017-02-17 15:43:35] resultOrder: OID-132
+[2017-02-17 15:44:39] sendArticle: CID-16 Article: Array
+(
+    [0] => Array
+        (
+            [id] => 801
+            [count] => 1
+            [comment] => 
+            [price] => 400
+            [name] => Ножки Н2-3 белые
+            [total] => 400
+        )
+
+)
+
+[2017-02-17 15:44:39] sendOrder: CID-16 Order: Array
+(
+    [type] => 0
+    [payment] => 1
+    [logistic] => 1
+    [fname] => ТестИмя
+    [lname] => Тест
+    [pname] => ТестО
+    [phone] => 8222123
+    [email] => 
+    [cname] => 
+    [inn] => 
+    [city] => Челябинск
+    [address] => 
+    [comment] => 
+    [companyname] => 
+    [cphone] => 
+    [cemail] => 
+)
+
+[2017-02-17 15:44:39] resultOrder: OID-132
+[2017-02-17 15:44:45] sendArticle: CID-16 Article: Array
+(
+    [0] => Array
+        (
+            [id] => 801
+            [count] => 1
+            [comment] => 
+            [price] => 400
+            [name] => Ножки Н2-3 белые
+            [total] => 400
+        )
+
+)
+
+[2017-02-17 15:44:45] sendOrder: CID-16 Order: Array
+(
+    [type] => 0
+    [payment] => 1
+    [logistic] => 1
+    [fname] => ТестИмя
+    [lname] => Тест
+    [pname] => ТестО
+    [phone] => 8222123
+    [email] => 
+    [cname] => 
+    [inn] => 
+    [city] => Челябинск
+    [address] => 
+    [comment] => 
+    [companyname] => 
+    [cphone] => 
+    [cemail] => 
+)
+
+[2017-02-17 15:44:45] resultOrder: OID-132
+[2017-02-17 15:44:55] sendArticle: CID-16 Article: Array
+(
+    [0] => Array
+        (
+            [id] => 801
+            [count] => 1
+            [comment] => 
+            [price] => 400
+            [name] => Ножки Н2-3 белые
+            [total] => 400
+        )
+
+)
+
+[2017-02-17 15:44:55] sendOrder: CID-16 Order: Array
+(
+    [type] => 0
+    [payment] => 0
+    [logistic] => 0
+    [fname] => ТестИмя
+    [lname] => Тест
+    [pname] => ТестО
+    [phone] => 8222123
+    [email] => 
+    [cname] => 
+    [inn] => 
+    [city] => Челябинск
+    [address] => 
+    [comment] => 
+    [companyname] => 
+    [cphone] => 
+    [cemail] => 
+)
+
+[2017-02-17 15:44:55] resultOrder: OID-132
+[2017-02-17 15:44:59] createDeal: OID-132 Info:Заказ №132 <br>1 Ножки Н2-3 белые  - 1 x 400 <br>2 Доставка Челябинск - 1 x 0 <br><hr>Получатель: Тест ТестИмя ТестО<br>Контакты: 8222123 <br>Доставка до склада: Челябинск<br>Оплата: полная<br>Доп. информация: <br>
+[2017-02-17 15:44:59] Send form: <form action="https://demomoney.yandex.ru/eshop.xml" method="post">
+        <input name="shopId" value="120256" type="hidden"/>
+        <input name="scid" value="548743" type="hidden"/>
+        <input name="sum" value="400" type="hidden">
+        <input name="customerNumber" value="Тест ТестИмя ТестО" type="hidden"/>
+        <input name="paymentType" value="" type="hidden"/>
+        <input name="orderNumber" value="132" type="hidden"/>
+        <input name="shopDefaultUrl" value="https://kouzi.ru/addon/shopdemo/" type="hidden"/>        
+        <input name="shopSuccessURL" value="https://kouzi.ru/addon/shopdemo/" type="hidden"/>        
+        <input name="cps_phone" value="8222123" type="hidden"/>
+        <input name="cps_email" value="" type="hidden"/>
+        <input type="submit" value="Pay"/>
+        </form>
+[2017-02-17 15:44:59] Start task: addDeal
+[2017-02-17 15:46:10] sendArticle: CID-16 Article: Array
+(
+    [0] => Array
+        (
+            [name] => Ножки Н2-3 белые
+            [price] => 400
+            [total] => 400
+            [count] => 1
+            [id] => 801
+            [comment] => 
+        )
+
+)
+
+[2017-02-17 15:46:10] sendOrder: CID-16 Order: Array
+(
+    [type] => 0
+    [payment] => 0
+    [logistic] => 0
+    [fname] => ТестИмя
+    [lname] => Тест
+    [pname] => ТестО
+    [phone] => 8222123
+    [email] => 
+    [cname] => 
+    [inn] => 
+    [city] => Челябинск
+    [address] => 
+    [comment] => 
+    [companyname] => 
+    [cphone] => 
+    [cemail] => 
+)
+
+[2017-02-17 15:46:10] resultOrder: OID-133
+[2017-02-17 15:46:12] createDeal: OID-133 Info:Заказ №133 <br>1 Ножки Н2-3 белые  - 1 x 400 <br>2 Доставка Челябинск - 1 x 0 <br><hr>Получатель: Тест ТестИмя ТестО<br>Контакты: 8222123 <br>Доставка до склада: Челябинск<br>Оплата: полная<br>Доп. информация: <br>
+[2017-02-17 15:46:12] Send form: <form action="https://demomoney.yandex.ru/eshop.xml" method="post">
+        <input name="shopId" value="120256" type="hidden"/>
+        <input name="scid" value="548743" type="hidden"/>
+        <input name="sum" value="400" type="hidden">
+        <input name="customerNumber" value="Тест ТестИмя ТестО" type="hidden"/>
+        <input name="paymentType" value="" type="hidden"/>
+        <input name="orderNumber" value="133" type="hidden"/>
+        <input name="shopDefaultUrl" value="https://kouzi.ru/addon/shopdemo/" type="hidden"/>        
+        <input name="shopSuccessURL" value="https://kouzi.ru/addon/shopdemo/" type="hidden"/>        
+        <input name="cps_phone" value="8222123" type="hidden"/>
+        <input name="cps_email" value="" type="hidden"/>
+        <input type="submit" value="Pay"/>
+        </form>
+[2017-02-17 15:46:12] Start task: addDeal
+[2017-02-17 15:46:38] sendArticle: CID-16 Article: Array
+(
+    [0] => Array
+        (
+            [name] => КОУЗИ М1 250Вт Белый
+            [price] => 5200
+            [total] => 5200
+            [count] => 1
+            [id] => 10111
+            [comment] => 
+        )
+
+)
+
+[2017-02-17 15:46:38] sendOrder: CID-16 Order: Array
+(
+    [type] => 0
+    [payment] => 0
+    [logistic] => 0
+    [fname] => ТестИмя
+    [lname] => Тест
+    [pname] => ТестО
+    [phone] => 8222123
+    [email] => 
+    [cname] => 
+    [inn] => 
+    [city] => Челябинск
+    [address] => 
+    [comment] => 
+    [companyname] => 
+    [cphone] => 
+    [cemail] => 
+)
+
+[2017-02-17 15:46:38] resultOrder: OID-134
+[2017-02-17 15:46:39] createDeal: OID-134 Info:Заказ №134 <br>1 КОУЗИ М1 250Вт Белый  - 1 x 5200 <br>2 Доставка Челябинск - 1 x 0 <br><hr>Получатель: Тест ТестИмя ТестО<br>Контакты: 8222123 <br>Доставка до склада: Челябинск<br>Оплата: полная<br>Доп. информация: <br>
+[2017-02-17 15:46:39] Send form: <form action="https://demomoney.yandex.ru/eshop.xml" method="post">
+        <input name="shopId" value="120256" type="hidden"/>
+        <input name="scid" value="548743" type="hidden"/>
+        <input name="sum" value="5200" type="hidden">
+        <input name="customerNumber" value="Тест ТестИмя ТестО" type="hidden"/>
+        <input name="paymentType" value="" type="hidden"/>
+        <input name="orderNumber" value="134" type="hidden"/>
+        <input name="shopDefaultUrl" value="https://kouzi.ru/addon/shopdemo/" type="hidden"/>        
+        <input name="shopSuccessURL" value="https://kouzi.ru/addon/shopdemo/" type="hidden"/>        
+        <input name="cps_phone" value="8222123" type="hidden"/>
+        <input name="cps_email" value="" type="hidden"/>
+        <input type="submit" value="Pay"/>
+        </form>
+[2017-02-17 15:46:39] Start task: addDeal
+[2017-02-20 08:23:54] sendArticle: CID-16 Article: Array
+(
+    [0] => Array
+        (
+            [id] => 801
+            [count] => 1
+            [comment] => 
+            [price] => 400
+            [name] => Ножки Н2-3 белые
+            [total] => 400
+        )
+
+)
+
+[2017-02-20 08:23:54] sendOrder: CID-16 Order: Array
+(
+    [type] => 0
+    [payment] => 0
+    [logistic] => 0
+    [fname] => ТестИмя
+    [lname] => Тест
+    [pname] => ТестО
+    [phone] => 8222123
+    [email] => 
+    [cname] => 
+    [inn] => 
+    [city] => Челябинск
+    [address] => 
+    [comment] => 
+    [companyname] => 
+    [cphone] => 
+    [cemail] => 
+)
+
+[2017-02-20 08:23:54] resultOrder: OID-135
+[2017-02-20 08:23:55] createDeal: OID-135 Info:Заказ №135 <br>1 Ножки Н2-3 белые  - 1 x 400 <br>2 Доставка Челябинск - 1 x 0 <br><hr>Получатель: Тест ТестИмя ТестО<br>Контакты: 8222123 <br>Доставка до склада: Челябинск<br>Оплата: полная<br>Доп. информация: <br>
+[2017-02-20 08:23:55] Send form: <form action="https://demomoney.yandex.ru/eshop.xml" method="post">
+        <input name="shopId" value="120256" type="hidden"/>
+        <input name="scid" value="548743" type="hidden"/>
+        <input name="sum" value="400" type="hidden">
+        <input name="customerNumber" value="Тест ТестИмя ТестО" type="hidden"/>
+        <input name="paymentType" value="" type="hidden"/>
+        <input name="orderNumber" value="135" type="hidden"/>
+        <input name="shopDefaultUrl" value="https://kouzi.ru/addon/shopdemo/" type="hidden"/>        
+        <input name="shopSuccessURL" value="https://kouzi.ru/addon/shopdemo/" type="hidden"/>        
+        <input name="cps_phone" value="8222123" type="hidden"/>
+        <input name="cps_email" value="" type="hidden"/>
+        <input type="submit" value="Pay"/>
+        </form>
+[2017-02-20 08:23:55] Start task: addDeal
+[2017-02-20 09:54:37] sendArticle: CID-16 Article: Array
+(
+    [0] => Array
+        (
+            [id] => 801
+            [count] => 2
+            [comment] => 
+            [price] => 400
+            [name] => Ножки Н2-3 белые
+            [total] => 800
+        )
+
+    [1] => Array
+        (
+            [id] => 20111
+            [count] => 1
+            [comment] => 
+            [price] => 5200
+            [name] => КОУЗИ М1 320Вт Белый
+            [total] => 5200
+        )
+
+)
+
+[2017-02-20 09:54:37] sendOrder: CID-16 Order: Array
+(
+    [type] => 0
+    [payment] => 0
+    [logistic] => 0
+    [fname] => ТестИмя
+    [lname] => Тест
+    [pname] => ТестО
+    [phone] => 8222123
+    [email] => 
+    [cname] => 
+    [inn] => 
+    [city] => Уфа
+    [address] => 
+    [comment] => 
+    [companyname] => 
+    [cphone] => 
+    [cemail] => 
+)
+
+[2017-02-20 09:54:37] resultOrder: OID-136
+[2017-02-20 10:01:30] sendArticle: CID-16 Article: Array
+(
+    [0] => Array
+        (
+            [id] => 20111
+            [count] => 1
+            [comment] => 
+            [price] => 5200
+            [name] => КОУЗИ М1 320Вт Белый
+            [total] => 5200
+        )
+
+    [1] => Array
+        (
+            [id] => 801
+            [count] => 2
+            [comment] => 
+            [price] => 400
+            [name] => Ножки Н2-3 белые
+            [total] => 800
+        )
+
+)
+
+[2017-02-20 10:01:30] sendOrder: CID-16 Order: Array
+(
+    [type] => 0
+    [payment] => 0
+    [logistic] => 0
+    [fname] => ТестИмя
+    [lname] => Тест
+    [pname] => ТестО
+    [phone] => 8222123
+    [email] => 
+    [cname] => 
+    [inn] => 
+    [city] => Уфа
+    [address] => 
+    [comment] => 
+    [companyname] => 
+    [cphone] => 
+    [cemail] => 
+)
+
+[2017-02-20 10:01:30] resultOrder: OID-136
+[2017-02-20 10:05:32] sendArticle: CID-16 Article: Array
+(
+    [0] => Array
+        (
+            [id] => 801
+            [count] => 2
+            [comment] => 
+            [price] => 400
+            [name] => Ножки Н2-3 белые
+            [total] => 800
+        )
+
+    [1] => Array
+        (
+            [id] => 20111
+            [count] => 2
+            [comment] => 
+            [price] => 5200
+            [name] => КОУЗИ М1 320Вт Белый
+            [total] => 10400
+        )
+
+)
+
+[2017-02-20 10:05:32] sendOrder: CID-16 Order: Array
+(
+    [type] => 0
+    [payment] => 1
+    [logistic] => 0
+    [fname] => ТестИмя
+    [lname] => Тест
+    [pname] => ТестО
+    [phone] => 8222123
+    [email] => 
+    [cname] => 
+    [inn] => 
+    [city] => Туймазы
+    [address] => 
+    [comment] => 
+    [companyname] => 
+    [cphone] => 
+    [cemail] => 
+)
+
+[2017-02-20 10:05:32] resultOrder: OID-136
+[2017-02-20 10:08:05] sendArticle: CID-16 Article: Array
+(
+    [0] => Array
+        (
+            [id] => 20111
+            [count] => 1
+            [comment] => 
+            [price] => 5200
+            [name] => КОУЗИ М1 320Вт Белый
+            [total] => 5200
+        )
+
+    [1] => Array
+        (
+            [id] => 801
+            [count] => 1
+            [comment] => 
+            [price] => 400
+            [name] => Ножки Н2-3 белые
+            [total] => 400
+        )
+
+)
+
+[2017-02-20 10:08:05] sendOrder: CID-16 Order: Array
+(
+    [type] => 0
+    [payment] => 0
+    [logistic] => 0
+    [fname] => ТестИмя
+    [lname] => Тест
+    [pname] => ТестО
+    [phone] => 8222123
+    [email] => 
+    [cname] => 
+    [inn] => 
+    [city] => Туймазы
+    [address] => 
+    [comment] => 
+    [companyname] => 
+    [cphone] => 
+    [cemail] => 
+)
+
+[2017-02-20 10:08:05] resultOrder: OID-136
+[2017-02-20 10:09:05] sendArticle: CID-16 Article: Array
+(
+    [0] => Array
+        (
+            [id] => 801
+            [count] => 2
+            [comment] => 
+            [price] => 400
+            [name] => Ножки Н2-3 белые
+            [total] => 800
+        )
+
+    [1] => Array
+        (
+            [id] => 20111
+            [count] => 1
+            [comment] => 
+            [price] => 5200
+            [name] => КОУЗИ М1 320Вт Белый
+            [total] => 5200
+        )
+
+)
+
+[2017-02-20 10:09:05] sendOrder: CID-16 Order: Array
+(
+    [type] => 0
+    [payment] => 0
+    [logistic] => 0
+    [fname] => ТестИмя
+    [lname] => Тест
+    [pname] => ТестО
+    [phone] => 8222123
+    [email] => 
+    [cname] => 
+    [inn] => 
+    [city] => Туймазы
+    [address] => 
+    [comment] => 
+    [companyname] => 
+    [cphone] => 
+    [cemail] => 
+)
+
+[2017-02-20 10:09:05] resultOrder: OID-136
+[2017-02-20 10:09:22] sendArticle: CID-16 Article: Array
+(
+    [0] => Array
+        (
+            [id] => 801
+            [count] => 2
+            [comment] => 
+            [price] => 400
+            [name] => Ножки Н2-3 белые
+            [total] => 800
+        )
+
+    [1] => Array
+        (
+            [id] => 20111
+            [count] => 1
+            [comment] => 
+            [price] => 5200
+            [name] => КОУЗИ М1 320Вт Белый
+            [total] => 5200
+        )
+
+)
+
+[2017-02-20 10:09:22] sendOrder: CID-16 Order: Array
+(
+    [type] => 0
+    [payment] => 1
+    [logistic] => 0
+    [fname] => ТестИмя
+    [lname] => Тест
+    [pname] => ТестО
+    [phone] => 8222123
+    [email] => 
+    [cname] => 
+    [inn] => 
+    [city] => Туймазы
+    [address] => 
+    [comment] => 
+    [companyname] => 
+    [cphone] => 
+    [cemail] => 
+)
+
+[2017-02-20 10:09:22] resultOrder: OID-136
+[2017-02-20 10:10:09] sendArticle: CID-16 Article: Array
+(
+    [0] => Array
+        (
+            [id] => 801
+            [count] => 2
+            [comment] => 
+            [price] => 400
+            [name] => Ножки Н2-3 белые
+            [total] => 800
+        )
+
+    [1] => Array
+        (
+            [id] => 20111
+            [count] => 1
+            [comment] => 
+            [price] => 5200
+            [name] => КОУЗИ М1 320Вт Белый
+            [total] => 5200
+        )
+
+)
+
+[2017-02-20 10:10:09] sendOrder: CID-16 Order: Array
+(
+    [type] => 0
+    [payment] => 0
+    [logistic] => 0
+    [fname] => ТестИмя
+    [lname] => Тест
+    [pname] => ТестО
+    [phone] => 8222123
+    [email] => 
+    [cname] => 
+    [inn] => 
+    [city] => Туймазы
+    [address] => 
+    [comment] => 
+    [companyname] => 
+    [cphone] => 
+    [cemail] => 
+)
+
+[2017-02-20 10:10:09] resultOrder: OID-136
+[2017-02-20 10:10:28] sendArticle: CID-16 Article: Array
+(
+    [0] => Array
+        (
+            [id] => 801
+            [count] => 2
+            [comment] => 
+            [price] => 400
+            [name] => Ножки Н2-3 белые
+            [total] => 800
+        )
+
+    [1] => Array
+        (
+            [id] => 20111
+            [count] => 1
+            [comment] => 
+            [price] => 5200
+            [name] => КОУЗИ М1 320Вт Белый
+            [total] => 5200
+        )
+
+)
+
+[2017-02-20 10:10:28] sendOrder: CID-16 Order: Array
+(
+    [type] => 0
+    [payment] => 1
+    [logistic] => 0
+    [fname] => ТестИмя
+    [lname] => Тест
+    [pname] => ТестО
+    [phone] => 8222123
+    [email] => 
+    [cname] => 
+    [inn] => 
+    [city] => Челябинск
+    [address] => 
+    [comment] => 
+    [companyname] => 
+    [cphone] => 
+    [cemail] => 
+)
+
+[2017-02-20 10:10:28] resultOrder: OID-136
+[2017-02-20 10:10:43] sendArticle: CID-16 Article: Array
+(
+    [0] => Array
+        (
+            [id] => 801
+            [count] => 2
+            [comment] => 
+            [price] => 400
+            [name] => Ножки Н2-3 белые
+            [total] => 800
+        )
+
+    [1] => Array
+        (
+            [id] => 20111
+            [count] => 1
+            [comment] => 
+            [price] => 5200
+            [name] => КОУЗИ М1 320Вт Белый
+            [total] => 5200
+        )
+
+)
+
+[2017-02-20 10:10:43] sendOrder: CID-16 Order: Array
+(
+    [type] => 0
+    [payment] => 1
+    [logistic] => 0
+    [fname] => ТестИмя
+    [lname] => Тест
+    [pname] => ТестО
+    [phone] => 8222123
+    [email] => 
+    [cname] => 
+    [inn] => 
+    [city] => Уфа
+    [address] => 
+    [comment] => 
+    [companyname] => 
+    [cphone] => 
+    [cemail] => 
+)
+
+[2017-02-20 10:10:43] resultOrder: OID-136
+[2017-02-20 10:11:00] sendArticle: CID-16 Article: Array
+(
+    [0] => Array
+        (
+            [id] => 801
+            [count] => 2
+            [comment] => 
+            [price] => 400
+            [name] => Ножки Н2-3 белые
+            [total] => 800
+        )
+
+    [1] => Array
+        (
+            [id] => 20111
+            [count] => 1
+            [comment] => 
+            [price] => 5200
+            [name] => КОУЗИ М1 320Вт Белый
+            [total] => 5200
+        )
+
+    [2] => Array
+        (
+            [name] => Терморегулятор
+            [price] => 1500
+            [total] => 1500
+            [count] => 1
+            [id] => 500
+            [comment] => 
+        )
+
+)
+
+[2017-02-20 10:11:00] sendOrder: CID-16 Order: Array
+(
+    [type] => 0
+    [payment] => 1
+    [logistic] => 0
+    [fname] => ТестИмя
+    [lname] => Тест
+    [pname] => ТестО
+    [phone] => 8222123
+    [email] => 
+    [cname] => 
+    [inn] => 
+    [city] => Уфа
+    [address] => 
+    [comment] => 
+    [companyname] => 
+    [cphone] => 
+    [cemail] => 
+)
+
+[2017-02-20 10:11:00] resultOrder: OID-136
+[2017-02-20 10:36:47] sendArticle: CID-16 Article: Array
+(
+    [0] => Array
+        (
+            [id] => 20111
+            [count] => 1
+            [comment] => 
+            [price] => 5200
+            [name] => КОУЗИ М1 320Вт Белый
+            [total] => 5200
+        )
+
+    [1] => Array
+        (
+            [id] => 801
+            [count] => 2
+            [comment] => 
+            [price] => 400
+            [name] => Ножки Н2-3 белые
+            [total] => 800
+        )
+
+    [2] => Array
+        (
+            [id] => 500
+            [count] => 1
+            [comment] => 
+            [price] => 1500
+            [name] => Терморегулятор
+            [total] => 1500
+        )
+
+)
+
+[2017-02-20 10:36:47] sendOrder: CID-16 Order: Array
+(
+    [type] => 0
+    [payment] => 0
+    [logistic] => 0
+    [fname] => ТестИмя
+    [lname] => Тест
+    [pname] => ТестО
+    [phone] => 8222123
+    [email] => 
+    [cname] => 
+    [inn] => 
+    [city] => Уфа
+    [address] => 
+    [comment] => 
+    [companyname] => 
+    [cphone] => 
+    [cemail] => 
+)
+
+[2017-02-20 10:36:47] resultOrder: OID-136
+[2017-02-20 10:36:50] createDeal: OID-136 Info:Заказ №136 <br>1 КОУЗИ М1 320Вт Белый  - 1 x 5200 <br>2 Ножки Н2-3 белые  - 2 x 400 <br>3 Терморегулятор  - 1 x 1500 <br>4 Доставка Уфа - 1 x 1140 <br><hr>Получатель: Тест ТестИмя ТестО<br>Контакты: 8222123 <br>Доставка до склада: Уфа<br>Оплата: полная<br>Доп. информация: <br>
+[2017-02-20 10:36:50] Send form: <form action="https://demomoney.yandex.ru/eshop.xml" method="post">
+        <input name="shopId" value="120256" type="hidden"/>
+        <input name="scid" value="548743" type="hidden"/>
+        <input name="sum" value="8640" type="hidden">
+        <input name="customerNumber" value="Тест ТестИмя ТестО" type="hidden"/>
+        <input name="paymentType" value="" type="hidden"/>
+        <input name="orderNumber" value="136" type="hidden"/>
+        <input name="shopDefaultUrl" value="https://kouzi.ru/addon/shopdemo/" type="hidden"/>        
+        <input name="shopSuccessURL" value="https://kouzi.ru/addon/shopdemo/" type="hidden"/>        
+        <input name="cps_phone" value="8222123" type="hidden"/>
+        <input name="cps_email" value="" type="hidden"/>
+        <input type="submit" value="Pay"/>
+        </form>
+[2017-02-20 10:36:50] Start task: addDeal
+[2017-02-20 10:38:35] sendArticle: CID-16 Article: Array
+(
+    [0] => Array
+        (
+            [name] => КОУЗИ М1 250Вт Белый
+            [price] => 5200
+            [total] => 5200
+            [count] => 1
+            [id] => 10111
+            [comment] => 
+        )
+
+    [1] => Array
+        (
+            [name] => Ножки Н2-3 белые
+            [price] => 400
+            [total] => 800
+            [count] => 2
+            [id] => 801
+            [comment] => 
+        )
+
+)
+
+[2017-02-20 10:38:35] sendOrder: CID-16 Order: Array
+(
+    [type] => 0
+    [payment] => 1
+    [logistic] => 0
+    [fname] => ТестИмя
+    [lname] => Тест
+    [pname] => ТестО
+    [phone] => 8222123
+    [email] => 
+    [cname] => 
+    [inn] => 
+    [city] => Уфа
+    [address] => 
+    [comment] => 
+    [companyname] => 
+    [cphone] => 
+    [cemail] => 
+)
+
+[2017-02-20 10:38:35] resultOrder: OID-138
+[2017-02-20 10:38:39] createDeal: OID-138 Info:Заказ №138 <br>1 КОУЗИ М1 250Вт Белый  - 1 x 5200 <br>2 Ножки Н2-3 белые  - 2 x 400 <br>3 Комиссия  - 1 x 280 <br>4 Доставка Уфа - 1 x 1140 <br><hr>Получатель: Тест ТестИмя ТестО<br>Контакты: 8222123 <br>Доставка до склада: Уфа<br>Оплата: только доставка<br>Доп. информация: <br>
+[2017-02-20 10:38:39] Send form: <form action="https://demomoney.yandex.ru/eshop.xml" method="post">
+        <input name="shopId" value="120256" type="hidden"/>
+        <input name="scid" value="548743" type="hidden"/>
+        <input name="sum" value="1140" type="hidden">
+        <input name="customerNumber" value="Тест ТестИмя ТестО" type="hidden"/>
+        <input name="paymentType" value="" type="hidden"/>
+        <input name="orderNumber" value="138" type="hidden"/>
+        <input name="shopDefaultUrl" value="https://kouzi.ru/addon/shopdemo/" type="hidden"/>        
+        <input name="shopSuccessURL" value="https://kouzi.ru/addon/shopdemo/" type="hidden"/>        
+        <input name="cps_phone" value="8222123" type="hidden"/>
+        <input name="cps_email" value="" type="hidden"/>
+        <input type="submit" value="Pay"/>
+        </form>
+[2017-02-20 10:38:40] Start task: addDeal
+[2017-02-20 10:44:23] sendArticle: CID-16 Article: Array
+(
+    [0] => Array
+        (
+            [name] => КОУЗИ Н2 720Вт Белый
+            [price] => 6900
+            [total] => 13800
+            [count] => 2
+            [id] => 40411
+            [comment] => 
+        )
+
+    [1] => Array
+        (
+            [name] => Ножки Н2-3 белые
+            [price] => 400
+            [total] => 400
+            [count] => 1
+            [id] => 801
+            [comment] => 
+        )
+
+)
+
+[2017-02-20 10:44:23] sendOrder: CID-16 Order: Array
+(
+    [type] => 0
+    [payment] => 1
+    [logistic] => 0
+    [fname] => ТестИмя
+    [lname] => Тест
+    [pname] => ТестО
+    [phone] => 8222123
+    [email] => 
+    [cname] => 
+    [inn] => 
+    [city] => Уфа
+    [address] => 
+    [comment] => 
+    [companyname] => 
+    [cphone] => 
+    [cemail] => 
+)
+
+[2017-02-20 10:44:23] resultOrder: OID-139
+[2017-02-20 10:44:33] sendArticle: CID-16 Article: Array
+(
+    [0] => Array
+        (
+            [name] => КОУЗИ Н2 720Вт Белый
+            [price] => 6900
+            [total] => 13800
+            [count] => 2
+            [id] => 40411
+            [comment] => 
+        )
+
+    [1] => Array
+        (
+            [name] => Ножки Н2-3 белые
+            [price] => 400
+            [total] => 400
+            [count] => 1
+            [id] => 801
+            [comment] => 
+        )
+
+)
+
+[2017-02-20 10:44:33] sendOrder: CID-16 Order: Array
+(
+    [type] => 0
+    [payment] => 1
+    [logistic] => 0
+    [fname] => ТестИмя
+    [lname] => Тест
+    [pname] => ТестО
+    [phone] => 8222123
+    [email] => 
+    [cname] => 
+    [inn] => 
+    [city] => Тула
+    [address] => 
+    [comment] => 
+    [companyname] => 
+    [cphone] => 
+    [cemail] => 
+)
+
+[2017-02-20 10:44:34] resultOrder: OID-139
+[2017-02-20 10:44:39] createDeal: OID-139 Info:Заказ №139 <br>1 КОУЗИ Н2 720Вт Белый  - 2 x 6900 <br>2 Ножки Н2-3 белые  - 1 x 400 <br>3 Комиссия  - 1 x 365 <br>4 Доставка Тула - 1 x 1000 <br><hr>Получатель: Тест ТестИмя ТестО<br>Контакты: 8222123 <br>Доставка до склада: Тула<br>Оплата: только доставка<br>Доп. информация: <br>
+[2017-02-20 10:44:40] Send form: <form action="https://demomoney.yandex.ru/eshop.xml" method="post">
+        <input name="shopId" value="120256" type="hidden"/>
+        <input name="scid" value="548743" type="hidden"/>
+        <input name="sum" value="1000" type="hidden">
+        <input name="customerNumber" value="Тест ТестИмя ТестО" type="hidden"/>
+        <input name="paymentType" value="" type="hidden"/>
+        <input name="orderNumber" value="139" type="hidden"/>
+        <input name="shopDefaultUrl" value="https://kouzi.ru/addon/shopdemo/" type="hidden"/>        
+        <input name="shopSuccessURL" value="https://kouzi.ru/addon/shopdemo/" type="hidden"/>        
+        <input name="cps_phone" value="8222123" type="hidden"/>
+        <input name="cps_email" value="" type="hidden"/>
+        <input type="submit" value="Pay"/>
+        </form>
+[2017-02-20 10:44:40] Start task: addDeal
+[2017-02-20 10:46:57] sendArticle: CID-16 Article: Array
+(
+    [0] => Array
+        (
+            [name] => Ножки М1-2 белые
+            [price] => 400
+            [total] => 400
+            [count] => 1
+            [id] => 601
+            [comment] => 
+        )
+
+    [1] => Array
+        (
+            [name] => Ножки М3 белые
+            [price] => 400
+            [total] => 400
+            [count] => 1
+            [id] => 701
+            [comment] => 
+        )
+
+)
+
+[2017-02-20 10:46:57] sendOrder: CID-16 Order: Array
+(
+    [type] => 0
+    [payment] => 1
+    [logistic] => 0
+    [fname] => ТестИмя
+    [lname] => Тест
+    [pname] => ТестО
+    [phone] => 8222123
+    [email] => 
+    [cname] => 
+    [inn] => 
+    [city] => Челябинск
+    [address] => 
+    [comment] => 
+    [companyname] => 
+    [cphone] => 
+    [cemail] => 
+)
+
+[2017-02-20 10:46:57] resultOrder: OID-140
+[2017-02-20 10:47:02] createDeal: OID-140 Info:Заказ №140 <br>1 Ножки М1-2 белые  - 1 x 400 <br>2 Ножки М3 белые  - 1 x 400 <br>3 Доставка Челябинск - 1 x 0 <br><hr>Получатель: Тест ТестИмя ТестО<br>Контакты: 8222123 <br>Доставка до склада: Челябинск<br>Оплата: только доставка<br>Доп. информация: <br>
+[2017-02-20 10:47:03] Start task: addDeal
+[2017-02-20 10:47:42] sendArticle: CID-16 Article: Array
+(
+    [0] => Array
+        (
+            [name] => Ножки М1-2 белые
+            [price] => 400
+            [total] => 400
+            [count] => 1
+            [id] => 601
+            [comment] => 
+        )
+
+    [1] => Array
+        (
+            [name] => Ножки М3 белые
+            [price] => 400
+            [total] => 800
+            [count] => 2
+            [id] => 701
+            [comment] => 
+        )
+
+)
+
+[2017-02-20 10:47:42] sendOrder: CID-16 Order: Array
+(
+    [type] => 0
+    [payment] => 1
+    [logistic] => 0
+    [fname] => ТестИмя
+    [lname] => Тест
+    [pname] => ТестО
+    [phone] => 8222123
+    [email] => 
+    [cname] => 
+    [inn] => 
+    [city] => Москва
+    [address] => 
+    [comment] => 
+    [companyname] => 
+    [cphone] => 
+    [cemail] => 
+)
+
+[2017-02-20 10:47:42] resultOrder: OID-141
+[2017-02-20 10:47:48] createDeal: OID-141 Info:Заказ №141 <br>1 Ножки М1-2 белые  - 1 x 400 <br>2 Ножки М3 белые  - 2 x 400 <br>3 Комиссия  - 1 x 60 <br>4 Доставка Москва - 1 x 1200 <br><hr>Получатель: Тест ТестИмя ТестО<br>Контакты: 8222123 <br>Доставка до склада: Москва<br>Оплата: только доставка<br>Доп. информация: <br>
+[2017-02-20 10:47:48] Send form: <form action="https://demomoney.yandex.ru/eshop.xml" method="post">
+        <input name="shopId" value="120256" type="hidden"/>
+        <input name="scid" value="548743" type="hidden"/>
+        <input name="sum" value="1200" type="hidden">
+        <input name="customerNumber" value="Тест ТестИмя ТестО" type="hidden"/>
+        <input name="paymentType" value="" type="hidden"/>
+        <input name="orderNumber" value="141" type="hidden"/>
+        <input name="shopDefaultUrl" value="https://kouzi.ru/addon/shopdemo/" type="hidden"/>        
+        <input name="shopSuccessURL" value="https://kouzi.ru/addon/shopdemo/" type="hidden"/>        
+        <input name="cps_phone" value="8222123" type="hidden"/>
+        <input name="cps_email" value="" type="hidden"/>
+        <input type="submit" value="Pay"/>
+        </form>
+[2017-02-20 10:47:48] Start task: addDeal
+[2017-02-20 10:55:22] sendArticle: CID-16 Article: Array
+(
+    [0] => Array
+        (
+            [name] => Ножки М1-2 белые
+            [price] => 400
+            [total] => 400
+            [count] => 1
+            [id] => 601
+            [comment] => 
+        )
+
+)
+
+[2017-02-20 10:55:22] sendOrder: CID-16 Order: Array
+(
+    [type] => 1
+    [payment] => 0
+    [logistic] => 1
+    [fname] => ТестИмя
+    [lname] => Тест
+    [pname] => ТестО
+    [phone] => 8222123
+    [email] => 
+    [cname] => Тетст
+    [inn] => 123123123
+    [city] => Мариинск
+    [address] => 454001 Арррр, д 1
+    [comment] => 
+    [companyname] => ООО РиК
+    [cphone] => 896300110011
+    [cemail] => av@it.ru
+)
+
+[2017-02-20 10:55:22] resultOrder: OID-142
+[2017-02-20 10:56:13] sendArticle: CID-16 Article: Array
+(
+    [0] => Array
+        (
+            [id] => 500
+            [count] => 1
+            [comment] => 
+            [price] => 1500
+            [name] => Терморегулятор
+            [total] => 1500
+        )
+
+    [1] => Array
+        (
+            [id] => 601
+            [count] => 1
+            [comment] => 
+            [price] => 400
+            [name] => Ножки М1-2 белые
+            [total] => 400
+        )
+
+)
+
+[2017-02-20 10:56:13] sendOrder: CID-16 Order: Array
+(
+    [type] => 1
+    [payment] => 0
+    [logistic] => 1
+    [fname] => ТестИмя
+    [lname] => Тест
+    [pname] => ТестО
+    [phone] => 8222123
+    [email] => 
+    [cname] => Тетст
+    [inn] => 123123123
+    [city] => Мариинск
+    [address] => 454001 Арррр, д 1
+    [comment] => 
+    [companyname] => ООО РиК
+    [cphone] => 896300110011
+    [cemail] => av@it.ru
+)
+
+[2017-02-20 10:56:13] resultOrder: OID-142
+[2017-02-20 10:56:16] createDeal: OID-142 Info:Заказ №142 <br>1 Терморегулятор  - 1 x 1500 <br>2 Ножки М1-2 белые  - 1 x 400 <br>3 Доставка Мариинск - 1 x 6800 <br><hr>Получатель: ООО РиК ИНН:123123123 Тетст<br>Контакты: 896300110011 av@it.ru<br>Доставка до адреса: Мариинск 454001 Арррр, д 1<br>Оплата: полная<br>Доп. информация: <br>
+[2017-02-20 10:56:16] Start task: addDeal
+[2017-02-20 10:57:34] sendArticle: CID-16 Article: Array
+(
+    [0] => Array
+        (
+            [name] => Ножки М3 белые
+            [price] => 400
+            [total] => 400
+            [count] => 1
+            [id] => 701
+            [comment] => 
+        )
+
+)
+
+[2017-02-20 10:57:34] sendOrder: CID-16 Order: Array
+(
+    [type] => 1
+    [payment] => 0
+    [logistic] => 1
+    [fname] => ТестИмя
+    [lname] => Тест
+    [pname] => ТестО
+    [phone] => 8222123
+    [email] => 
+    [cname] => Тетст
+    [inn] => 123123123
+    [city] => Мариинск
+    [address] => 454001 Арррр, д 1
+    [comment] => 
+    [companyname] => ООО РиК
+    [cphone] => 896300110011
+    [cemail] => av@it.ru
+)
+
+[2017-02-20 10:57:34] resultOrder: OID-143
+[2017-02-20 12:08:12] sendArticle: CID-11 Article: Array
+(
+    [0] => Array
+        (
+            [id] => 30111
+            [count] => 1
+            [comment] => 
+            [price] => 5200
+            [name] => КОУЗИ М1 450Вт Белый
+            [total] => 5200
+        )
+
+    [1] => Array
+        (
+            [id] => 20111
+            [count] => 3
+            [comment] => 
+            [price] => 5200
+            [name] => КОУЗИ М1 320Вт Белый
+            [total] => 15600
+        )
+
+    [2] => Array
+        (
+            [id] => 40411
+            [count] => 100
+            [comment] => 
+            [price] => 6900
+            [name] => КОУЗИ Н2 720Вт Белый
+            [total] => 690000
+        )
+
+    [3] => Array
+        (
+            [name] => КОУЗИ Н2 720Вт 
+            [price] => 7200
+            [total] => 14400
+            [count] => 2
+            [id] => 40412
+            [comment] => 
+        )
+
+)
+
+[2017-02-20 12:08:12] sendOrder: CID-11 Order: Array
+(
+    [type] => 0
+    [payment] => 0
+    [logistic] => 0
+    [fname] => ФИО
+    [lname] => 1223
+    [pname] => EMK
+    [phone] => 98877798798798
+    [email] => DDD@sd.ru
+    [cname] => EMK
+    [inn] => ФИО
+    [city] => Ухта
+    [address] => 
+    [comment] => 
+    [companyname] => ФИО
+    [cphone] => 078377266859
+    [cemail] => DDD@sd.ru
+)
+
+[2017-02-20 12:08:12] resultOrder: OID-130
+[2017-02-20 12:08:23] sendArticle: CID-11 Article: Array
+(
+    [0] => Array
+        (
+            [id] => 30111
+            [count] => 1
+            [comment] => 
+            [price] => 5200
+            [name] => КОУЗИ М1 450Вт Белый
+            [total] => 5200
+        )
+
+    [1] => Array
+        (
+            [id] => 20111
+            [count] => 3
+            [comment] => 
+            [price] => 5200
+            [name] => КОУЗИ М1 320Вт Белый
+            [total] => 15600
+        )
+
+    [2] => Array
+        (
+            [id] => 40411
+            [count] => 100
+            [comment] => 
+            [price] => 6900
+            [name] => КОУЗИ Н2 720Вт Белый
+            [total] => 690000
+        )
+
+    [3] => Array
+        (
+            [name] => КОУЗИ Н2 720Вт 
+            [price] => 7200
+            [total] => 14400
+            [count] => 2
+            [id] => 40412
+            [comment] => 
+        )
+
+)
+
+[2017-02-20 12:08:23] sendOrder: CID-11 Order: Array
+(
+    [type] => 0
+    [payment] => 0
+    [logistic] => 0
+    [fname] => ФИО
+    [lname] => 1223
+    [pname] => EMK
+    [phone] => 98877798798798
+    [email] => DDD@sd.ru
+    [cname] => EMK
+    [inn] => ФИО
+    [city] => Ухта
+    [address] => 
+    [comment] => 
+    [companyname] => ФИО
+    [cphone] => 078377266859
+    [cemail] => DDD@sd.ru
+)
+
+[2017-02-20 12:08:23] resultOrder: OID-130
+[2017-02-20 12:08:44] sendArticle: CID-11 Article: Array
+(
+    [0] => Array
+        (
+            [id] => 30111
+            [count] => 1
+            [comment] => 
+            [price] => 5200
+            [name] => КОУЗИ М1 450Вт Белый
+            [total] => 5200
+        )
+
+    [1] => Array
+        (
+            [id] => 20111
+            [count] => 3
+            [comment] => 
+            [price] => 5200
+            [name] => КОУЗИ М1 320Вт Белый
+            [total] => 15600
+        )
+
+    [2] => Array
+        (
+            [id] => 40411
+            [count] => 100
+            [comment] => 
+            [price] => 6900
+            [name] => КОУЗИ Н2 720Вт Белый
+            [total] => 690000
+        )
+
+    [3] => Array
+        (
+            [name] => КОУЗИ Н2 720Вт 
+            [price] => 7200
+            [total] => 14400
+            [count] => 2
+            [id] => 40412
+            [comment] => 
+        )
+
+)
+
+[2017-02-20 12:08:44] sendOrder: CID-11 Order: Array
+(
+    [type] => 0
+    [payment] => 0
+    [logistic] => 0
+    [fname] => ФИО
+    [lname] => 1223
+    [pname] => EMK
+    [phone] => 98877798798798
+    [email] => DDD@sd.ru
+    [cname] => EMK
+    [inn] => ФИО
+    [city] => Ухта
+    [address] => 
+    [comment] => 
+    [companyname] => ФИО
+    [cphone] => 078377266859
+    [cemail] => DDD@sd.ru
+)
+
+[2017-02-20 12:08:44] resultOrder: OID-130
+[2017-02-20 12:08:49] sendArticle: CID-11 Article: Array
+(
+    [0] => Array
+        (
+            [id] => 30111
+            [count] => 1
+            [comment] => 
+            [price] => 5200
+            [name] => КОУЗИ М1 450Вт Белый
+            [total] => 5200
+        )
+
+    [1] => Array
+        (
+            [id] => 20111
+            [count] => 3
+            [comment] => 
+            [price] => 5200
+            [name] => КОУЗИ М1 320Вт Белый
+            [total] => 15600
+        )
+
+    [2] => Array
+        (
+            [id] => 40411
+            [count] => 100
+            [comment] => 
+            [price] => 6900
+            [name] => КОУЗИ Н2 720Вт Белый
+            [total] => 690000
+        )
+
+    [3] => Array
+        (
+            [name] => КОУЗИ Н2 720Вт 
+            [price] => 7200
+            [total] => 14400
+            [count] => 2
+            [id] => 40412
+            [comment] => 
+        )
+
+)
+
+[2017-02-20 12:08:49] sendOrder: CID-11 Order: Array
+(
+    [type] => 0
+    [payment] => 0
+    [logistic] => 0
+    [fname] => ФИО
+    [lname] => 1223
+    [pname] => EMK
+    [phone] => 98877798798798
+    [email] => DDD@sd.ru
+    [cname] => EMK
+    [inn] => ФИО
+    [city] => Ухта
+    [address] => 
+    [comment] => 
+    [companyname] => ФИО
+    [cphone] => 078377266859
+    [cemail] => DDD@sd.ru
+)
+
+[2017-02-20 12:08:49] resultOrder: OID-130
+[2017-02-20 12:09:02] sendArticle: CID-11 Article: Array
+(
+    [0] => Array
+        (
+            [id] => 30111
+            [count] => 1
+            [comment] => 
+            [price] => 5200
+            [name] => КОУЗИ М1 450Вт Белый
+            [total] => 5200
+        )
+
+    [1] => Array
+        (
+            [id] => 20111
+            [count] => 3
+            [comment] => 
+            [price] => 5200
+            [name] => КОУЗИ М1 320Вт Белый
+            [total] => 15600
+        )
+
+    [2] => Array
+        (
+            [id] => 40411
+            [count] => 100
+            [comment] => 
+            [price] => 6900
+            [name] => КОУЗИ Н2 720Вт Белый
+            [total] => 690000
+        )
+
+    [3] => Array
+        (
+            [name] => КОУЗИ Н2 720Вт 
+            [price] => 7200
+            [total] => 14400
+            [count] => 2
+            [id] => 40412
+            [comment] => 
+        )
+
+)
+
+[2017-02-20 12:09:02] sendOrder: CID-11 Order: Array
+(
+    [type] => 0
+    [payment] => 0
+    [logistic] => 0
+    [fname] => ФИО
+    [lname] => 1223
+    [pname] => EMK
+    [phone] => 98877798798798
+    [email] => DDD@sd.ru
+    [cname] => EMK
+    [inn] => ФИО
+    [city] => Ухта
+    [address] => 
+    [comment] => 
+    [companyname] => ФИО
+    [cphone] => 078377266859
+    [cemail] => DDD@sd.ru
+)
+
+[2017-02-20 12:09:02] resultOrder: OID-130
+[2017-02-20 12:09:05] sendArticle: CID-11 Article: Array
+(
+    [0] => Array
+        (
+            [id] => 30111
+            [count] => 1
+            [comment] => 
+            [price] => 5200
+            [name] => КОУЗИ М1 450Вт Белый
+            [total] => 5200
+        )
+
+    [1] => Array
+        (
+            [id] => 20111
+            [count] => 3
+            [comment] => 
+            [price] => 5200
+            [name] => КОУЗИ М1 320Вт Белый
+            [total] => 15600
+        )
+
+    [2] => Array
+        (
+            [id] => 40411
+            [count] => 100
+            [comment] => 
+            [price] => 6900
+            [name] => КОУЗИ Н2 720Вт Белый
+            [total] => 690000
+        )
+
+    [3] => Array
+        (
+            [name] => КОУЗИ Н2 720Вт 
+            [price] => 7200
+            [total] => 14400
+            [count] => 2
+            [id] => 40412
+            [comment] => 
+        )
+
+)
+
+[2017-02-20 12:09:05] sendOrder: CID-11 Order: Array
+(
+    [type] => 0
+    [payment] => 0
+    [logistic] => 0
+    [fname] => ФИО
+    [lname] => 1223
+    [pname] => EMK
+    [phone] => 98877798798798
+    [email] => DDD@sd.ru
+    [cname] => EMK
+    [inn] => ФИО
+    [city] => Ухта
+    [address] => 
+    [comment] => 
+    [companyname] => ФИО
+    [cphone] => 078377266859
+    [cemail] => DDD@sd.ru
+)
+
+[2017-02-20 12:09:05] resultOrder: OID-130
+[2017-02-20 13:30:50] sendArticle: CID-16 Article: Array
+(
+    [0] => Array
+        (
+            [id] => 701
+            [count] => 1
+            [comment] => 
+            [price] => 400
+            [name] => Ножки М3 белые
+            [total] => 400
+        )
+
+    [1] => Array
+        (
+            [id] => 702
+            [count] => 8
+            [comment] => RAL 5012
+            [price] => 400
+            [name] => Ножки М3 
+            [total] => 3200
+        )
+
+)
+
+[2017-02-20 13:30:50] sendOrder: CID-16 Order: Array
+(
+    [type] => 0
+    [payment] => 1
+    [logistic] => 1
+    [fname] => ТестИмя
+    [lname] => Тест
+    [pname] => ТестО
+    [phone] => 8222123
+    [email] => 
+    [cname] => Тетст
+    [inn] => 123123123
+    [city] => Ломоносов
+    [address] => 454001 Арррр, д 1
+    [comment] => 
+    [companyname] => ООО РиК
+    [cphone] => 896300110011
+    [cemail] => av@it.ru
+)
+
+[2017-02-20 13:30:50] resultOrder: OID-143
+[2017-02-20 13:32:40] sendArticle: CID-16 Article: Array
+(
+    [0] => Array
+        (
+            [id] => 702
+            [count] => 8
+            [comment] => RAL 5012
+            [price] => 400
+            [name] => Ножки М3 
+            [total] => 3200
+        )
+
+    [1] => Array
+        (
+            [id] => 701
+            [count] => 1
+            [comment] => 
+            [price] => 400
+            [name] => Ножки М3 белые
+            [total] => 400
+        )
+
+)
+
+[2017-02-20 13:32:40] sendOrder: CID-16 Order: Array
+(
+    [type] => 0
+    [payment] => 1
+    [logistic] => 1
+    [fname] => ТестИмя
+    [lname] => Тест
+    [pname] => ТестО
+    [phone] => 8222123
+    [email] => 
+    [cname] => Тетст
+    [inn] => 123123123
+    [city] => Ломоносов
+    [address] => 454001 Арррр, д 1
+    [comment] => 
+    [companyname] => ООО РиК
+    [cphone] => 896300110011
+    [cemail] => av@it.ru
+)
+
+[2017-02-20 13:32:40] resultOrder: OID-143
+[2017-02-20 13:32:46] createDeal: OID-143 Info:Заказ №143 <br>1 Ножки М3  RAL 5012 - 8 x 400 <br>2 Ножки М3 белые  - 1 x 400 <br>3 Комиссия  - 1 x 180 <br>4 Доставка Ломоносов - 1 x 1400 <br><hr>Получатель: Тест ТестИмя ТестО<br>Контакты: 8222123 <br>Доставка до адреса: Ломоносов 454001 Арррр, д 1<br>Оплата: только доставка<br>Доп. информация: <br>
+[2017-02-20 13:32:46] Send form: <form action="https://demomoney.yandex.ru/eshop.xml" method="post">
+        <input name="shopId" value="120256" type="hidden"/>
+        <input name="scid" value="548743" type="hidden"/>
+        <input name="sum" value="1400" type="hidden">
+        <input name="customerNumber" value="Тест ТестИмя ТестО" type="hidden"/>
+        <input name="paymentType" value="" type="hidden"/>
+        <input name="orderNumber" value="143" type="hidden"/>
+        <input name="shopDefaultUrl" value="https://kouzi.ru/addon/shopdemo/" type="hidden"/>        
+        <input name="shopSuccessURL" value="https://kouzi.ru/addon/shopdemo/" type="hidden"/>        
+        <input name="cps_phone" value="8222123" type="hidden"/>
+        <input name="cps_email" value="" type="hidden"/>
+        <input type="submit" value="Pay"/>
+        </form>
+[2017-02-20 13:32:47] Start task: addDeal
+[2017-02-20 13:33:34] sendArticle: CID-16 Article: Array
+(
+    [0] => Array
+        (
+            [name] => КОУЗИ М1 320Вт 
+            [price] => 5500
+            [total] => 22000
+            [count] => 4
+            [id] => 20112
+            [comment] => RAL 5024
+        )
+
+    [1] => Array
+        (
+            [name] => Ножки М3 белые
+            [price] => 400
+            [total] => 1600
+            [count] => 4
+            [id] => 701
+            [comment] => 
+        )
+
+)
+
+[2017-02-20 13:33:34] sendOrder: CID-16 Order: Array
+(
+    [type] => 0
+    [payment] => 1
+    [logistic] => 1
+    [fname] => ТестИмя
+    [lname] => Тест
+    [pname] => ТестО
+    [phone] => 8222123
+    [email] => 
+    [cname] => Тетст
+    [inn] => 123123123
+    [city] => Челябинск
+    [address] => 454001 Арррр, д 1
+    [comment] => 
+    [companyname] => ООО РиК
+    [cphone] => 896300110011
+    [cemail] => av@it.ru
+)
+
+[2017-02-20 13:33:34] resultOrder: OID-144
+[2017-02-20 13:33:41] createDeal: OID-144 Info:Заказ №144 <br>1 КОУЗИ М1 320Вт  RAL 5024 - 4 x 5500 <br>2 Ножки М3 белые  - 4 x 400 <br>3 Доставка Челябинск - 1 x 0 <br><hr>Получатель: Тест ТестИмя ТестО<br>Контакты: 8222123 <br>Доставка до адреса: Челябинск 454001 Арррр, д 1<br>Оплата: только доставка<br>Доп. информация: <br>
+[2017-02-20 13:33:41] Start task: addDeal
+[2017-02-20 13:36:25] sendArticle: CID-11 Article: Array
+(
+    [0] => Array
+        (
+            [name] => КОУЗИ Н2 720Вт Белый
+            [price] => 6900
+            [total] => 6900
+            [count] => 1
+            [id] => 40411
+            [comment] => 
+        )
+
+)
+
+[2017-02-20 13:36:25] sendOrder: CID-11 Order: Array
+(
+    [type] => 0
+    [payment] => 0
+    [logistic] => 0
+    [fname] => ФИО
+    [lname] => 1223
+    [pname] => EMK
+    [phone] => 98877798798798
+    [email] => DDD@sd.ru
+    [cname] => EMK
+    [inn] => ФИО
+    [city] => Ухта
+    [address] => 
+    [comment] => 
+    [companyname] => ФИО
+    [cphone] => 078377266859
+    [cemail] => DDD@sd.ru
+)
+
+[2017-02-20 13:36:25] resultOrder: OID-130
+[2017-02-20 13:51:17] sendArticle: CID-16 Article: Array
+(
+    [0] => Array
+        (
+            [id] => 500
+            [count] => 4
+            [comment] => 
+            [price] => 1500
+            [name] => Терморегулятор
+            [total] => 6000
+        )
+
+    [1] => Array
+        (
+            [id] => 602
+            [count] => 1
+            [comment] => RAL 3031
+            [price] => 400
+            [name] => Ножки М1-2 
+            [total] => 400
+        )
+
+)
+
+[2017-02-20 13:51:17] sendOrder: CID-16 Order: Array
+(
+    [type] => 0
+    [payment] => 1
+    [logistic] => 1
+    [fname] => ТестИмя
+    [lname] => Тест
+    [pname] => ТестО
+    [phone] => 8222123
+    [email] => 
+    [cname] => Тетст
+    [inn] => 123123123
+    [city] => Челябинск
+    [address] => 454001 Арррр, д 1
+    [comment] =>  
+    [companyname] => ООО РиК
+    [cphone] => 896300110011
+    [cemail] => av@it.ru
+)
+
+[2017-02-20 13:51:17] resultOrder: OID-145
+[2017-02-20 15:01:16] sendArticle: CID-11 Article: Array
+(
+    [0] => Array
+        (
+            [id] => 20221
+            [count] => 1
+            [comment] => 
+            [price] => 5400
+            [name] => КОУЗИ М2 320ВтK Белый
+            [total] => 5400
+        )
+
+    [1] => Array
+        (
+            [id] => 40411
+            [count] => 1
+            [comment] => 
+            [price] => 6900
+            [name] => КОУЗИ Н2 720Вт Белый
+            [total] => 6900
+        )
+
+)
+
+[2017-02-20 15:01:16] sendOrder: CID-11 Order: Array
+(
+    [type] => 0
+    [payment] => 1
+    [logistic] => 0
+    [fname] => Иван
+    [lname] => Иванов
+    [pname] => Иванович
+    [phone] => 74952222222
+    [email] => 
+    [cname] => 
+    [inn] => 
+    [city] => Москва
+    [address] => 
+    [comment] => Отправка транспортной кампанией Деловые Линии
+    [companyname] => 
+    [cphone] => 
+    [cemail] => 
+)
+
+[2017-02-20 15:01:16] resultOrder: OID-130
+[2017-02-20 15:02:11] sendArticle: CID-11 Article: Array
+(
+    [0] => Array
+        (
+            [id] => 20221
+            [count] => 1
+            [comment] => 
+            [price] => 5400
+            [name] => КОУЗИ М2 320ВтK Белый
+            [total] => 5400
+        )
+
+    [1] => Array
+        (
+            [id] => 40411
+            [count] => 2
+            [comment] => 
+            [price] => 6900
+            [name] => КОУЗИ Н2 720Вт Белый
+            [total] => 13800
+        )
+
+)
+
+[2017-02-20 15:02:11] sendOrder: CID-11 Order: Array
+(
+    [type] => 0
+    [payment] => 1
+    [logistic] => 0
+    [fname] => Иван
+    [lname] => Иванов
+    [pname] => Иванович
+    [phone] => 74952222222
+    [email] => 
+    [cname] => 
+    [inn] => 
+    [city] => Москва
+    [address] => 
+    [comment] => Отправка транспортной кампанией Деловые Линии
+    [companyname] => 
+    [cphone] => 
+    [cemail] => 
+)
+
+[2017-02-20 15:02:11] resultOrder: OID-130
+[2017-02-20 15:02:25] createDeal: OID-130 Info:Заказ №130 <br>1 КОУЗИ М2 320ВтK Белый  - 1 x 5400 <br>2 КОУЗИ Н2 720Вт Белый  - 2 x 6900 <br>3 Комиссия  - 1 x 960 <br>4 Доставка Москва - 1 x 1200 <br><hr>Получатель: Иванов Иван Иванович<br>Контакты: 74952222222 <br>Доставка до склада: Москва<br>Оплата: только доставка<br>Доп. информация: Отправка транспортной кампанией Деловые Линии<br>
+[2017-02-20 15:02:25] Send form: <form action="https://demomoney.yandex.ru/eshop.xml" method="post">
+        <input name="shopId" value="120256" type="hidden"/>
+        <input name="scid" value="548743" type="hidden"/>
+        <input name="sum" value="1200" type="hidden">
+        <input name="customerNumber" value="Иванов Иван Иванович" type="hidden"/>
+        <input name="paymentType" value="" type="hidden"/>
+        <input name="orderNumber" value="130" type="hidden"/>
+        <input name="shopDefaultUrl" value="https://kouzi.ru/addon/shopdemo/" type="hidden"/>        
+        <input name="shopSuccessURL" value="https://kouzi.ru/addon/shopdemo/" type="hidden"/>        
+        <input name="cps_phone" value="74952222222" type="hidden"/>
+        <input name="cps_email" value="" type="hidden"/>
+        <input type="submit" value="Pay"/>
+        </form>
+[2017-02-20 15:02:25] Start task: addDeal
+[2017-02-20 15:03:13] Start checkOrder
+[2017-02-20 15:03:13] Security type MD5
+[2017-02-20 15:03:13] Request: Array
+(
+    [action] => checkOrder
+    [orderSumAmount] => 1200.00
+    [orderSumCurrencyPaycash] => 10643
+    [orderSumBankPaycash] => 1003
+    [shopId] => 120256
+    [invoiceId] => 2000001043074
+    [customerNumber] => Иванов Иван Иванович
+    [orderNumber] => 130
+    [md5] => F196DD8416F77779A1F80ECA0864954D
+)
+
+[2017-02-20 15:03:13] String to md5: checkOrder;1200.00;10643;1003;120256;2000001043074;Иванов Иван Иванович;GGUx6Wyh4zLa
+[2017-02-20 15:03:13] Response: <?xml version="1.0" encoding="UTF-8"?><checkOrderResponse performedDatetime="2017-02-20T15:03:13.000+03:00" code="0"  invoiceId="2000001043074" shopId="120256"/>
+[2017-02-20 15:03:13] Start paymentAviso
+[2017-02-20 15:03:13] Security type MD5
+[2017-02-20 15:03:13] Request: Array
+(
+    [action] => paymentAviso
+    [orderSumAmount] => 1200.00
+    [orderSumCurrencyPaycash] => 10643
+    [orderSumBankPaycash] => 1003
+    [shopId] => 120256
+    [invoiceId] => 2000001043074
+    [customerNumber] => Иванов Иван Иванович
+    [orderNumber] => 130
+    [md5] => 06A7C2B50B06502481E0E2071E09C10F
+)
+
+[2017-02-20 15:03:13] String to md5: paymentAviso;1200.00;10643;1003;120256;2000001043074;Иванов Иван Иванович;GGUx6Wyh4zLa
+[2017-02-20 15:03:13] Пришла оплата: сделка ID130
+[2017-02-20 15:04:17] Start paymentAviso
+[2017-02-20 15:04:17] Security type MD5
+[2017-02-20 15:04:17] Request: Array
+(
+    [action] => paymentAviso
+    [orderSumAmount] => 1200.00
+    [orderSumCurrencyPaycash] => 10643
+    [orderSumBankPaycash] => 1003
+    [shopId] => 120256
+    [invoiceId] => 2000001043074
+    [customerNumber] => Иванов Иван Иванович
+    [orderNumber] => 130
+    [md5] => 06A7C2B50B06502481E0E2071E09C10F
+)
+
+[2017-02-20 15:04:17] String to md5: paymentAviso;1200.00;10643;1003;120256;2000001043074;Иванов Иван Иванович;GGUx6Wyh4zLa
+[2017-02-20 15:04:17] Пришла оплата: сделка ID130
+[2017-02-20 15:19:18] Start paymentAviso
+[2017-02-20 15:19:18] Security type MD5
+[2017-02-20 15:19:18] Request: Array
+(
+    [action] => paymentAviso
+    [orderSumAmount] => 1200.00
+    [orderSumCurrencyPaycash] => 10643
+    [orderSumBankPaycash] => 1003
+    [shopId] => 120256
+    [invoiceId] => 2000001043074
+    [customerNumber] => Иванов Иван Иванович
+    [orderNumber] => 130
+    [md5] => 06A7C2B50B06502481E0E2071E09C10F
+)
+
+[2017-02-20 15:19:18] String to md5: paymentAviso;1200.00;10643;1003;120256;2000001043074;Иванов Иван Иванович;GGUx6Wyh4zLa
+[2017-02-20 15:19:18] Пришла оплата: сделка ID130
+[2017-02-20 15:49:21] Start paymentAviso
+[2017-02-20 15:49:21] Security type MD5
+[2017-02-20 15:49:21] Request: Array
+(
+    [action] => paymentAviso
+    [orderSumAmount] => 1200.00
+    [orderSumCurrencyPaycash] => 10643
+    [orderSumBankPaycash] => 1003
+    [shopId] => 120256
+    [invoiceId] => 2000001043074
+    [customerNumber] => Иванов Иван Иванович
+    [orderNumber] => 130
+    [md5] => 06A7C2B50B06502481E0E2071E09C10F
+)
+
+[2017-02-20 15:49:21] String to md5: paymentAviso;1200.00;10643;1003;120256;2000001043074;Иванов Иван Иванович;GGUx6Wyh4zLa
+[2017-02-20 15:49:22] Пришла оплата: сделка ID130
+[2017-02-20 16:19:23] Start paymentAviso
+[2017-02-20 16:19:23] Security type MD5
+[2017-02-20 16:19:23] Request: Array
+(
+    [action] => paymentAviso
+    [orderSumAmount] => 1200.00
+    [orderSumCurrencyPaycash] => 10643
+    [orderSumBankPaycash] => 1003
+    [shopId] => 120256
+    [invoiceId] => 2000001043074
+    [customerNumber] => Иванов Иван Иванович
+    [orderNumber] => 130
+    [md5] => 06A7C2B50B06502481E0E2071E09C10F
+)
+
+[2017-02-20 16:19:23] String to md5: paymentAviso;1200.00;10643;1003;120256;2000001043074;Иванов Иван Иванович;GGUx6Wyh4zLa
+[2017-02-20 16:19:23] Пришла оплата: сделка ID130
+[2017-02-20 16:49:23] Start paymentAviso
+[2017-02-20 16:49:23] Security type MD5
+[2017-02-20 16:49:23] Request: Array
+(
+    [action] => paymentAviso
+    [orderSumAmount] => 1200.00
+    [orderSumCurrencyPaycash] => 10643
+    [orderSumBankPaycash] => 1003
+    [shopId] => 120256
+    [invoiceId] => 2000001043074
+    [customerNumber] => Иванов Иван Иванович
+    [orderNumber] => 130
+    [md5] => 06A7C2B50B06502481E0E2071E09C10F
+)
+
+[2017-02-20 16:49:23] String to md5: paymentAviso;1200.00;10643;1003;120256;2000001043074;Иванов Иван Иванович;GGUx6Wyh4zLa
+[2017-02-20 16:49:23] Пришла оплата: сделка ID130
+[2017-02-20 17:19:24] Start paymentAviso
+[2017-02-20 17:19:24] Security type MD5
+[2017-02-20 17:19:24] Request: Array
+(
+    [action] => paymentAviso
+    [orderSumAmount] => 1200.00
+    [orderSumCurrencyPaycash] => 10643
+    [orderSumBankPaycash] => 1003
+    [shopId] => 120256
+    [invoiceId] => 2000001043074
+    [customerNumber] => Иванов Иван Иванович
+    [orderNumber] => 130
+    [md5] => 06A7C2B50B06502481E0E2071E09C10F
+)
+
+[2017-02-20 17:19:24] String to md5: paymentAviso;1200.00;10643;1003;120256;2000001043074;Иванов Иван Иванович;GGUx6Wyh4zLa
+[2017-02-20 17:19:24] Пришла оплата: сделка ID130
+[2017-02-22 10:05:31] sendArticle: CID-16 Article: Array
+(
+    [0] => Array
+        (
+            [id] => 602
+            [count] => 1
+            [comment] => RAL 3031
+            [price] => 400
+            [name] => Ножки М1-2 
+            [total] => 400
+        )
+
+    [1] => Array
+        (
+            [id] => 500
+            [count] => 4
+            [comment] => 
+            [price] => 1500
+            [name] => Терморегулятор
+            [total] => 6000
+        )
+
+)
+
+[2017-02-22 10:05:31] sendOrder: CID-16 Order: Array
+(
+    [type] => 0
+    [payment] => 1
+    [logistic] => 1
+    [fname] => ТестИмя
+    [lname] => Тест
+    [pname] => ТестО
+    [phone] => 8222123
+    [email] => 
+    [cname] => Тетст
+    [inn] => 123123123
+    [city] => Челябинск
+    [address] => 454001 Арррр, д 1
+    [comment] =>  
+    [companyname] => ООО РиК
+    [cphone] => 896300110011
+    [cemail] => av@it.ru
+)
+
+[2017-02-22 10:05:31] resultOrder: OID-145
+[2017-02-22 10:29:53] sendArticle: CID-10 Article: Array
+(
+    [0] => Array
+        (
+            [id] => 30111
+            [count] => 1
+            [comment] => 
+            [price] => 5200
+            [name] => КОУЗИ М1 450Вт Белый
+            [total] => 5200
+        )
+
+    [1] => Array
+        (
+            [name] => КОУЗИ М1 320Вт Белый
+            [price] => 5200
+            [total] => 5200
+            [count] => 1
+            [id] => 20111
+            [comment] => 
+        )
+
+)
+
+[2017-02-22 10:29:53] sendOrder: CID-10 Order: Array
+(
+    [type] => 0
+    [payment] => 1
+    [logistic] => 1
+    [fname] => Иваныч
+    [lname] => Иван
+    [pname] => Иваныч
+    [phone] => 1121212121212
+    [email] => 12344@mali.ruf
+    [cname] => https://kouzi.ru/addon/shopdemo/
+    [inn] => https://kouzi.ru/addon/shopdemo/
+    [city] => Уфа
+    [address] => https://kouzi.ru/addon/shopdemo/
+    [comment] => https://kouzi.ru/addon/shopdemo/
+    [companyname] => https://kouzi.ru/addon/shopdemo/
+    [cphone] => 567567567567576
+    [cemail] => 1@2.ru
+)
+
+[2017-02-22 10:29:53] resultOrder: OID-71
+[2017-02-22 10:31:03] sendArticle: CID-10 Article: Array
+(
+    [0] => Array
+        (
+            [id] => 30111
+            [count] => 1
+            [comment] => 
+            [price] => 5200
+            [name] => КОУЗИ М1 450Вт Белый
+            [total] => 5200
+        )
+
+    [1] => Array
+        (
+            [name] => КОУЗИ М1 320Вт Белый
+            [price] => 5200
+            [total] => 5200
+            [count] => 1
+            [id] => 20111
+            [comment] => 
+        )
+
+)
+
+[2017-02-22 10:31:03] sendOrder: CID-10 Order: Array
+(
+    [type] => 0
+    [payment] => 1
+    [logistic] => 1
+    [fname] => Иваныч
+    [lname] => Иван
+    [pname] => Иваныч
+    [phone] => 1121212121212
+    [email] => 12344@mali.ruf
+    [cname] => https://kouzi.ru/addon/shopdemo/
+    [inn] => https://kouzi.ru/addon/shopdemo/
+    [city] => Уфа
+    [address] => https://kouzi.ru/addon/shopdemo/
+    [comment] => https://kouzi.ru/addon/shopdemo/
+    [companyname] => https://kouzi.ru/addon/shopdemo/
+    [cphone] => 567567567567576
+    [cemail] => 1@2.ru
+)
+
+[2017-02-22 10:31:03] resultOrder: OID-71
+[2017-02-22 10:31:05] createDeal: OID-71 Info:Заказ №71 <br>1 КОУЗИ М1 450Вт Белый  - 1 x 5200 <br>2 КОУЗИ М1 320Вт Белый  - 1 x 5200 <br>3 Комиссия  - 1 x 520 <br>4 Доставка Уфа - 1 x 1450 <br><hr>Получатель: Иван Иваныч Иваныч<br>Контакты: 1121212121212 12344@mali.ruf<br>Доставка до адреса: Уфа https://kouzi.ru/addon/shopdemo/<br>Оплата: только доставка<br>Доп. информация: https://kouzi.ru/addon/shopdemo/<br>
+[2017-02-22 10:31:05] Send form: <form action="https://demomoney.yandex.ru/eshop.xml" method="post">
+        <input name="shopId" value="120256" type="hidden"/>
+        <input name="scid" value="548743" type="hidden"/>
+        <input name="sum" value="1450" type="hidden">
+        <input name="customerNumber" value="Иван Иваныч Иваныч" type="hidden"/>
+        <input name="paymentType" value="" type="hidden"/>
+        <input name="orderNumber" value="71" type="hidden"/>
+        <input name="shopDefaultUrl" value="https://kouzi.ru/addon/shopdemo/" type="hidden"/>        
+        <input name="shopSuccessURL" value="https://kouzi.ru/addon/shopdemo/" type="hidden"/>        
+        <input name="cps_phone" value="1121212121212" type="hidden"/>
+        <input name="cps_email" value="12344@mali.ruf" type="hidden"/>
+        <input type="submit" value="Pay"/>
+        </form>
+[2017-02-22 10:31:06] Start task: addDeal
+[2017-02-22 11:03:49] sendArticle: CID-16 Article: Array
+(
+    [0] => Array
+        (
+            [id] => 500
+            [count] => 4
+            [comment] => 
+            [price] => 1500
+            [name] => Терморегулятор
+            [total] => 6000
+        )
+
+    [1] => Array
+        (
+            [id] => 602
+            [count] => 1
+            [comment] => RAL 3031
+            [price] => 400
+            [name] => Ножки М1-2 
+            [total] => 400
+        )
+
+    [2] => Array
+        (
+            [name] => КОУЗИ Н2 720Вт 
+            [price] => 7200
+            [total] => 36000
+            [count] => 5
+            [id] => 40412
+            [comment] => RAL 4011
+        )
+
+)
+
+[2017-02-22 11:03:49] sendOrder: CID-16 Order: Array
+(
+    [type] => 0
+    [payment] => 1
+    [logistic] => 1
+    [fname] => ТестИмя
+    [lname] => Тест
+    [pname] => ТестО
+    [phone] => 8222123
+    [email] => 
+    [cname] => Тетст
+    [inn] => 123123123
+    [city] => Хабаровск
+    [address] => 454001 Арррр, д 1
+    [comment] =>  
+    [companyname] => ООО РиК
+    [cphone] => 896300110011
+    [cemail] => av@it.ru
+)
+
+[2017-02-22 11:03:49] resultOrder: OID-145
+[2017-02-22 11:09:23] sendArticle: CID-16 Article: Array
+(
+    [0] => Array
+        (
+            [id] => 500
+            [count] => 4
+            [comment] => 
+            [price] => 1500
+            [name] => Терморегулятор
+            [total] => 6000
+        )
+
+    [1] => Array
+        (
+            [id] => 602
+            [count] => 1
+            [comment] => RAL 3031
+            [price] => 400
+            [name] => Ножки М1-2 
+            [total] => 400
+        )
+
+    [2] => Array
+        (
+            [name] => КОУЗИ Н2 720Вт 
+            [price] => 7200
+            [total] => 36000
+            [count] => 5
+            [id] => 40412
+            [comment] => RAL 4011
+        )
+
+    [3] => Array
+        (
+            [name] => Ножки М1-2 
+            [price] => 400
+            [total] => 400
+            [count] => 1
+            [id] => 602
+            [comment] => 
+        )
+
+)
+
+[2017-02-22 11:09:23] sendOrder: CID-16 Order: Array
+(
+    [type] => 0
+    [payment] => 0
+    [logistic] => 1
+    [fname] => ТестИмя
+    [lname] => Тест
+    [pname] => ТестО
+    [phone] => 8222123
+    [email] => 
+    [cname] => Тетст
+    [inn] => 123123123
+    [city] => Хабаровск
+    [address] => 454001 Арррр, д 1
+    [comment] =>  
+    [companyname] => ООО РиК
+    [cphone] => 896300110011
+    [cemail] => av@it.ru
+)
+
+[2017-02-22 11:09:23] resultOrder: OID-145
+[2017-02-22 11:09:24] createDeal: OID-145 Info:Заказ №145 <br>1 Терморегулятор  - 4 x 1500 <br>2 Ножки М1-2  RAL 3031 - 1 x 400 <br>3 КОУЗИ Н2 720Вт  RAL 4011 - 5 x 7200 <br>4 Ножки М1-2   - 1 x 400 <br>5 Доставка Хабаровск - 1 x 2158 <br><hr>Получатель: Тест ТестИмя ТестО<br>Контакты: 8222123 <br>Доставка до адреса: Хабаровск 454001 Арррр, д 1<br>Оплата: полная<br>Доп. информация:  <br>
+[2017-02-22 11:09:24] Send form: <form action="https://demomoney.yandex.ru/eshop.xml" method="post">
+        <input name="shopId" value="120256" type="hidden"/>
+        <input name="scid" value="548743" type="hidden"/>
+        <input name="sum" value="44958" type="hidden">
+        <input name="customerNumber" value="Тест ТестИмя ТестО" type="hidden"/>
+        <input name="paymentType" value="" type="hidden"/>
+        <input name="orderNumber" value="145" type="hidden"/>
+        <input name="shopDefaultUrl" value="https://kouzi.ru/addon/shopdemo/" type="hidden"/>        
+        <input name="shopSuccessURL" value="https://kouzi.ru/addon/shopdemo/" type="hidden"/>        
+        <input name="cps_phone" value="8222123" type="hidden"/>
+        <input name="cps_email" value="" type="hidden"/>
+        <input type="submit" value="Pay"/>
+        </form>
+[2017-02-22 11:09:24] Start task: addDeal
+[2017-02-22 11:09:40] Start checkOrder
+[2017-02-22 11:09:40] Security type MD5
+[2017-02-22 11:09:40] Request: Array
+(
+    [action] => checkOrder
+    [orderSumAmount] => 44958.00
+    [orderSumCurrencyPaycash] => 10643
+    [orderSumBankPaycash] => 1003
+    [shopId] => 120256
+    [invoiceId] => 2000001049041
+    [customerNumber] => Тест ТестИмя ТестО
+    [orderNumber] => 145
+    [md5] => B48F23C3DEF0848D02B0171285715EC9
+)
+
+[2017-02-22 11:09:40] String to md5: checkOrder;44958.00;10643;1003;120256;2000001049041;Тест ТестИмя ТестО;GGUx6Wyh4zLa
+[2017-02-22 11:09:40] Response: <?xml version="1.0" encoding="UTF-8"?><checkOrderResponse performedDatetime="2017-02-22T11:09:40.000+03:00" code="0"  invoiceId="2000001049041" shopId="120256"/>
+[2017-02-22 11:09:40] Start paymentAviso
+[2017-02-22 11:09:40] Security type MD5
+[2017-02-22 11:09:40] Request: Array
+(
+    [action] => paymentAviso
+    [orderSumAmount] => 44958.00
+    [orderSumCurrencyPaycash] => 10643
+    [orderSumBankPaycash] => 1003
+    [shopId] => 120256
+    [invoiceId] => 2000001049041
+    [customerNumber] => Тест ТестИмя ТестО
+    [orderNumber] => 145
+    [md5] => D5753171DB2E8BCD2DD44E84FA8721E2
+)
+
+[2017-02-22 11:09:40] String to md5: paymentAviso;44958.00;10643;1003;120256;2000001049041;Тест ТестИмя ТестО;GGUx6Wyh4zLa
+[2017-02-22 11:09:40] Пришла оплата: сделка ID145
+[2017-02-22 11:10:43] Start paymentAviso
+[2017-02-22 11:10:43] Security type MD5
+[2017-02-22 11:10:43] Request: Array
+(
+    [action] => paymentAviso
+    [orderSumAmount] => 44958.00
+    [orderSumCurrencyPaycash] => 10643
+    [orderSumBankPaycash] => 1003
+    [shopId] => 120256
+    [invoiceId] => 2000001049041
+    [customerNumber] => Тест ТестИмя ТестО
+    [orderNumber] => 145
+    [md5] => D5753171DB2E8BCD2DD44E84FA8721E2
+)
+
+[2017-02-22 11:10:43] String to md5: paymentAviso;44958.00;10643;1003;120256;2000001049041;Тест ТестИмя ТестО;GGUx6Wyh4zLa
+[2017-02-22 11:10:43] Пришла оплата: сделка ID145
