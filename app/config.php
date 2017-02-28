@@ -27,11 +27,11 @@ define('ID_CART',"ID_CART");
 
 ////crm config BX24
 define('SHOP_CRM', 'kouzi.bitrix24.ru');
-define("CLIENT_ID", "local.589c56fc122287.42559076");
-define("CLIENT_SECRET", "hMmcQc58zAA7Vwsq1b4eAKZlnFc2UQGxwS14pzBqzM7oo83EAb");
+define("CLIENT_ID", "local.58b5346ed4c5f9.95770643");
+define("CLIENT_SECRET", "TAc4zwtglTcMgSwV3VLi62PB5fzH4G2nx75rbMlw2Oa90E1ZTx");
 define('LIB_BX_FOLDER', 'lib/BX24class/');
 define('APP_FOLDER', SHOP_DIR.LIB_BX_FOLDER);
-define('REDIRECT_URI', APP_SERVER.LIB_BX_FOLDER);
+define('REDIRECT_URI', APP_SERVER.APP_URL_FOLDER.LIB_BX_FOLDER);
 define('SCOPE', 'log,user,department,sonet_group');
 define('PROTOCOL', 'https://');
 define('TOKEN_FILE',APP_FOLDER.'key.json');

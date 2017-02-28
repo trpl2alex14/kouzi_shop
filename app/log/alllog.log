@@ -8412,3 +8412,1418 @@
 
 [2017-02-22 11:10:43] String to md5: paymentAviso;44958.00;10643;1003;120256;2000001049041;Тест ТестИмя ТестО;GGUx6Wyh4zLa
 [2017-02-22 11:10:43] Пришла оплата: сделка ID145
+[2017-02-22 11:25:44] Start paymentAviso
+[2017-02-22 11:25:44] Security type MD5
+[2017-02-22 11:25:44] Request: Array
+(
+    [action] => paymentAviso
+    [orderSumAmount] => 44958.00
+    [orderSumCurrencyPaycash] => 10643
+    [orderSumBankPaycash] => 1003
+    [shopId] => 120256
+    [invoiceId] => 2000001049041
+    [customerNumber] => Тест ТестИмя ТестО
+    [orderNumber] => 145
+    [md5] => D5753171DB2E8BCD2DD44E84FA8721E2
+)
+
+[2017-02-22 11:25:44] String to md5: paymentAviso;44958.00;10643;1003;120256;2000001049041;Тест ТестИмя ТестО;GGUx6Wyh4zLa
+[2017-02-22 11:25:44] Пришла оплата: сделка ID145
+[2017-02-22 11:32:49] sendArticle: CID-16 Article: Array
+(
+    [0] => Array
+        (
+            [name] => Ножки Н2-3 белые
+            [price] => 400
+            [total] => 400
+            [count] => 1
+            [id] => 801
+            [comment] => 
+        )
+
+)
+
+[2017-02-22 11:32:49] sendOrder: CID-16 Order: Array
+(
+    [type] => 0
+    [payment] => 0
+    [logistic] => 1
+    [fname] => ТестИмя
+    [lname] => Тест
+    [pname] => ТестО
+    [phone] => 8222123
+    [email] => 
+    [cname] => Тетст
+    [inn] => 123123123
+    [city] => Хабаровск
+    [address] => 454001 Арррр, д 1
+    [comment] =>  
+    [companyname] => ООО РиК
+    [cphone] => 896300110011
+    [cemail] => av@it.ru
+)
+
+[2017-02-22 11:32:49] resultOrder: OID-148
+[2017-02-22 11:38:36] sendArticle: CID-16 Article: Array
+(
+    [0] => Array
+        (
+            [id] => 801
+            [count] => 1
+            [comment] => 
+            [price] => 400
+            [name] => Ножки Н2-3 белые
+            [total] => 400
+        )
+
+)
+
+[2017-02-22 11:38:36] sendOrder: CID-16 Order: Array
+(
+    [type] => 0
+    [payment] => 0
+    [logistic] => 1
+    [fname] => ТестИмя
+    [lname] => Тест
+    [pname] => ТестО
+    [phone] => 8222123
+    [email] => 
+    [cname] => Тетст
+    [inn] => 123123123
+    [city] => Хабаровск
+    [address] => 454001 Арррр, д 1
+    [comment] =>  
+    [companyname] => ООО РиК
+    [cphone] => 896300110011
+    [cemail] => av@it.ru
+)
+
+[2017-02-22 11:38:36] resultOrder: OID-148
+[2017-02-22 11:38:58] sendArticle: CID-16 Article: Array
+(
+    [0] => Array
+        (
+            [id] => 801
+            [count] => 1
+            [comment] => 
+            [price] => 400
+            [name] => Ножки Н2-3 белые
+            [total] => 400
+        )
+
+    [1] => Array
+        (
+            [name] => Ножки М1-2 
+            [price] => 400
+            [total] => 400
+            [count] => 1
+            [id] => 602
+            [comment] => RAL 1021
+        )
+
+)
+
+[2017-02-22 11:38:58] sendOrder: CID-16 Order: Array
+(
+    [type] => 0
+    [payment] => 0
+    [logistic] => 1
+    [fname] => ТестИмя
+    [lname] => Тест
+    [pname] => ТестО
+    [phone] => 8222123
+    [email] => 
+    [cname] => Тетст
+    [inn] => 123123123
+    [city] => Хабаровск
+    [address] => 454001 Арррр, д 1
+    [comment] =>  
+    [companyname] => ООО РиК
+    [cphone] => 896300110011
+    [cemail] => av@it.ru
+)
+
+[2017-02-22 11:38:58] resultOrder: OID-148
+[2017-02-22 11:40:04] sendArticle: CID-16 Article: Array
+(
+    [0] => Array
+        (
+            [id] => 801
+            [count] => 1
+            [comment] => 
+            [price] => 400
+            [name] => Ножки Н2-3 белые
+            [total] => 400
+        )
+
+    [1] => Array
+        (
+            [name] => Ножки М1-2 
+            [price] => 400
+            [total] => 400
+            [count] => 1
+            [id] => 602
+            [comment] => RAL 1021
+        )
+
+)
+
+[2017-02-22 11:40:04] sendOrder: CID-16 Order: Array
+(
+    [type] => 0
+    [payment] => 0
+    [logistic] => 1
+    [fname] => ТестИмя
+    [lname] => Тест
+    [pname] => ТестО
+    [phone] => 8222123
+    [email] => 
+    [cname] => Тетст
+    [inn] => 123123123
+    [city] => Хабаровск
+    [address] => 454001 Арррр, д 1
+    [comment] =>  
+    [companyname] => ООО РиК
+    [cphone] => 896300110011
+    [cemail] => av@it.ru
+)
+
+[2017-02-22 11:40:04] resultOrder: OID-148
+[2017-02-22 11:40:05] createDeal: OID-148 Info:Заказ №148 <br>1 Ножки Н2-3 белые  - 1 x 400 <br>2 Ножки М1-2  RAL 1021 - 1 x 400 <br>3 Доставка Хабаровск - 1 x 2158 <br><hr>Получатель: Тест ТестИмя ТестО<br>Контакты: 8222123 <br>Доставка до адреса: Хабаровск 454001 Арррр, д 1<br>Оплата: полная<br>Доп. информация:  <br>
+[2017-02-22 11:40:06] Send form: <form action="https://demomoney.yandex.ru/eshop.xml" method="post">
+        <input name="shopId" value="120256" type="hidden"/>
+        <input name="scid" value="548743" type="hidden"/>
+        <input name="sum" value="2958" type="hidden">
+        <input name="customerNumber" value="Тест ТестИмя ТестО" type="hidden"/>
+        <input name="paymentType" value="" type="hidden"/>
+        <input name="orderNumber" value="148" type="hidden"/>
+        <input name="shopDefaultUrl" value="https://kouzi.ru/shop" type="hidden"/>        
+        <input name="shopSuccessURL" value="https://kouzi.ru/shop" type="hidden"/>        
+        <input name="cps_phone" value="8222123" type="hidden"/>
+        <input name="cps_email" value="" type="hidden"/>
+        <input type="submit" value="Pay"/>
+        </form>
+[2017-02-22 11:40:06] Start task: addDeal
+[2017-02-22 11:40:22] Start checkOrder
+[2017-02-22 11:40:22] Security type MD5
+[2017-02-22 11:40:22] Request: Array
+(
+    [action] => checkOrder
+    [orderSumAmount] => 2958.00
+    [orderSumCurrencyPaycash] => 10643
+    [orderSumBankPaycash] => 1003
+    [shopId] => 120256
+    [invoiceId] => 2000001049063
+    [customerNumber] => Тест ТестИмя ТестО
+    [orderNumber] => 148
+    [md5] => 82C32F1DBF95C69263841F43CF9169CD
+)
+
+[2017-02-22 11:40:22] String to md5: checkOrder;2958.00;10643;1003;120256;2000001049063;Тест ТестИмя ТестО;GGUx6Wyh4zLa
+[2017-02-22 11:40:22] Response: <?xml version="1.0" encoding="UTF-8"?><checkOrderResponse performedDatetime="2017-02-22T11:40:22.000+03:00" code="0"  invoiceId="2000001049063" shopId="120256"/>
+[2017-02-22 11:40:23] Start paymentAviso
+[2017-02-22 11:40:23] Security type MD5
+[2017-02-22 11:40:23] Request: Array
+(
+    [action] => paymentAviso
+    [orderSumAmount] => 2958.00
+    [orderSumCurrencyPaycash] => 10643
+    [orderSumBankPaycash] => 1003
+    [shopId] => 120256
+    [invoiceId] => 2000001049063
+    [customerNumber] => Тест ТестИмя ТестО
+    [orderNumber] => 148
+    [md5] => 07E08C6FC6BA2C7BA3094AADABE34FF0
+)
+
+[2017-02-22 11:40:23] String to md5: paymentAviso;2958.00;10643;1003;120256;2000001049063;Тест ТестИмя ТестО;GGUx6Wyh4zLa
+[2017-02-22 11:40:23] Пришла оплата: сделка ID148
+[2017-02-22 11:41:24] Start paymentAviso
+[2017-02-22 11:41:24] Security type MD5
+[2017-02-22 11:41:24] Request: Array
+(
+    [action] => paymentAviso
+    [orderSumAmount] => 2958.00
+    [orderSumCurrencyPaycash] => 10643
+    [orderSumBankPaycash] => 1003
+    [shopId] => 120256
+    [invoiceId] => 2000001049063
+    [customerNumber] => Тест ТестИмя ТестО
+    [orderNumber] => 148
+    [md5] => 07E08C6FC6BA2C7BA3094AADABE34FF0
+)
+
+[2017-02-22 11:41:24] String to md5: paymentAviso;2958.00;10643;1003;120256;2000001049063;Тест ТестИмя ТестО;GGUx6Wyh4zLa
+[2017-02-22 11:41:24] Пришла оплата: сделка ID148
+[2017-02-22 11:45:06] sendArticle: CID-16 Article: Array
+(
+    [0] => Array
+        (
+            [name] => Терморегулятор
+            [price] => 1500
+            [total] => 1500
+            [count] => 1
+            [id] => 500
+            [comment] => 
+        )
+
+)
+
+[2017-02-22 11:45:06] sendOrder: CID-16 Order: Array
+(
+    [type] => 0
+    [payment] => 0
+    [logistic] => 1
+    [fname] => ТестИмя
+    [lname] => Тест
+    [pname] => ТестО
+    [phone] => 8222123
+    [email] => 
+    [cname] => Тетст
+    [inn] => 123123123
+    [city] => Хабаровск
+    [address] => 454001 Арррр, д 1
+    [comment] =>  
+    [companyname] => ООО РиК
+    [cphone] => 896300110011
+    [cemail] => av@it.ru
+)
+
+[2017-02-22 11:45:06] resultOrder: OID-149
+[2017-02-22 11:45:09] createDeal: OID-149 Info:Заказ №149 <br>1 Терморегулятор  - 1 x 1500 <br>2 Доставка Хабаровск - 1 x 2158 <br><hr>Получатель: Тест ТестИмя ТестО<br>Контакты: 8222123 <br>Доставка до адреса: Хабаровск 454001 Арррр, д 1<br>Оплата: полная<br>Доп. информация:  <br>
+[2017-02-22 11:45:09] Send form: <form action="https://demomoney.yandex.ru/eshop.xml" method="post">
+        <input name="shopId" value="120256" type="hidden"/>
+        <input name="scid" value="548743" type="hidden"/>
+        <input name="sum" value="3658" type="hidden">
+        <input name="customerNumber" value="Тест ТестИмя ТестО" type="hidden"/>
+        <input name="paymentType" value="" type="hidden"/>
+        <input name="orderNumber" value="149" type="hidden"/>
+        <input name="shopDefaultUrl" value="https://kouzi.ru/shop" type="hidden"/>        
+        <input name="shopSuccessURL" value="https://kouzi.ru/shop" type="hidden"/>        
+        <input name="cps_phone" value="8222123" type="hidden"/>
+        <input name="cps_email" value="" type="hidden"/>
+        <input type="submit" value="Pay"/>
+        </form>
+[2017-02-22 11:45:09] Start task: addDeal
+[2017-02-22 11:45:29] Start checkOrder
+[2017-02-22 11:45:29] Security type MD5
+[2017-02-22 11:45:29] Request: Array
+(
+    [action] => checkOrder
+    [orderSumAmount] => 3658.00
+    [orderSumCurrencyPaycash] => 10643
+    [orderSumBankPaycash] => 1003
+    [shopId] => 120256
+    [invoiceId] => 2000001049070
+    [customerNumber] => Тест ТестИмя ТестО
+    [orderNumber] => 149
+    [md5] => DE375450551C1D8EBB5489EB48CCACE6
+)
+
+[2017-02-22 11:45:29] String to md5: checkOrder;3658.00;10643;1003;120256;2000001049070;Тест ТестИмя ТестО;GGUx6Wyh4zLa
+[2017-02-22 11:45:29] Response: <?xml version="1.0" encoding="UTF-8"?><checkOrderResponse performedDatetime="2017-02-22T11:45:29.000+03:00" code="0"  invoiceId="2000001049070" shopId="120256"/>
+[2017-02-22 11:45:29] Start paymentAviso
+[2017-02-22 11:45:29] Security type MD5
+[2017-02-22 11:45:29] Request: Array
+(
+    [action] => paymentAviso
+    [orderSumAmount] => 3658.00
+    [orderSumCurrencyPaycash] => 10643
+    [orderSumBankPaycash] => 1003
+    [shopId] => 120256
+    [invoiceId] => 2000001049070
+    [customerNumber] => Тест ТестИмя ТестО
+    [orderNumber] => 149
+    [md5] => D59FEBA090A58406A22018ACECBA4BE1
+)
+
+[2017-02-22 11:45:29] String to md5: paymentAviso;3658.00;10643;1003;120256;2000001049070;Тест ТестИмя ТестО;GGUx6Wyh4zLa
+[2017-02-22 11:45:29] Пришла оплата: сделка ID149
+[2017-02-22 11:46:31] Start paymentAviso
+[2017-02-22 11:46:31] Security type MD5
+[2017-02-22 11:46:31] Request: Array
+(
+    [action] => paymentAviso
+    [orderSumAmount] => 3658.00
+    [orderSumCurrencyPaycash] => 10643
+    [orderSumBankPaycash] => 1003
+    [shopId] => 120256
+    [invoiceId] => 2000001049070
+    [customerNumber] => Тест ТестИмя ТестО
+    [orderNumber] => 149
+    [md5] => D59FEBA090A58406A22018ACECBA4BE1
+)
+
+[2017-02-22 11:46:31] String to md5: paymentAviso;3658.00;10643;1003;120256;2000001049070;Тест ТестИмя ТестО;GGUx6Wyh4zLa
+[2017-02-22 11:46:31] Пришла оплата: сделка ID149
+[2017-02-22 11:55:45] Start paymentAviso
+[2017-02-22 11:55:45] Security type MD5
+[2017-02-22 11:55:45] Request: Array
+(
+    [action] => paymentAviso
+    [orderSumAmount] => 44958.00
+    [orderSumCurrencyPaycash] => 10643
+    [orderSumBankPaycash] => 1003
+    [shopId] => 120256
+    [invoiceId] => 2000001049041
+    [customerNumber] => Тест ТестИмя ТестО
+    [orderNumber] => 145
+    [md5] => D5753171DB2E8BCD2DD44E84FA8721E2
+)
+
+[2017-02-22 11:55:45] String to md5: paymentAviso;44958.00;10643;1003;120256;2000001049041;Тест ТестИмя ТестО;GGUx6Wyh4zLa
+[2017-02-22 11:55:45] Пришла оплата: сделка ID145
+[2017-02-22 11:55:56] sendArticle: CID-16 Article: Array
+(
+    [0] => Array
+        (
+            [name] => КОУЗИ М1 450Вт Белый
+            [price] => 5200
+            [total] => 5200
+            [count] => 1
+            [id] => 30111
+            [comment] => 
+        )
+
+)
+
+[2017-02-22 11:55:56] sendOrder: CID-16 Order: Array
+(
+    [type] => 0
+    [payment] => 0
+    [logistic] => 1
+    [fname] => ТестИмя
+    [lname] => Тест
+    [pname] => ТестО
+    [phone] => 8222123
+    [email] => 
+    [cname] => Тетст
+    [inn] => 123123123
+    [city] => Хабаровск
+    [address] => 454001 Арррр, д 1
+    [comment] =>  
+    [companyname] => ООО РиК
+    [cphone] => 896300110011
+    [cemail] => av@it.ru
+)
+
+[2017-02-22 11:55:56] resultOrder: OID-150
+[2017-02-22 11:55:57] createDeal: OID-150 Info:Заказ №150 <br>1 КОУЗИ М1 450Вт Белый  - 1 x 5200 <br>2 Доставка Хабаровск - 1 x 2158 <br><hr>Получатель: Тест ТестИмя ТестО<br>Контакты: 8222123 <br>Доставка до адреса: Хабаровск 454001 Арррр, д 1<br>Оплата: полная<br>Доп. информация:  <br>
+[2017-02-22 11:55:57] Send mail: av@itentaro.ru Str: Заказ №150  
+ 1 КОУЗИ М1 450Вт Белый  - 1 x 5200  
+ 2 Доставка Хабаровск - 1 x 2158  
+  
+  
+ Получатель: Тест ТестИмя ТестО 
+ Контакты: 8222123  
+ Доставка до адреса: Хабаровск 454001 Арррр, д 1 
+ Оплата: полная 
+ Доп. информация:   
+ 
+
+[2017-02-22 11:55:57] Send form: <form action="https://demomoney.yandex.ru/eshop.xml" method="post">
+        <input name="shopId" value="120256" type="hidden"/>
+        <input name="scid" value="548743" type="hidden"/>
+        <input name="sum" value="7358" type="hidden">
+        <input name="customerNumber" value="Тест ТестИмя ТестО" type="hidden"/>
+        <input name="paymentType" value="" type="hidden"/>
+        <input name="orderNumber" value="150" type="hidden"/>
+        <input name="shopDefaultUrl" value="https://kouzi.ru/shop" type="hidden"/>        
+        <input name="shopSuccessURL" value="https://kouzi.ru/shop" type="hidden"/>        
+        <input name="cps_phone" value="8222123" type="hidden"/>
+        <input name="cps_email" value="" type="hidden"/>
+        <input type="submit" value="Pay"/>
+        </form>
+[2017-02-22 11:55:57] Start task: addDeal
+[2017-02-22 11:56:25] Start paymentAviso
+[2017-02-22 11:56:25] Security type MD5
+[2017-02-22 11:56:25] Request: Array
+(
+    [action] => paymentAviso
+    [orderSumAmount] => 2958.00
+    [orderSumCurrencyPaycash] => 10643
+    [orderSumBankPaycash] => 1003
+    [shopId] => 120256
+    [invoiceId] => 2000001049063
+    [customerNumber] => Тест ТестИмя ТестО
+    [orderNumber] => 148
+    [md5] => 07E08C6FC6BA2C7BA3094AADABE34FF0
+)
+
+[2017-02-22 11:56:25] String to md5: paymentAviso;2958.00;10643;1003;120256;2000001049063;Тест ТестИмя ТестО;GGUx6Wyh4zLa
+[2017-02-22 11:56:25] Пришла оплата: сделка ID148
+[2017-02-22 11:56:46] Start checkOrder
+[2017-02-22 11:56:46] Security type MD5
+[2017-02-22 11:56:46] Request: Array
+(
+    [action] => checkOrder
+    [orderSumAmount] => 7358.00
+    [orderSumCurrencyPaycash] => 10643
+    [orderSumBankPaycash] => 1003
+    [shopId] => 120256
+    [invoiceId] => 2000001049091
+    [customerNumber] => Тест ТестИмя ТестО
+    [orderNumber] => 150
+    [md5] => E035FDBFCA38C642B7B8C6B742440F1D
+)
+
+[2017-02-22 11:56:46] String to md5: checkOrder;7358.00;10643;1003;120256;2000001049091;Тест ТестИмя ТестО;GGUx6Wyh4zLa
+[2017-02-22 11:56:46] Response: <?xml version="1.0" encoding="UTF-8"?><checkOrderResponse performedDatetime="2017-02-22T11:56:46.000+03:00" code="0"  invoiceId="2000001049091" shopId="120256"/>
+[2017-02-22 11:56:46] Start paymentAviso
+[2017-02-22 11:56:46] Security type MD5
+[2017-02-22 11:56:46] Request: Array
+(
+    [action] => paymentAviso
+    [orderSumAmount] => 7358.00
+    [orderSumCurrencyPaycash] => 10643
+    [orderSumBankPaycash] => 1003
+    [shopId] => 120256
+    [invoiceId] => 2000001049091
+    [customerNumber] => Тест ТестИмя ТестО
+    [orderNumber] => 150
+    [md5] => F7D787EFFE87B830E8EDF60B9A04C96D
+)
+
+[2017-02-22 11:56:46] String to md5: paymentAviso;7358.00;10643;1003;120256;2000001049091;Тест ТестИмя ТестО;GGUx6Wyh4zLa
+[2017-02-22 11:56:46] Пришла оплата: сделка ID150
+[2017-02-22 11:57:47] Start paymentAviso
+[2017-02-22 11:57:47] Security type MD5
+[2017-02-22 11:57:47] Request: Array
+(
+    [action] => paymentAviso
+    [orderSumAmount] => 7358.00
+    [orderSumCurrencyPaycash] => 10643
+    [orderSumBankPaycash] => 1003
+    [shopId] => 120256
+    [invoiceId] => 2000001049091
+    [customerNumber] => Тест ТестИмя ТестО
+    [orderNumber] => 150
+    [md5] => F7D787EFFE87B830E8EDF60B9A04C96D
+)
+
+[2017-02-22 11:57:47] String to md5: paymentAviso;7358.00;10643;1003;120256;2000001049091;Тест ТестИмя ТестО;GGUx6Wyh4zLa
+[2017-02-22 11:57:47] Пришла оплата: сделка ID150
+[2017-02-22 12:00:27] sendArticle: CID-16 Article: Array
+(
+    [0] => Array
+        (
+            [name] => КОУЗИ М1 250Вт Белый
+            [price] => 5200
+            [total] => 5200
+            [count] => 1
+            [id] => 10111
+            [comment] => 
+        )
+
+)
+
+[2017-02-22 12:00:27] sendOrder: CID-16 Order: Array
+(
+    [type] => 0
+    [payment] => 0
+    [logistic] => 1
+    [fname] => ТестИмя
+    [lname] => Тест
+    [pname] => ТестО
+    [phone] => 8222123
+    [email] => 
+    [cname] => Тетст
+    [inn] => 123123123
+    [city] => Хабаровск
+    [address] => 454001 Арррр, д 1
+    [comment] =>  
+    [companyname] => ООО РиК
+    [cphone] => 896300110011
+    [cemail] => av@it.ru
+)
+
+[2017-02-22 12:00:27] resultOrder: OID-151
+[2017-02-22 12:00:28] createDeal: OID-151 Info:Заказ №151 <br>1 КОУЗИ М1 250Вт Белый  - 1 x 5200 <br>2 Доставка Хабаровск - 1 x 2158 <br><hr>Получатель: Тест ТестИмя ТестО<br>Контакты: 8222123 <br>Доставка до адреса: Хабаровск 454001 Арррр, д 1<br>Оплата: полная<br>Доп. информация:  <br>
+[2017-02-22 12:00:28] Send mail: av@itentaro.ru Str: Заказ №151  
+ 1 КОУЗИ М1 250Вт Белый  - 1 x 5200  
+ 2 Доставка Хабаровск - 1 x 2158  
+  
+  
+ Получатель: Тест ТестИмя ТестО 
+ Контакты: 8222123  
+ Доставка до адреса: Хабаровск 454001 Арррр, д 1 
+ Оплата: полная 
+ Доп. информация:   
+ 
+
+[2017-02-22 12:00:28] Send form: <form action="https://demomoney.yandex.ru/eshop.xml" method="post">
+        <input name="shopId" value="120256" type="hidden"/>
+        <input name="scid" value="548743" type="hidden"/>
+        <input name="sum" value="7358" type="hidden">
+        <input name="customerNumber" value="Тест ТестИмя ТестО" type="hidden"/>
+        <input name="paymentType" value="" type="hidden"/>
+        <input name="orderNumber" value="151" type="hidden"/>
+        <input name="shopDefaultUrl" value="https://kouzi.ru/shop" type="hidden"/>        
+        <input name="shopSuccessURL" value="https://kouzi.ru/shop" type="hidden"/>        
+        <input name="cps_phone" value="8222123" type="hidden"/>
+        <input name="cps_email" value="" type="hidden"/>
+        <input type="submit" value="Pay"/>
+        </form>
+[2017-02-22 12:00:28] Start task: addDeal
+[2017-02-22 12:00:43] Start checkOrder
+[2017-02-22 12:00:43] Security type MD5
+[2017-02-22 12:00:43] Request: Array
+(
+    [action] => checkOrder
+    [orderSumAmount] => 7358.00
+    [orderSumCurrencyPaycash] => 10643
+    [orderSumBankPaycash] => 1003
+    [shopId] => 120256
+    [invoiceId] => 2000001049097
+    [customerNumber] => Тест ТестИмя ТестО
+    [orderNumber] => 151
+    [md5] => 149917B153FFA91BCA19100DDB5B1407
+)
+
+[2017-02-22 12:00:43] String to md5: checkOrder;7358.00;10643;1003;120256;2000001049097;Тест ТестИмя ТестО;GGUx6Wyh4zLa
+[2017-02-22 12:00:43] Response: <?xml version="1.0" encoding="UTF-8"?><checkOrderResponse performedDatetime="2017-02-22T12:00:43.000+03:00" code="0"  invoiceId="2000001049097" shopId="120256"/>
+[2017-02-22 12:00:43] Start paymentAviso
+[2017-02-22 12:00:43] Security type MD5
+[2017-02-22 12:00:43] Request: Array
+(
+    [action] => paymentAviso
+    [orderSumAmount] => 7358.00
+    [orderSumCurrencyPaycash] => 10643
+    [orderSumBankPaycash] => 1003
+    [shopId] => 120256
+    [invoiceId] => 2000001049097
+    [customerNumber] => Тест ТестИмя ТестО
+    [orderNumber] => 151
+    [md5] => 3B0D32EF4430213F9305084D41E3DF88
+)
+
+[2017-02-22 12:00:43] String to md5: paymentAviso;7358.00;10643;1003;120256;2000001049097;Тест ТестИмя ТестО;GGUx6Wyh4zLa
+[2017-02-22 12:00:43] Пришла оплата: сделка ID151
+[2017-02-22 12:00:43] Send mail: av@itentaro.ru Str: Информация: 
+ Array
+(
+    [action] => paymentAviso
+    [orderSumAmount] => 7358.00
+    [orderSumCurrencyPaycash] => 10643
+    [orderSumBankPaycash] => 1003
+    [shopId] => 120256
+    [invoiceId] => 2000001049097
+    [customerNumber] => Тест ТестИмя ТестО
+    [orderNumber] => 151
+    [md5] => 3B0D32EF4430213F9305084D41E3DF88
+)
+
+
+[2017-02-22 12:00:44] Response: <?xml version="1.0" encoding="UTF-8"?><paymentAvisoResponse performedDatetime="2017-02-22T12:00:44.000+03:00" code="0"  invoiceId="2000001049097" shopId="120256"/>
+[2017-02-22 12:12:48] Start paymentAviso
+[2017-02-22 12:12:48] Security type MD5
+[2017-02-22 12:12:48] Request: Array
+(
+    [action] => paymentAviso
+    [orderSumAmount] => 7358.00
+    [orderSumCurrencyPaycash] => 10643
+    [orderSumBankPaycash] => 1003
+    [shopId] => 120256
+    [invoiceId] => 2000001049091
+    [customerNumber] => Тест ТестИмя ТестО
+    [orderNumber] => 150
+    [md5] => F7D787EFFE87B830E8EDF60B9A04C96D
+)
+
+[2017-02-22 12:12:48] String to md5: paymentAviso;7358.00;10643;1003;120256;2000001049091;Тест ТестИмя ТестО;GGUx6Wyh4zLa
+[2017-02-22 12:12:48] Пришла оплата: сделка ID150
+[2017-02-22 12:12:48] Send mail: av@itentaro.ru Str: Информация: 
+ Array
+(
+    [action] => paymentAviso
+    [orderSumAmount] => 7358.00
+    [orderSumCurrencyPaycash] => 10643
+    [orderSumBankPaycash] => 1003
+    [shopId] => 120256
+    [invoiceId] => 2000001049091
+    [customerNumber] => Тест ТестИмя ТестО
+    [orderNumber] => 150
+    [md5] => F7D787EFFE87B830E8EDF60B9A04C96D
+)
+
+
+[2017-02-22 12:12:48] Response: <?xml version="1.0" encoding="UTF-8"?><paymentAvisoResponse performedDatetime="2017-02-22T12:12:48.000+03:00" code="0"  invoiceId="2000001049091" shopId="120256"/>
+[2017-02-22 12:25:50] Start paymentAviso
+[2017-02-22 12:25:50] Security type MD5
+[2017-02-22 12:25:50] Request: Array
+(
+    [action] => paymentAviso
+    [orderSumAmount] => 44958.00
+    [orderSumCurrencyPaycash] => 10643
+    [orderSumBankPaycash] => 1003
+    [shopId] => 120256
+    [invoiceId] => 2000001049041
+    [customerNumber] => Тест ТестИмя ТестО
+    [orderNumber] => 145
+    [md5] => D5753171DB2E8BCD2DD44E84FA8721E2
+)
+
+[2017-02-22 12:25:50] String to md5: paymentAviso;44958.00;10643;1003;120256;2000001049041;Тест ТестИмя ТестО;GGUx6Wyh4zLa
+[2017-02-22 12:25:50] Пришла оплата: сделка ID145
+[2017-02-22 12:25:50] Send mail: av@itentaro.ru Str: Информация: 
+ Array
+(
+    [action] => paymentAviso
+    [orderSumAmount] => 44958.00
+    [orderSumCurrencyPaycash] => 10643
+    [orderSumBankPaycash] => 1003
+    [shopId] => 120256
+    [invoiceId] => 2000001049041
+    [customerNumber] => Тест ТестИмя ТестО
+    [orderNumber] => 145
+    [md5] => D5753171DB2E8BCD2DD44E84FA8721E2
+)
+
+
+[2017-02-22 12:25:50] Response: <?xml version="1.0" encoding="UTF-8"?><paymentAvisoResponse performedDatetime="2017-02-22T12:25:50.000+03:00" code="0"  invoiceId="2000001049041" shopId="120256"/>
+[2017-02-22 12:26:27] Start paymentAviso
+[2017-02-22 12:26:27] Security type MD5
+[2017-02-22 12:26:27] Request: Array
+(
+    [action] => paymentAviso
+    [orderSumAmount] => 2958.00
+    [orderSumCurrencyPaycash] => 10643
+    [orderSumBankPaycash] => 1003
+    [shopId] => 120256
+    [invoiceId] => 2000001049063
+    [customerNumber] => Тест ТестИмя ТестО
+    [orderNumber] => 148
+    [md5] => 07E08C6FC6BA2C7BA3094AADABE34FF0
+)
+
+[2017-02-22 12:26:27] String to md5: paymentAviso;2958.00;10643;1003;120256;2000001049063;Тест ТестИмя ТестО;GGUx6Wyh4zLa
+[2017-02-22 12:26:27] Пришла оплата: сделка ID148
+[2017-02-22 12:26:27] Send mail: av@itentaro.ru Str: Информация: 
+ Array
+(
+    [action] => paymentAviso
+    [orderSumAmount] => 2958.00
+    [orderSumCurrencyPaycash] => 10643
+    [orderSumBankPaycash] => 1003
+    [shopId] => 120256
+    [invoiceId] => 2000001049063
+    [customerNumber] => Тест ТестИмя ТестО
+    [orderNumber] => 148
+    [md5] => 07E08C6FC6BA2C7BA3094AADABE34FF0
+)
+
+
+[2017-02-22 12:26:27] Response: <?xml version="1.0" encoding="UTF-8"?><paymentAvisoResponse performedDatetime="2017-02-22T12:26:27.000+03:00" code="0"  invoiceId="2000001049063" shopId="120256"/>
+[2017-02-22 12:31:34] Start paymentAviso
+[2017-02-22 12:31:34] Security type MD5
+[2017-02-22 12:31:34] Request: Array
+(
+    [action] => paymentAviso
+    [orderSumAmount] => 3658.00
+    [orderSumCurrencyPaycash] => 10643
+    [orderSumBankPaycash] => 1003
+    [shopId] => 120256
+    [invoiceId] => 2000001049070
+    [customerNumber] => Тест ТестИмя ТестО
+    [orderNumber] => 149
+    [md5] => D59FEBA090A58406A22018ACECBA4BE1
+)
+
+[2017-02-22 12:31:34] String to md5: paymentAviso;3658.00;10643;1003;120256;2000001049070;Тест ТестИмя ТестО;GGUx6Wyh4zLa
+[2017-02-22 12:31:34] Пришла оплата: сделка ID149
+[2017-02-22 12:31:34] Send mail: av@itentaro.ru Str: Информация: 
+ Array
+(
+    [action] => paymentAviso
+    [orderSumAmount] => 3658.00
+    [orderSumCurrencyPaycash] => 10643
+    [orderSumBankPaycash] => 1003
+    [shopId] => 120256
+    [invoiceId] => 2000001049070
+    [customerNumber] => Тест ТестИмя ТестО
+    [orderNumber] => 149
+    [md5] => D59FEBA090A58406A22018ACECBA4BE1
+)
+
+
+[2017-02-22 12:31:35] Response: <?xml version="1.0" encoding="UTF-8"?><paymentAvisoResponse performedDatetime="2017-02-22T12:31:35.000+03:00" code="0"  invoiceId="2000001049070" shopId="120256"/>
+[2017-02-22 14:02:35] sendArticle: CID-16 Article: Array
+(
+    [0] => Array
+        (
+            [name] => Терморегулятор
+            [price] => 1500
+            [total] => 1500
+            [count] => 1
+            [id] => 500
+            [comment] => 
+        )
+
+    [1] => Array
+        (
+            [name] => Ножки М3 белые
+            [price] => 400
+            [total] => 800
+            [count] => 2
+            [id] => 701
+            [comment] => 
+        )
+
+    [2] => Array
+        (
+            [name] => Ножки Н2-3 белые
+            [price] => 400
+            [total] => 400
+            [count] => 1
+            [id] => 801
+            [comment] => 
+        )
+
+    [3] => Array
+        (
+            [name] => Ножки М1-2 белые
+            [price] => 400
+            [total] => 400
+            [count] => 1
+            [id] => 601
+            [comment] => 
+        )
+
+)
+
+[2017-02-22 14:02:35] sendOrder: CID-16 Order: Array
+(
+    [type] => 0
+    [payment] => 0
+    [logistic] => 1
+    [fname] => ТестИмя
+    [lname] => Тест
+    [pname] => ТестО
+    [phone] => 8222123
+    [email] => 
+    [cname] => Тетст
+    [inn] => 123123123
+    [city] => Хабаровск
+    [address] => 454001 Арррр, д 1
+    [comment] =>  
+    [companyname] => ООО РиК
+    [cphone] => 896300110011
+    [cemail] => av@it.ru
+)
+
+[2017-02-22 14:02:35] resultOrder: OID-152
+[2017-02-22 14:02:38] createDeal: OID-152 Info:Заказ №152 <br>1 Терморегулятор  - 1 x 1500 <br>2 Ножки М3 белые  - 2 x 400 <br>3 Ножки Н2-3 белые  - 1 x 400 <br>4 Ножки М1-2 белые  - 1 x 400 <br>5 Доставка Хабаровск - 1 x 2158 <br><hr>Получатель: Тест ТестИмя ТестО<br>Контакты: 8222123 <br>Доставка до адреса: Хабаровск 454001 Арррр, д 1<br>Оплата: полная<br>Доп. информация:  <br>
+[2017-02-22 14:02:38] Send mail: av@itentaro.ru Str: Заказ №152  
+ 1 Терморегулятор  - 1 x 1500  
+ 2 Ножки М3 белые  - 2 x 400  
+ 3 Ножки Н2-3 белые  - 1 x 400  
+ 4 Ножки М1-2 белые  - 1 x 400  
+ 5 Доставка Хабаровск - 1 x 2158  
+  
+  
+ Получатель: Тест ТестИмя ТестО 
+ Контакты: 8222123  
+ Доставка до адреса: Хабаровск 454001 Арррр, д 1 
+ Оплата: полная 
+ Доп. информация:   
+ 
+
+[2017-02-22 14:02:38] Send form: <form action="https://demomoney.yandex.ru/eshop.xml" method="post">
+        <input name="shopId" value="120256" type="hidden"/>
+        <input name="scid" value="548743" type="hidden"/>
+        <input name="sum" value="5258" type="hidden">
+        <input name="customerNumber" value="Тест ТестИмя ТестО" type="hidden"/>
+        <input name="paymentType" value="" type="hidden"/>
+        <input name="orderNumber" value="152" type="hidden"/>
+        <input name="shopDefaultUrl" value="https://kouzi.ru/shop" type="hidden"/>        
+        <input name="shopSuccessURL" value="https://kouzi.ru/shop" type="hidden"/>        
+        <input name="cps_phone" value="8222123" type="hidden"/>
+        <input name="cps_email" value="" type="hidden"/>
+        <input type="submit" value="Pay"/>
+        </form>
+[2017-02-22 14:02:38] Start task: addDeal
+[2017-02-22 14:02:57] Start checkOrder
+[2017-02-22 14:02:57] Security type MD5
+[2017-02-22 14:02:57] Request: Array
+(
+    [action] => checkOrder
+    [orderSumAmount] => 5258.00
+    [orderSumCurrencyPaycash] => 10643
+    [orderSumBankPaycash] => 1003
+    [shopId] => 120256
+    [invoiceId] => 2000001053059
+    [customerNumber] => Тест ТестИмя ТестО
+    [orderNumber] => 152
+    [md5] => 78CC09986D2BE1B894F465E3E36CC01D
+)
+
+[2017-02-22 14:02:57] String to md5: checkOrder;5258.00;10643;1003;120256;2000001053059;Тест ТестИмя ТестО;GGUx6Wyh4zLa
+[2017-02-22 14:02:57] Response: <?xml version="1.0" encoding="UTF-8"?><checkOrderResponse performedDatetime="2017-02-22T14:02:57.000+03:00" code="0"  invoiceId="2000001053059" shopId="120256"/>
+[2017-02-22 14:02:58] Start paymentAviso
+[2017-02-22 14:02:58] Security type MD5
+[2017-02-22 14:02:58] Request: Array
+(
+    [action] => paymentAviso
+    [orderSumAmount] => 5258.00
+    [orderSumCurrencyPaycash] => 10643
+    [orderSumBankPaycash] => 1003
+    [shopId] => 120256
+    [invoiceId] => 2000001053059
+    [customerNumber] => Тест ТестИмя ТестО
+    [orderNumber] => 152
+    [md5] => 45868E7A2D1D7574D8A61A0B88EB7574
+)
+
+[2017-02-22 14:02:58] String to md5: paymentAviso;5258.00;10643;1003;120256;2000001053059;Тест ТестИмя ТестО;GGUx6Wyh4zLa
+[2017-02-22 14:02:58] Пришла оплата: сделка ID152
+[2017-02-22 14:02:58] Send mail: av@itentaro.ru Str: Информация: 
+ Array
+(
+    [action] => paymentAviso
+    [orderSumAmount] => 5258.00
+    [orderSumCurrencyPaycash] => 10643
+    [orderSumBankPaycash] => 1003
+    [shopId] => 120256
+    [invoiceId] => 2000001053059
+    [customerNumber] => Тест ТестИмя ТестО
+    [orderNumber] => 152
+    [md5] => 45868E7A2D1D7574D8A61A0B88EB7574
+)
+
+
+[2017-02-22 14:02:58] Response: <?xml version="1.0" encoding="UTF-8"?><paymentAvisoResponse performedDatetime="2017-02-22T14:02:58.000+03:00" code="0"  invoiceId="2000001053059" shopId="120256"/>
+[2017-02-22 14:07:02] sendArticle: CID-11 Article: Array
+(
+    [0] => Array
+        (
+            [id] => 30112
+            [count] => 1
+            [comment] => RAL 3024
+            [price] => 5500
+            [name] => КОУЗИ М1 450Вт 
+            [total] => 5500
+        )
+
+    [1] => Array
+        (
+            [name] => КОУЗИ М1 320Вт Белый
+            [price] => 5200
+            [total] => 20800
+            [count] => 4
+            [id] => 20111
+            [comment] => 
+        )
+
+    [2] => Array
+        (
+            [name] => КОУЗИ М1 450Вт 
+            [price] => 5500
+            [total] => 5500
+            [count] => 1
+            [id] => 30112
+            [comment] => RAL 3018
+        )
+
+)
+
+[2017-02-22 14:07:02] sendOrder: CID-11 Order: Array
+(
+    [type] => 0
+    [payment] => 0
+    [logistic] => 0
+    [fname] => Иван
+    [lname] => Иванов
+    [pname] => Иванович
+    [phone] => 74952222222
+    [email] => 
+    [cname] => 
+    [inn] => 
+    [city] => Москва
+    [address] => 
+    [comment] => Отправка транспортной кампанией Деловые Линии
+    [companyname] => 
+    [cphone] => 
+    [cemail] => 
+)
+
+[2017-02-22 14:07:02] resultOrder: OID-146
+[2017-02-22 14:27:39] sendArticle: CID-16 Article: Array
+(
+    [0] => Array
+        (
+            [name] => КОУЗИ М1 450Вт 
+            [price] => 5500
+            [total] => 5500
+            [count] => 1
+            [id] => 30112
+            [comment] => RAL 6009
+        )
+
+)
+
+[2017-02-22 14:27:39] sendOrder: CID-16 Order: Array
+(
+    [type] => 1
+    [payment] => 0
+    [logistic] => 1
+    [fname] => ТестИмя
+    [lname] => Тест
+    [pname] => ТестО
+    [phone] => 8222123
+    [email] => 
+    [cname] => Тетст
+    [inn] => 123123123
+    [city] => Ульяновск
+    [address] => 454001 Арррр, д 1
+    [comment] =>  
+    [companyname] => ООО РиК
+    [cphone] => 896300110011
+    [cemail] => av@it.ru
+)
+
+[2017-02-22 14:27:39] resultOrder: OID-153
+[2017-02-22 14:27:45] createDeal: OID-153 Info:Заказ №153 <br>1 КОУЗИ М1 450Вт  RAL 6009 - 1 x 5500 <br>2 Доставка Ульяновск - 1 x 1445 <br><hr>Получатель: ООО РиК ИНН:123123123 Тетст<br>Контакты: 896300110011 av@it.ru<br>Доставка до адреса: Ульяновск 454001 Арррр, д 1<br>Оплата: полная<br>Доп. информация:  <br>
+[2017-02-22 14:27:45] Send mail: av@itentaro.ru Str: Заказ №153  
+ 1 КОУЗИ М1 450Вт  RAL 6009 - 1 x 5500  
+ 2 Доставка Ульяновск - 1 x 1445  
+  
+  
+ Получатель: ООО РиК ИНН:123123123 Тетст 
+ Контакты: 896300110011 av@it.ru 
+ Доставка до адреса: Ульяновск 454001 Арррр, д 1 
+ Оплата: полная 
+ Доп. информация:   
+ 
+
+[2017-02-22 14:27:45] Start task: addDeal
+[2017-02-22 14:43:58] sendArticle: CID-21 Article: Array
+(
+    [0] => Array
+        (
+            [name] => Терморегулятор
+            [price] => 1500
+            [total] => 1500
+            [count] => 1
+            [id] => 500
+            [comment] => 
+        )
+
+)
+
+[2017-02-22 14:43:58] sendOrder: CID-21 Order: Array
+(
+    [type] => 0
+    [payment] => 1
+    [logistic] => 1
+    [fname] => Иван
+    [lname] => Петров
+    [pname] => Викторович
+    [phone] => 83512009090
+    [email] => 
+    [cname] => 
+    [inn] => 
+    [city] => Москва
+    [address] => у. Ленина, д. 124, кв. 1000
+    [comment] => деловыми линиями до дому
+    [companyname] => 
+    [cphone] => 
+    [cemail] => 
+)
+
+[2017-02-22 14:43:58] resultOrder: OID-154
+[2017-02-22 14:44:13] createDeal: OID-154 Info:Заказ №154 <br>1 Терморегулятор  - 1 x 1500 <br>2 Комиссия  - 1 x 75 <br>3 Доставка Москва - 1 x 1800 <br><hr>Получатель: Петров Иван Викторович<br>Контакты: 83512009090 <br>Доставка до адреса: Москва у. Ленина, д. 124, кв. 1000<br>Оплата: только доставка<br>Доп. информация: деловыми линиями до дому<br>
+[2017-02-22 14:44:13] Send mail: av@itentaro.ru Str: Заказ №154  
+ 1 Терморегулятор  - 1 x 1500  
+ 2 Комиссия  - 1 x 75  
+ 3 Доставка Москва - 1 x 1800  
+  
+  
+ Получатель: Петров Иван Викторович 
+ Контакты: 83512009090  
+ Доставка до адреса: Москва у. Ленина, д. 124, кв. 1000 
+ Оплата: только доставка 
+ Доп. информация: деловыми линиями до дому 
+ 
+
+[2017-02-22 14:44:13] Send form: <form action="https://demomoney.yandex.ru/eshop.xml" method="post">
+        <input name="shopId" value="120256" type="hidden"/>
+        <input name="scid" value="548743" type="hidden"/>
+        <input name="sum" value="1800" type="hidden">
+        <input name="customerNumber" value="Петров Иван Викторович" type="hidden"/>
+        <input name="paymentType" value="" type="hidden"/>
+        <input name="orderNumber" value="154" type="hidden"/>
+        <input name="shopDefaultUrl" value="https://kouzi.ru/shop" type="hidden"/>        
+        <input name="shopSuccessURL" value="https://kouzi.ru/shop" type="hidden"/>        
+        <input name="cps_phone" value="83512009090" type="hidden"/>
+        <input name="cps_email" value="" type="hidden"/>
+        <input type="submit" value="Pay"/>
+        </form>
+[2017-02-22 14:44:14] Start task: addDeal
+[2017-02-22 14:44:35] Start checkOrder
+[2017-02-22 14:44:35] Security type MD5
+[2017-02-22 14:44:35] Request: Array
+(
+    [action] => checkOrder
+    [orderSumAmount] => 1800.00
+    [orderSumCurrencyPaycash] => 10643
+    [orderSumBankPaycash] => 1003
+    [shopId] => 120256
+    [invoiceId] => 2000001053285
+    [customerNumber] => Петров Иван Викторович
+    [orderNumber] => 154
+    [md5] => 867D0B8857A099A433A0E26FDDDEEB44
+)
+
+[2017-02-22 14:44:35] String to md5: checkOrder;1800.00;10643;1003;120256;2000001053285;Петров Иван Викторович;GGUx6Wyh4zLa
+[2017-02-22 14:44:35] Response: <?xml version="1.0" encoding="UTF-8"?><checkOrderResponse performedDatetime="2017-02-22T14:44:35.000+03:00" code="0"  invoiceId="2000001053285" shopId="120256"/>
+[2017-02-22 14:44:35] Start paymentAviso
+[2017-02-22 14:44:35] Security type MD5
+[2017-02-22 14:44:35] Request: Array
+(
+    [action] => paymentAviso
+    [orderSumAmount] => 1800.00
+    [orderSumCurrencyPaycash] => 10643
+    [orderSumBankPaycash] => 1003
+    [shopId] => 120256
+    [invoiceId] => 2000001053285
+    [customerNumber] => Петров Иван Викторович
+    [orderNumber] => 154
+    [md5] => 2377D80C4DB20EAFDD7DC870D3270BB4
+)
+
+[2017-02-22 14:44:35] String to md5: paymentAviso;1800.00;10643;1003;120256;2000001053285;Петров Иван Викторович;GGUx6Wyh4zLa
+[2017-02-22 14:44:35] Пришла оплата: сделка ID154
+[2017-02-22 14:44:35] Send mail: av@itentaro.ru Str: Информация: 
+ Array
+(
+    [action] => paymentAviso
+    [orderSumAmount] => 1800.00
+    [orderSumCurrencyPaycash] => 10643
+    [orderSumBankPaycash] => 1003
+    [shopId] => 120256
+    [invoiceId] => 2000001053285
+    [customerNumber] => Петров Иван Викторович
+    [orderNumber] => 154
+    [md5] => 2377D80C4DB20EAFDD7DC870D3270BB4
+)
+
+
+[2017-02-22 14:44:35] Response: <?xml version="1.0" encoding="UTF-8"?><paymentAvisoResponse performedDatetime="2017-02-22T14:44:35.000+03:00" code="0"  invoiceId="2000001053285" shopId="120256"/>
+[2017-02-22 15:16:04] sendArticle: CID-11 Article: Array
+(
+    [0] => Array
+        (
+            [name] => КОУЗИ Н2 720Вт Белый
+            [price] => 6900
+            [total] => 6900
+            [count] => 1
+            [id] => 40411
+            [comment] => 
+        )
+
+)
+
+[2017-02-22 15:16:04] sendOrder: CID-11 Order: Array
+(
+    [type] => 1
+    [payment] => 0
+    [logistic] => 0
+    [fname] => Иван
+    [lname] => Иванов
+    [pname] => Иванович
+    [phone] => 74952222222
+    [email] => 
+    [cname] => Иванов Иван
+    [inn] => 123456789
+    [city] => Москва
+    [address] => 
+    [comment] => Отправка транспортной кампанией Деловые Линии
+    [companyname] => ООО "Компания"
+    [cphone] => 74951111111
+    [cemail] => ivanov@kompania.ru
+)
+
+[2017-02-22 15:16:04] resultOrder: OID-146
+[2017-02-22 15:16:32] sendArticle: CID-11 Article: Array
+(
+    [0] => Array
+        (
+            [name] => КОУЗИ Н2 720Вт Белый
+            [price] => 6900
+            [total] => 6900
+            [count] => 1
+            [id] => 40411
+            [comment] => 
+        )
+
+)
+
+[2017-02-22 15:16:32] sendOrder: CID-11 Order: Array
+(
+    [type] => 0
+    [payment] => 0
+    [logistic] => 0
+    [fname] => Иван
+    [lname] => Иванов
+    [pname] => Иванович
+    [phone] => 74952222222
+    [email] => 
+    [cname] => Иванов Иван
+    [inn] => 123456789
+    [city] => Москва
+    [address] => 
+    [comment] => Отправка транспортной кампанией Деловые Линии
+    [companyname] => ООО "Компания"
+    [cphone] => 74951111111
+    [cemail] => ivanov@kompania.ru
+)
+
+[2017-02-22 15:16:33] resultOrder: OID-146
+[2017-02-22 18:57:16] sendArticle: CID-11 Article: Array
+(
+    [0] => Array
+        (
+            [name] => КОУЗИ Н2 720Вт Белый
+            [price] => 6900
+            [total] => 6900
+            [count] => 1
+            [id] => 40411
+            [comment] => 
+        )
+
+    [1] => Array
+        (
+            [name] => КОУЗИ М1 450Вт Белый
+            [price] => 5200
+            [total] => 5200
+            [count] => 1
+            [id] => 30111
+            [comment] => 
+        )
+
+    [2] => Array
+        (
+            [name] => КОУЗИ М3 320Вт 
+            [price] => 5500
+            [total] => 5500
+            [count] => 1
+            [id] => 20312
+            [comment] => RAL 3026
+        )
+
+)
+
+[2017-02-22 18:57:16] sendOrder: CID-11 Order: Array
+(
+    [type] => 0
+    [payment] => 0
+    [logistic] => 0
+    [fname] => Иван
+    [lname] => Иванов
+    [pname] => Иванович
+    [phone] => 74952222222
+    [email] => 
+    [cname] => Иванов Иван
+    [inn] => 123456789
+    [city] => Москва
+    [address] => 
+    [comment] => Отправка транспортной кампанией Деловые Линии
+    [companyname] => ООО "Компания"
+    [cphone] => 74951111111
+    [cemail] => ivanov@kompania.ru
+)
+
+[2017-02-22 18:57:16] resultOrder: OID-146
+[2017-02-22 18:57:24] createDeal: OID-146 Info:Заказ №146 <br>1 КОУЗИ Н2 720Вт Белый  - 1 x 6900 <br>2 КОУЗИ М1 450Вт Белый  - 1 x 5200 <br>3 КОУЗИ М3 320Вт  RAL 3026 - 1 x 5500 <br>4 Доставка Москва - 1 x 1200 <br><hr>Получатель: Иванов Иван Иванович<br>Контакты: 74952222222 <br>Доставка до склада: Москва<br>Оплата: полная<br>Доп. информация: Отправка транспортной кампанией Деловые Линии<br>
+[2017-02-22 18:57:24] Send mail: av@itentaro.ru Str: Заказ №146  
+ 1 КОУЗИ Н2 720Вт Белый  - 1 x 6900  
+ 2 КОУЗИ М1 450Вт Белый  - 1 x 5200  
+ 3 КОУЗИ М3 320Вт  RAL 3026 - 1 x 5500  
+ 4 Доставка Москва - 1 x 1200  
+  
+  
+ Получатель: Иванов Иван Иванович 
+ Контакты: 74952222222  
+ Доставка до склада: Москва 
+ Оплата: полная 
+ Доп. информация: Отправка транспортной кампанией Деловые Линии 
+ 
+
+[2017-02-22 18:57:25] Send form: <form action="https://demomoney.yandex.ru/eshop.xml" method="post">
+        <input name="shopId" value="120256" type="hidden"/>
+        <input name="scid" value="548743" type="hidden"/>
+        <input name="sum" value="18800" type="hidden">
+        <input name="customerNumber" value="Иванов Иван Иванович" type="hidden"/>
+        <input name="paymentType" value="" type="hidden"/>
+        <input name="orderNumber" value="146" type="hidden"/>
+        <input name="shopDefaultUrl" value="https://kouzi.ru/shop" type="hidden"/>        
+        <input name="shopSuccessURL" value="https://kouzi.ru/shop" type="hidden"/>        
+        <input name="cps_phone" value="74952222222" type="hidden"/>
+        <input name="cps_email" value="" type="hidden"/>
+        <input type="submit" value="Pay"/>
+        </form>
+[2017-02-22 18:57:25] Start task: addDeal
+[2017-02-22 18:58:19] Start checkOrder
+[2017-02-22 18:58:19] Security type MD5
+[2017-02-22 18:58:19] Request: Array
+(
+    [action] => checkOrder
+    [orderSumAmount] => 18800.00
+    [orderSumCurrencyPaycash] => 10643
+    [orderSumBankPaycash] => 1003
+    [shopId] => 120256
+    [invoiceId] => 2000001056582
+    [customerNumber] => Иванов Иван Иванович
+    [orderNumber] => 146
+    [md5] => 2B990F911BB010A6503AF66FFC7858D8
+)
+
+[2017-02-22 18:58:19] String to md5: checkOrder;18800.00;10643;1003;120256;2000001056582;Иванов Иван Иванович;GGUx6Wyh4zLa
+[2017-02-22 18:58:19] Response: <?xml version="1.0" encoding="UTF-8"?><checkOrderResponse performedDatetime="2017-02-22T18:58:19.000+03:00" code="0"  invoiceId="2000001056582" shopId="120256"/>
+[2017-02-22 18:58:19] Start paymentAviso
+[2017-02-22 18:58:19] Security type MD5
+[2017-02-22 18:58:19] Request: Array
+(
+    [action] => paymentAviso
+    [orderSumAmount] => 18800.00
+    [orderSumCurrencyPaycash] => 10643
+    [orderSumBankPaycash] => 1003
+    [shopId] => 120256
+    [invoiceId] => 2000001056582
+    [customerNumber] => Иванов Иван Иванович
+    [orderNumber] => 146
+    [md5] => B13E6ACB521E702EB92691491D7CDF0F
+)
+
+[2017-02-22 18:58:19] String to md5: paymentAviso;18800.00;10643;1003;120256;2000001056582;Иванов Иван Иванович;GGUx6Wyh4zLa
+[2017-02-22 18:58:19] Пришла оплата: сделка ID146
+[2017-02-22 18:58:19] Send mail: av@itentaro.ru Str: Информация: 
+ Array
+(
+    [action] => paymentAviso
+    [orderSumAmount] => 18800.00
+    [orderSumCurrencyPaycash] => 10643
+    [orderSumBankPaycash] => 1003
+    [shopId] => 120256
+    [invoiceId] => 2000001056582
+    [customerNumber] => Иванов Иван Иванович
+    [orderNumber] => 146
+    [md5] => B13E6ACB521E702EB92691491D7CDF0F
+)
+
+
+[2017-02-22 18:58:19] Response: <?xml version="1.0" encoding="UTF-8"?><paymentAvisoResponse performedDatetime="2017-02-22T18:58:19.000+03:00" code="0"  invoiceId="2000001056582" shopId="120256"/>
+[2017-02-22 19:01:54] sendArticle: CID-11 Article: Array
+(
+    [0] => Array
+        (
+            [name] => Ножки Н2-3 белые
+            [price] => 400
+            [total] => 400
+            [count] => 1
+            [id] => 801
+            [comment] => 
+        )
+
+)
+
+[2017-02-22 19:01:54] sendOrder: CID-11 Order: Array
+(
+    [type] => 0
+    [payment] => 0
+    [logistic] => 0
+    [fname] => Иван
+    [lname] => Иванов
+    [pname] => Иванович
+    [phone] => 74952222222
+    [email] => 
+    [cname] => Иванов Иван
+    [inn] => 123456789
+    [city] => Москва
+    [address] => 
+    [comment] => Отправка транспортной кампанией Деловые Линии
+    [companyname] => ООО "Компания"
+    [cphone] => 74951111111
+    [cemail] => ivanov@kompania.ru
+)
+
+[2017-02-22 19:01:54] resultOrder: OID-155
+[2017-02-22 19:01:56] createDeal: OID-155 Info:Заказ №155 <br>1 Ножки Н2-3 белые  - 1 x 400 <br>2 Доставка Москва - 1 x 1200 <br><hr>Получатель: Иванов Иван Иванович<br>Контакты: 74952222222 <br>Доставка до склада: Москва<br>Оплата: полная<br>Доп. информация: Отправка транспортной кампанией Деловые Линии<br>
+[2017-02-22 19:01:56] Send mail: av@itentaro.ru Str: Заказ №155  
+ 1 Ножки Н2-3 белые  - 1 x 400  
+ 2 Доставка Москва - 1 x 1200  
+  
+  
+ Получатель: Иванов Иван Иванович 
+ Контакты: 74952222222  
+ Доставка до склада: Москва 
+ Оплата: полная 
+ Доп. информация: Отправка транспортной кампанией Деловые Линии 
+ 
+
+[2017-02-22 19:01:56] Send form: <form action="https://demomoney.yandex.ru/eshop.xml" method="post">
+        <input name="shopId" value="120256" type="hidden"/>
+        <input name="scid" value="548743" type="hidden"/>
+        <input name="sum" value="1600" type="hidden">
+        <input name="customerNumber" value="Иванов Иван Иванович" type="hidden"/>
+        <input name="paymentType" value="" type="hidden"/>
+        <input name="orderNumber" value="155" type="hidden"/>
+        <input name="shopDefaultUrl" value="https://kouzi.ru/shop" type="hidden"/>        
+        <input name="shopSuccessURL" value="https://kouzi.ru/shop" type="hidden"/>        
+        <input name="cps_phone" value="74952222222" type="hidden"/>
+        <input name="cps_email" value="" type="hidden"/>
+        <input type="submit" value="Pay"/>
+        </form>
+[2017-02-22 19:01:56] Start task: addDeal
+[2017-02-27 14:17:52] sendArticle: CID-11 Article: Array
+(
+    [0] => Array
+        (
+            [id] => 30111
+            [count] => 1
+            [comment] => 
+            [price] => 5200
+            [name] => КОУЗИ М1 450Вт Белый
+            [total] => 5200
+        )
+
+)
+
+[2017-02-27 14:17:52] sendOrder: CID-11 Order: Array
+(
+    [type] => 0
+    [payment] => 0
+    [logistic] => 0
+    [fname] => Иван
+    [lname] => Иванов
+    [pname] => Иванович
+    [phone] => 74952222222
+    [email] => 
+    [cname] => Иванов Иван
+    [inn] => 123456789
+    [city] => Москва
+    [address] => 
+    [comment] => Отправка транспортной компанией Деловые Линии
+    [companyname] => ООО "Компания"
+    [cphone] => 74951111111
+    [cemail] => ivanov@kompania.ru
+)
+
+[2017-02-27 14:17:52] resultOrder: OID-156
+[2017-02-28 11:44:50] Start checkOrder
+[2017-02-28 11:44:50] Security type MD5
+[2017-02-28 11:44:50] Request: Array
+(
+    [action] => checkOrder
+    [orderSumAmount] => 1800.00
+    [orderSumCurrencyPaycash] => 10643
+    [orderSumBankPaycash] => 1003
+    [shopId] => 120256
+    [invoiceId] => 2000001084585
+    [customerNumber] => Гарунович Алексей Владимирович
+    [orderNumber] => 158
+    [md5] => 63450C9B644392F8E86251B5442C4575
+)
+
+[2017-02-28 11:44:50] String to md5: checkOrder;1800.00;10643;1003;120256;2000001084585;Гарунович Алексей Владимирович;GGUx6Wyh4zLa
+[2017-02-28 11:44:50] Response: <?xml version="1.0" encoding="UTF-8"?><checkOrderResponse performedDatetime="2017-02-28T11:44:50.000+03:00" code="100" message="Заказ с данными параметрами не найден." invoiceId="2000001084585" shopId="120256"/>
