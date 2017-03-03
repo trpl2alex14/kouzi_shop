@@ -1,0 +1,3 @@
+[20.02.2017 10:38:39][Предупреждение] Use of undefined constant NOTAX_CITY - assumed 'NOTAX_CITY' in file /var/www/kouzi/data/www/kouzi.ru/addon/shopdemo/include/reqshop.php on in line 123 
+[20.02.2017 10:38:39][Опасность] in_array() expects parameter 2 to be array, string given in file /var/www/kouzi/data/www/kouzi.ru/addon/shopdemo/include/reqshop.php on in line 123 
+[28.02.2017 11:44:50][Предупреждение пользователя] Заказ ID:158 - отсутствует в базе in file /var/www/kouzi/data/www/kouzi.ru/addon/shopdemo/include/actionBase.php on in line 176 

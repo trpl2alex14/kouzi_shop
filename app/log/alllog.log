@@ -9827,3 +9827,127 @@
 
 [2017-02-28 11:44:50] String to md5: checkOrder;1800.00;10643;1003;120256;2000001084585;Гарунович Алексей Владимирович;GGUx6Wyh4zLa
 [2017-02-28 11:44:50] Response: <?xml version="1.0" encoding="UTF-8"?><checkOrderResponse performedDatetime="2017-02-28T11:44:50.000+03:00" code="100" message="Заказ с данными параметрами не найден." invoiceId="2000001084585" shopId="120256"/>
+[2017-03-02 10:48:53] sendArticle: CID-21 Article: Array
+(
+    [0] => Array
+        (
+            [id] => 601
+            [count] => 5
+            [comment] => 
+            [price] => 400
+            [name] => Ножки М1-2 белые
+            [total] => 2000
+        )
+
+    [1] => Array
+        (
+            [id] => 10111
+            [count] => 5
+            [comment] => 
+            [price] => 5200
+            [name] => КОУЗИ М1 250Вт Белый
+            [total] => 26000
+        )
+
+)
+
+[2017-03-02 10:48:53] sendOrder: CID-21 Order: Array
+(
+    [type] => 0
+    [payment] => 1
+    [logistic] => 1
+    [fname] => Иван
+    [lname] => Петров
+    [pname] => Викторович
+    [phone] => 83512009090
+    [email] => 
+    [cname] => 
+    [inn] => 
+    [city] => Москва
+    [address] => у. Ленина, д. 124, кв. 1000
+    [comment] => деловыми линиями до дому
+    [companyname] => 
+    [cphone] => 
+    [cemail] => 
+)
+
+[2017-03-02 10:48:53] resultOrder: OID-157
+[2017-03-02 10:48:54] createDeal: OID-157 Info:Заказ №157 <br>1 Ножки М1-2 белые  - 5 x 400 <br>2 КОУЗИ М1 250Вт Белый  - 5 x 5200 <br>3 Комиссия  - 1 x 1400 <br>4 Доставка Москва - 1 x 1800 <br><hr>Получатель: Петров Иван Викторович<br>Контакты: 83512009090 <br>Доставка до адреса: Москва у. Ленина, д. 124, кв. 1000<br>Оплата: только доставка<br>Доп. информация: деловыми линиями до дому<br>
+[2017-03-02 10:48:54] Send mail: av@itentaro.ru Str: Заказ №157  
+ 1 Ножки М1-2 белые  - 5 x 400  
+ 2 КОУЗИ М1 250Вт Белый  - 5 x 5200  
+ 3 Комиссия  - 1 x 1400  
+ 4 Доставка Москва - 1 x 1800  
+  
+  
+ Получатель: Петров Иван Викторович 
+ Контакты: 83512009090  
+ Доставка до адреса: Москва у. Ленина, д. 124, кв. 1000 
+ Оплата: только доставка 
+ Доп. информация: деловыми линиями до дому 
+ 
+
+[2017-03-02 10:48:54] Send form: <form action="https://demomoney.yandex.ru/eshop.xml" method="post">
+        <input name="shopId" value="120256" type="hidden"/>
+        <input name="scid" value="548743" type="hidden"/>
+        <input name="sum" value="1800" type="hidden">
+        <input name="customerNumber" value="Петров Иван Викторович" type="hidden"/>
+        <input name="paymentType" value="" type="hidden"/>
+        <input name="orderNumber" value="157" type="hidden"/>
+        <input name="shopDefaultUrl" value="https://kouzi.ru/shop" type="hidden"/>        
+        <input name="shopSuccessURL" value="https://kouzi.ru/shop" type="hidden"/>        
+        <input name="cps_phone" value="83512009090" type="hidden"/>
+        <input name="cps_email" value="" type="hidden"/>
+        <input type="submit" value="Pay"/>
+        </form>
+[2017-03-02 10:48:55] Start task: addDeal
+[2017-03-02 10:49:24] Start checkOrder
+[2017-03-02 10:49:24] Security type MD5
+[2017-03-02 10:49:24] Request: Array
+(
+    [action] => checkOrder
+    [orderSumAmount] => 1800.00
+    [orderSumCurrencyPaycash] => 10643
+    [orderSumBankPaycash] => 1003
+    [shopId] => 120256
+    [invoiceId] => 2000001099539
+    [customerNumber] => Петров Иван Викторович
+    [orderNumber] => 157
+    [md5] => 08AC288A04BBDDB841FAA9C5874CAEF6
+)
+
+[2017-03-02 10:49:24] String to md5: checkOrder;1800.00;10643;1003;120256;2000001099539;Петров Иван Викторович;GGUx6Wyh4zLa
+[2017-03-02 10:49:24] Response: <?xml version="1.0" encoding="UTF-8"?><checkOrderResponse performedDatetime="2017-03-02T10:49:24.000+03:00" code="0"  invoiceId="2000001099539" shopId="120256"/>
+[2017-03-02 10:49:24] Start paymentAviso
+[2017-03-02 10:49:24] Security type MD5
+[2017-03-02 10:49:24] Request: Array
+(
+    [action] => paymentAviso
+    [orderSumAmount] => 1800.00
+    [orderSumCurrencyPaycash] => 10643
+    [orderSumBankPaycash] => 1003
+    [shopId] => 120256
+    [invoiceId] => 2000001099539
+    [customerNumber] => Петров Иван Викторович
+    [orderNumber] => 157
+    [md5] => 8DA231C8D4B85E71E718E417CEB834A8
+)
+
+[2017-03-02 10:49:24] String to md5: paymentAviso;1800.00;10643;1003;120256;2000001099539;Петров Иван Викторович;GGUx6Wyh4zLa
+[2017-03-02 10:49:24] Пришла оплата: сделка ID157
+[2017-03-02 10:49:24] Send mail: av@itentaro.ru Str: Информация: 
+ Array
+(
+    [action] => paymentAviso
+    [orderSumAmount] => 1800.00
+    [orderSumCurrencyPaycash] => 10643
+    [orderSumBankPaycash] => 1003
+    [shopId] => 120256
+    [invoiceId] => 2000001099539
+    [customerNumber] => Петров Иван Викторович
+    [orderNumber] => 157
+    [md5] => 8DA231C8D4B85E71E718E417CEB834A8
+)
+
+
+[2017-03-02 10:49:25] Response: <?xml version="1.0" encoding="UTF-8"?><paymentAvisoResponse performedDatetime="2017-03-02T10:49:25.000+03:00" code="0"  invoiceId="2000001099539" shopId="120256"/>
