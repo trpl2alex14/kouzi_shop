@@ -171,7 +171,7 @@
             <input type="radio" id="payment-1" name="payment" value="0" checked>
             <label for="payment-1">Оплата на сайте (комиссия 0 руб.)
             <p>Оплачивается доставка и полная стоимость заказа банковской картой, через терминалы или салоны связи</p></label><br>
-            <input type="radio" id="payment-2" name="payment" value="1" ><label for="payment-2">Оплата заказа при получение <span></span>
+            <input type="radio" id="payment-2" name="payment" value="1" ><label for="payment-2">Оплата заказа при получении <span></span>
             <p>Предварительно оплачивается только стоимость доставки. Оплата заказа происходит в момент его получения</p></label><br>
         </div>
         <div class="other-block">  
