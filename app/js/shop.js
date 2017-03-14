@@ -91,6 +91,8 @@ KouziShop = {
             clientid: this.clientid,
             article:KouziList.article            
         };        
+        ga('set', 'page', KouziShop.successUrl+'/article');
+        ga('send', 'pageview');        
         this.ajaxReq('article',data);
     },
     
@@ -104,10 +106,14 @@ KouziShop = {
             article:KouziList.article,
             order  :KouziOrder.order
         };
+        yaCounter26081139.reachGoal('zakaz');
+        ga('send', 'event', 'online', 'lead', 'Интернет магазин - Лид');
+        ga('set', 'page', KouziShop.successUrl+'/order');
+        ga('send', 'pageview');        
         this.ajaxReq('order',data,function(responseData){
             KouziShop.orderid = responseData.orderid;
             jQuery("#article-list .title h3 span").html('№ '+responseData.orderid);
-        });        
+        });                
         return true;
     },
     
@@ -116,7 +122,10 @@ KouziShop = {
         var data = {
             clientid: this.clientid,
             orderid :this.orderid
-        };        
+        }; 
+        ga('send', 'event', 'online', 'deal', 'Интернет магазин - Заявка с оплатой');  
+        ga('set', 'page', KouziShop.successUrl+'/applay');
+        ga('send', 'pageview');             
         this.ajaxReq("pay&orderid="+this.orderid,data,function(responseData){            
             if(responseData.payform){
                 jQuery('#payForm').html(responseData.payform);
@@ -130,7 +139,10 @@ KouziShop = {
         var data = {
             clientid: this.clientid,
             orderid :this.orderid
-        };        
+        };    
+        ga('send', 'event', 'online', 'deal', 'Интернет магазин - Заявка с пост.оплатой'); 
+        ga('set', 'page', KouziShop.successUrl+'/applay');
+        ga('send', 'pageview');           
         this.ajaxReq("createdeal&orderid="+this.orderid,data,function(responseData){
             jQuery('#load_modal .info-applay h3 span').html(' № '+data.orderid);
             jQuery('#load_modal .info-applay p span').html(KouziShop.phone);

@@ -24,7 +24,12 @@ if(get_reqest('sendreq')=='addDeal'){
         $crm->setArticle($products);
         $crm->setOrder($orderinfo);
         $orderid = (int)$row['order_id'];
-        $id = $crm->createDeal($orderid,$row['comment']);
+        $rcid = $db->run("SELECT * FROM clients,orders WHERE orders.id_client=clients.id AND orders.id=".$orderid);
+        $cid='';
+        if(!$db->isError() && $rowcid = $rcid->fetch_assoc()){
+          $cid =  $rowcid['id_cart'];
+        }
+        $id = $crm->createDeal($orderid,$row['comment'],$cid);
         if($id){
             $db->run("INSERT INTO `ordercrm`(`order_id`, `crm_id`) VALUES (".$orderid.",".$id.")");
             $aBase->setOrderStatus($orderid,STATUS_ORDER_SEND);

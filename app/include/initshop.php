@@ -32,7 +32,14 @@ class InitShop {
     }
         
     public function createIdClient(){
-        $new_id = uniqid("kouzi_", true);
+        //$new_id = uniqid("kouzi_", true);
+        if (isset($_COOKIE['_ga'])) {
+            list($version,$domainDepth, $cid1, $cid2) = explode('.', $_COOKIE["_ga"],4);
+            $contents = array('version' => $version, 'domainDepth' => $domainDepth, 'cid' => $cid1.'.'.$cid2);
+            $new_id = $contents['cid'];
+        }else{
+            $new_id = uniqid("kouzi_", true);
+        }        
         $this->setIdCart($new_id);          
         $db = ShopDB::getInstance();
         $db->run("INSERT INTO clients (id_cart) VALUES ('".$new_id."')");

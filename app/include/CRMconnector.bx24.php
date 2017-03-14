@@ -102,7 +102,7 @@ class CRMconnector extends bx24class{
         }        
     }     
 
-    public function createDeal($orderid,$comment){
+    public function createDeal($orderid,$comment,$cid=''){
         $this->company_id = 0;
         $this->client_id  = 0;
         $fields = array(
@@ -110,7 +110,8 @@ class CRMconnector extends bx24class{
             "STAGE_ID" => DEAL_STAT,
             "COMMENTS" => $comment,
             "UF_CRM_1479793006" => $this->order['city'],
-            "UF_CRM_1486632429" => $orderid
+            "UF_CRM_1486632429" => $orderid,
+            "UF_CRM_1489044715" => $cid
         );
         if($this->order['type']==0){
             $this->createClient();
